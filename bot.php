@@ -125,58 +125,7 @@ if($message['type']=='text') {
         );
     }
 }
-if($message['type']=='text') {
-	    if ($command == 'creator') {
-		            $balas = array(
-                                  'replyToken' => $replyToken,
-                                  'messages' => array(
-array (
-  'type' => 'template',
-  'altText' => 'this is a image carousel template',
-  'template' => 
-  array (
-    'type' => 'image_carousel',
-    'columns' => 
-    array (
-      0 => 
-      array (
-        'imageUrl' => 'https://example.com/bot/images/item1.jpg',
-        'action' => 
-        array (
-          'type' => 'postback',
-          'label' => 'Buy',
-          'data' => 'action=buy&itemid=111',
-        ),
-      ),
-      1 => 
-      array (
-        'imageUrl' => 'https://example.com/bot/images/item2.jpg',
-        'action' => 
-        array (
-          'type' => 'message',
-          'label' => 'Yes',
-          'text' => 'yes',
-        ),
-      ),
-      2 => 
-      array (
-        'imageUrl' => 'https://example.com/bot/images/item3.jpg',
-        'action' => 
-        array (
-          'type' => 'uri',
-          'label' => 'View detail',
-          'uri' => 'http://example.com/page/222',
-        ),
-      ),
-    ),
-  ),
-)
-              )
-            )
-        );
-    }
 
-}
 if (isset($balas)) {
     $result = json_encode($balas);
 //$result = ob_get_clean();
