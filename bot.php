@@ -100,91 +100,51 @@ if($message['type']=='text') {
 }
 if($message['type']=='text') {
 	    if ($command == 'creator') {
-		    $balas = array(
-                         'replyToken' => $replyToken,
-                         'messages' => array(
+		            $balas = array(
+                                  'replyToken' => $replyToken,
+                                  'messages' => array(
 array (
   'type' => 'template',
-  'altText' => 'this is a carousel template',
+  'altText' => 'this is a image carousel template',
   'template' => 
   array (
-    'type' => 'carousel',
+    'type' => 'image_carousel',
     'columns' => 
     array (
       0 => 
       array (
-        'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
-        'imageBackgroundColor' => '#FFFFFF',
-        'title' => 'this is menu',
-        'text' => 'description',
-        'defaultAction' => 
+        'imageUrl' => 'https://example.com/bot/images/item1.jpg',
+        'action' => 
         array (
-          'type' => 'uri',
-          'label' => 'View detail',
-          'uri' => 'http://example.com/page/123',
-        ),
-        'actions' => 
-        array (
-          0 => 
-          array (
-            'type' => 'postback',
-            'label' => 'Buy',
-            'data' => 'action=buy&itemid=111',
-          ),
-          1 => 
-          array (
-            'type' => 'postback',
-            'label' => 'Add to cart',
-            'data' => 'action=add&itemid=111',
-          ),
-          2 => 
-          array (
-            'type' => 'uri',
-            'label' => 'View detail',
-            'uri' => 'http://example.com/page/111',
-          ),
+          'type' => 'postback',
+          'label' => 'Buy',
+          'data' => 'action=buy&itemid=111',
         ),
       ),
       1 => 
       array (
-        'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
-        'imageBackgroundColor' => '#000000',
-        'title' => 'this is menu',
-        'text' => 'description',
-        'defaultAction' => 
+        'imageUrl' => 'https://example.com/bot/images/item2.jpg',
+        'action' => 
+        array (
+          'type' => 'message',
+          'label' => 'Yes',
+          'text' => 'yes',
+        ),
+      ),
+      2 => 
+      array (
+        'imageUrl' => 'https://example.com/bot/images/item3.jpg',
+        'action' => 
         array (
           'type' => 'uri',
           'label' => 'View detail',
           'uri' => 'http://example.com/page/222',
         ),
-        'actions' => 
-        array (
-          0 => 
-          array (
-            'type' => 'postback',
-            'label' => 'Buy',
-            'data' => 'action=buy&itemid=222',
-          ),
-          1 => 
-          array (
-            'type' => 'postback',
-            'label' => 'Add to cart',
-            'data' => 'action=add&itemid=222',
-          ),
-          2 => 
-          array (
-            'type' => 'uri',
-            'label' => 'View detail',
-            'uri' => 'http://example.com/page/222',
-          ),
-        ),
       ),
     ),
-    'imageAspectRatio' => 'rectangle',
-    'imageSize' => 'cover',
   ),
 )
- )
+              )
             )
         );
     }
