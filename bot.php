@@ -96,25 +96,6 @@ if ($type == 'join' || $command == '/menu') {
 }
 
 //pesan bergambar
-if($message['type']=='text')
-{
-	if($pesan_datang=='Hi' || $pesan_datang=='hi')
-	{
-		
-		
-		$balas = array(
-							'replyToken' => $replyToken,														
-							'messages' => array(
-								array(
-										'type' => 'text',					
-										'text' => 'Halo '.$profil->displayName.', apa kabar?,'
-									)
-							)
-						);
-				
-	}
-
-//pesan bergambar
 if($message['type']=='text') {
 	    if ($command == '/shalat') {
 
