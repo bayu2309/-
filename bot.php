@@ -111,20 +111,8 @@ if ($type == 'join' || $command == '/menu') {
           0 => 
           array (
             'type' => 'postback',
-            'label' => 'Buy',
+            'label' => 'Detail',
             'data' => 'action=buy&itemid=111',
-          ),
-          1 => 
-          array (
-            'type' => 'postback',
-            'label' => 'Add to cart',
-            'data' => 'action=add&itemid=111',
-          ),
-          2 => 
-          array (
-            'type' => 'uri',
-            'label' => 'View detail',
-            'uri' => 'http://example.com/page/111',
           ),
         ),
       ),
