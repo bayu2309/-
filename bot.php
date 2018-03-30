@@ -83,7 +83,6 @@ function cuaca($keyword) {
 
 //show menu, saat join dan command /menu
 if ($type == 'join' || $command == '/menu') {
-    $text = "Assalamualaikum Kakak, aku adalah bot cuaca dan jadwal shalat, silahkan ketik\n\n/shalat atau /cuaca <nama tempat>\n\nnanti aku bakalan kasih tahu jam berapa waktunya shalat ^_^";
     $balas = array(
         'replyToken' => $replyToken,
         'messages' => array(
