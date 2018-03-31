@@ -83,15 +83,18 @@ if ($command == '/bye'){
   $balas = array(
       'replyToken' => $replyToken,
       'messages' => array(
-          array (
-  'type' => 'leave',
-  'timestamp' => $timestamp,
-  'source' => 
-  array (
-    'type' => 'group',
-    'groupId' => $groupId,
-  ),
-)
+          array(
+              'type' => 'text',
+              'text' => 'kakak jahat -_-',
+               array ('type' => 'leave',
+                      'timestamp' => $timestamp,
+                      'source' =>
+                       array ( 'type' => 'group',
+                              'groupId' => $groupId )
+                                     )
+                                     )
+                                     )
+                                     );
 }
 if ($type == 'join' || $command == '/menu') {
     $balas = array(
@@ -125,7 +128,6 @@ if ($type == 'join' || $command == '/menu') {
             'label' => 'Show',
             'text' => 'testing1',
           ),
-        ),
       ),
       1 =>
       array (
@@ -147,8 +149,6 @@ if ($type == 'join' || $command == '/menu') {
             'label' => 'Show',
             'text' => 'test2',
           ),
-        ),
-      ),
     ),
     'imageAspectRatio' => 'rectangle',
     'imageSize' => 'cover',
