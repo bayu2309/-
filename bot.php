@@ -1,15 +1,12 @@
 <?php
 /*
-copyright @ medantechno.com
-Modified @ Farzain - zFz
-2017
-
+just for fun
 */
 
 require_once('./line_class.php');
 require_once('./unirest-php-master/src/Unirest.php');
 
-$channelAccessToken = 'CkHhBC6Ambq9d3NOWNaZc2ymDU11L8tN/z94u6N0ySR8uKhVRExoPFxXa1IwezC2DKKBqaUPhaLLR4KGWtHsx5YZII5Agc75zchhL6pD7jVKwiqZaDZlQ2Gx2aVsYz12aKVnmwxOPR3p72AXU3ke1gdB04t89/1O/w1cDnyilFU='; //sesuaikan 
+$channelAccessToken = 'CkHhBC6Ambq9d3NOWNaZc2ymDU11L8tN/z94u6N0ySR8uKhVRExoPFxXa1IwezC2DKKBqaUPhaLLR4KGWtHsx5YZII5Agc75zchhL6pD7jVKwiqZaDZlQ2Gx2aVsYz12aKVnmwxOPR3p72AXU3ke1gdB04t89/1O/w1cDnyilFU='; //sesuaikan
 $channelSecret = 'efdfb084093043e5c501fd0622a52319';//sesuaikan
 
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
@@ -82,81 +79,94 @@ function cuaca($keyword) {
 # require_once('./src/function/hard.php');
 
 //show menu, saat join dan command /menu
+if ($command == '/bye'){
+  $balas = array(
+      'replyToken' => $replyToken,
+      'messages' => array(
+          array(
+              'type' => 'text',
+              'text' => 'kakak jahat -_-',
+               array ('type' => 'leave',
+                      'timestamp' => $timestamp,
+                      'source' =>
+                       array ( 'type' => 'group',
+                              'groupId' => $groupId )
+                                     )
+                                     )
+                                     )
+                                     );
+}
 if ($type == 'join' || $command == '/menu') {
     $balas = array(
         'replyToken' => $replyToken,
         'messages' => array(
           array (
-  'type' => 'template',
-  'altText' => 'this is a carousel template',
-  'template' => 
-  array (
-    'type' => 'carousel',
-    'columns' => 
-    array (
-      0 => 
-      array (
-        'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
-        'imageBackgroundColor' => '#FFFFFF',
-        'title' => 'this is menu',
-        'text' => 'description',
-        'defaultAction' => 
-        array (
-          'type' => 'uri',
-          'label' => 'View detail',
-          'uri' => 'http://example.com/page/123',
-        ),
-        'actions' => 
-        array (
-          0 => 
+                'type' => 'template',
+                'altText' => 'this is a carousel template',
+                'template' =>
           array (
-            'type' => 'postback',
-            'label' => 'Detail',
-            'data' => 'action=buy&itemid=111',
-          ),
-        ),
-      ),
-      1 => 
-      array (
-        'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
-        'imageBackgroundColor' => '#000000',
-        'title' => 'this is menu',
-        'text' => 'description',
-        'defaultAction' => 
-        array (
-          'type' => 'uri',
-          'label' => 'View detail',
-          'uri' => 'http://example.com/page/222',
-        ),
-        'actions' => 
-        array (
-          0 => 
-          array (
-            'type' => 'postback',
-            'label' => 'Buy',
-            'data' => 'action=buy&itemid=222',
-          ),
-          1 => 
-          array (
-            'type' => 'postback',
-            'label' => 'Add to cart',
-            'data' => 'action=add&itemid=222',
-          ),
-          2 => 
-          array (
-            'type' => 'uri',
-            'label' => 'View detail',
-            'uri' => 'http://example.com/page/222',
-          ),
-        ),
-      ),
-    ),
-    'imageAspectRatio' => 'rectangle',
-    'imageSize' => 'cover',
-  ),
-)
-        )
-    );
+                'type' => 'carousel',
+                'columns' =>
+                           array (
+                                   0 =>
+                                       array (
+                                             'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
+                                             'imageBackgroundColor' => '#FFFFFF',
+                                             'title' => 'Youtube',
+                                             'text' => 'Mencari vidio youtube berdasarkan judul yg kamu ketik',
+                                             'defaultAction' =>
+                                                              array (
+                                                                     'type' => 'postback',
+                                                                     'label' => 'Example',
+                                                                     'text' => '/youtube <query>',
+                                                                     ),
+                                                                     ),
+                                                                     ),
+                                   1 =>
+                                       array (
+                                             'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
+                                             'imageBackgroundColor' => '#000000',
+                                             'title' => 'Weather',
+                                             'text' => 'Memberitahukan info cuaca berdasarkan nama kota yang kamu ketik',
+                                             'defaultAction' =>
+                                                              array (
+                                                                    'type' => 'postback',
+                                                                    'label' => 'Example',
+                                                                    'text' => '/cuaca <query>',
+                                                                    ),
+                                                                    ),
+                                   2 =>
+                                       array (
+                                            'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
+                                            'imageBackgroundColor' => '#000000',
+                                            'title' => 'Praytime',
+                                            'text' => 'Memberitahukan info jadwal shalat berdasarkan nama kota yang kamu ketik',
+                                            'defaultAction' =>
+                                                              array (
+                                                                    'type' => 'postback',
+                                                                    'label' => 'Example',
+                                                                    'text' => '/shalat <query>',
+                                                                    ),
+                                                                    ),
+                                  3 =>
+                                      array (
+                                            'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
+                                            'imageBackgroundColor' => '#000000',
+                                            'title' => 'Google image',
+                                            'text' => 'Memberikan hasil gambar berdasarkan hal yang kamu ketik',
+                                            'defaultAction' =>
+                                                              array (
+                                                                    'type' => 'postback',
+                                                                    'label' => 'Example',
+                                                                    'text' => '/image <query>',
+                                                                    ),
+                                                                    ),
+                'imageAspectRatio' => 'rectangle',
+                'imageSize' => 'cover',
+                ),
+                )
+                )
+                );
 }
 
 //pesan bergambar
