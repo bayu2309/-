@@ -83,15 +83,18 @@ if ($command == '/bye'){
   $balas = array(
       'replyToken' => $replyToken,
       'messages' => array(
-          array (
-  'type' => 'leave',
-  'timestamp' => 1462629479859,
-  'source' => 
-  array (
-    'type' => 'group',
-    'groupId' => 'C4af4980629...',
-  ),
-)
+          array(
+              'type' => 'text',
+              'text' => 'kakak jahat -_-',
+               array ('type' => 'leave',
+                      'timestamp' => $timestamp,
+                      'source' =>
+                       array ( 'type' => 'group',
+                              'groupId' => $groupId )
+                                     )
+                                     )
+                                     )
+                                     );
 }
 if ($type == 'join' || $command == '/menu') {
     $balas = array(
@@ -100,38 +103,38 @@ if ($type == 'join' || $command == '/menu') {
           array (
   'type' => 'template',
   'altText' => 'this is a carousel template',
-  'template' => 
+  'template' =>
   array (
     'type' => 'carousel',
-    'columns' => 
+    'columns' =>
     array (
-      0 => 
+      0 =>
       array (
         'thumbnailImageUrl' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQbpGtTo9pMAk4_QAKtHaym2bPLIfCnC2ufh9UlidUXoOnc3z8',
         'imageBackgroundColor' => '#FFFFFF',
         'title' => 'Pray time',
         'text' => 'Info waktu shalat berdasarkan kota yang kamu inginkan',
-        'defaultAction' => 
+        'defaultAction' =>
         array (
           'type' => 'uri',
           'label' => 'View detail',
           'uri' => 'http://example.com/page/123',
         ),
-        'actions' => 
+        'actions' =>
         array (
-          0 => 
+          0 =>
           array (
             'type' => 'postback',
             'label' => 'Example',
-            'data' => '/shalat bandung',
+            'text' => '/shalat bandung',
           ),
-          1 => 
+          1 =>
           array (
             'type' => 'postback',
             'label' => 'empty',
             'data' => 'action=add&itemid=111',
           ),
-          2 => 
+          2 =>
           array (
             'type' => 'uri',
             'label' => 'empty',
@@ -139,25 +142,25 @@ if ($type == 'join' || $command == '/menu') {
           ),
         ),
       ),
-      1 => 
+      1 =>
       array (
         'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
         'imageBackgroundColor' => '#000000',
         'title' => 'Weather',
         'text' => 'Info cuaca berdasarka kota yang kamu inginkan',
-        'defaultAction' => 
+        'defaultAction' =>
         array (
           'type' => 'uri',
           'label' => 'View detail',
           'uri' => 'http://example.com/page/222',
         ),
-        'actions' => 
+        'actions' =>
         array (
-          0 => 
+          0 =>
           array (
             'type' => 'postback',
             'label' => 'Example',
-            'data' => '/cuaca jakarta',
+            'text' => '/cuaca jakarta',
           ),
           1 => 
           array (
@@ -165,7 +168,7 @@ if ($type == 'join' || $command == '/menu') {
             'label' => 'empty',
             'data' => 'action=add&itemid=222',
           ),
-          2 => 
+          2 =>
           array (
             'type' => 'uri',
             'label' => 'empty',
