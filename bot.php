@@ -83,90 +83,77 @@ if ($command == '/bye'){
   $balas = array(
       'replyToken' => $replyToken,
       'messages' => array(
-          array(
-              'type' => 'text',
-              'text' => 'kakak jahat -_-',
-               array ('type' => 'leave',
-                      'timestamp' => $timestamp,
-                      'source' =>
-                       array ( 'type' => 'group',
-                              'groupId' => $groupId )
-                                     )
-                                     )
-                                     )
-                                     );
+          array (
+  'type' => 'leave',
+  'timestamp' => $timestamp,
+  'source' => 
+  array (
+    'type' => 'group',
+    'groupId' => $groupId,
+  ),
+)
 }
 if ($type == 'join' || $command == '/menu') {
     $balas = array(
         'replyToken' => $replyToken,
         'messages' => array(
           array (
-                'type' => 'template',
-                'altText' => 'this is a carousel template',
-                'template' =>
+  'type' => 'template',
+  'altText' => 'this is a carousel template',
+  'template' =>
+  array (
+    'type' => 'carousel',
+    'columns' =>
+    array (
+      0 =>
+      array (
+        'thumbnailImageUrl' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLzRnN5Y98uL_hzhaYpTniP6f6mncGyNKRa8Q1MbLfC9nbvPj7',
+        'imageBackgroundColor' => '#FFFFFF',
+        'title' => 'Youtube',
+        'text' => 'memberikan hasil pencarian di youtube berdasarkan query',
+        'defaultAction' =>
+        array (
+          'type' => 'uri',
+          'label' => 'View detail',
+          'uri' => 'http://example.com/page/123',
+        ),
+        'actions' =>
+        array (
+          0 =>
           array (
-                'type' => 'carousel',
-                'columns' =>
-                           array (
-                                   0 =>
-                                       array (
-                                             'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
-                                             'imageBackgroundColor' => '#FFFFFF',
-                                             'title' => 'Youtube',
-                                             'text' => 'Mencari vidio youtube berdasarkan judul yg kamu ketik',
-                                             'defaultAction' =>
-                                                              array (
-                                                                     'type' => 'postback',
-                                                                     'label' => 'Example',
-                                                                     'text' => '/youtube <query>',
-                                                                     ),
-                                                                     ),
-                                                                     ),
-                                   1 =>
-                                       array (
-                                             'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
-                                             'imageBackgroundColor' => '#000000',
-                                             'title' => 'Weather',
-                                             'text' => 'Memberitahukan info cuaca berdasarkan nama kota yang kamu ketik',
-                                             'defaultAction' =>
-                                                              array (
-                                                                    'type' => 'postback',
-                                                                    'label' => 'Example',
-                                                                    'text' => '/cuaca <query>',
-                                                                    ),
-                                                                    ),
-                                   2 =>
-                                       array (
-                                            'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
-                                            'imageBackgroundColor' => '#000000',
-                                            'title' => 'Praytime',
-                                            'text' => 'Memberitahukan info jadwal shalat berdasarkan nama kota yang kamu ketik',
-                                            'defaultAction' =>
-                                                              array (
-                                                                    'type' => 'postback',
-                                                                    'label' => 'Example',
-                                                                    'text' => '/shalat <query>',
-                                                                    ),
-                                                                    ),
-                                  3 =>
-                                      array (
-                                            'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
-                                            'imageBackgroundColor' => '#000000',
-                                            'title' => 'Google image',
-                                            'text' => 'Memberikan hasil gambar berdasarkan hal yang kamu ketik',
-                                            'defaultAction' =>
-                                                              array (
-                                                                    'type' => 'postback',
-                                                                    'label' => 'Example',
-                                                                    'text' => '/image <query>',
-                                                                    ),
-                                                                    ),
-                'imageAspectRatio' => 'rectangle',
-                'imageSize' => 'cover',
-                ),
-                )
-                )
-                );
+            'type' => 'postback',
+            'label' => 'Show',
+            'text' => 'testing1',
+          ),
+        ),
+      ),
+      1 =>
+      array (
+        'thumbnailImageUrl' => 'https://www.google.com/imgres?imgurl=https%3A%2F%2Fimage.moboplay.com%2Fimages%2Fapk%2F397%2Fcom.tohsoft.weather.live_icon.png&imgrefurl=https%3A%2F%2Fapk.moboplay.com%2Fid%2Fdownload-prakiraan-cuaca-apk-54976.html&docid=CbjgRLeAb1IwLM&tbnid=RYmu_Wrty6VLPM%3A&vet=10ahUKEwiknfjekpbaAhVDNY8KHXUSCgEQMwiGASg_MD8..i&w=512&h=512&itg=1&client=firefox-b-ab&bih=786&biw=1600&q=cuaca%20icon&ved=0ahUKEwiknfjekpbaAhVDNY8KHXUSCgEQMwiGASg_MD8&iact=mrc&uact=8',
+        'imageBackgroundColor' => '#000000',
+        'title' => 'Weather',
+        'text' => 'memberikan data tentang cuaca sesuai kota yang kamu cari',
+        'defaultAction' =>
+        array (
+          'type' => 'uri',
+          'label' => 'View detail',
+          'uri' => 'http://example.com/page/222',
+        ),
+        'actions' =>
+        array (
+          0 =>
+          array (
+            'type' => 'postback',
+            'label' => 'Show',
+            'text' => 'test2',
+          ),
+        ),
+      ),
+    ),
+    'imageAspectRatio' => 'rectangle',
+    'imageSize' => 'cover',
+  ),
+)
 }
 
 //pesan bergambar
