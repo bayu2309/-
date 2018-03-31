@@ -110,7 +110,7 @@ if ($type == 'join' || $command == '/menu') {
     array (
       0 => 
       array (
-        'thumbnailImageUrl' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQbpGtTo9pMAk4_QAKtHaym2bPLIfCnC2ufh9UlidUXoOnc3z8',
+        'thumbnailImageUrl' => 'http://2.bp.blogspot.com/-YeXp5RJmzHY/VNtT2rSlrtI/AAAAAAAAAsQ/L_CQimhBC80/s1600/sholat%2Btepat%2Bwaktu.png',
         'imageBackgroundColor' => '#FFFFFF',
         'title' => 'this is menu',
         'text' => 'description',
