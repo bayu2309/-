@@ -128,7 +128,9 @@ if ($type == 'join' || $command == '/menu') {
             'label' => 'Show',
             'text' => 'testing1',
           ),
+        ),
       ),
+    ),
       1 =>
       array (
         'thumbnailImageUrl' => 'https://www.google.com/imgres?imgurl=https%3A%2F%2Fimage.moboplay.com%2Fimages%2Fapk%2F397%2Fcom.tohsoft.weather.live_icon.png&imgrefurl=https%3A%2F%2Fapk.moboplay.com%2Fid%2Fdownload-prakiraan-cuaca-apk-54976.html&docid=CbjgRLeAb1IwLM&tbnid=RYmu_Wrty6VLPM%3A&vet=10ahUKEwiknfjekpbaAhVDNY8KHXUSCgEQMwiGASg_MD8..i&w=512&h=512&itg=1&client=firefox-b-ab&bih=786&biw=1600&q=cuaca%20icon&ved=0ahUKEwiknfjekpbaAhVDNY8KHXUSCgEQMwiGASg_MD8&iact=mrc&uact=8',
@@ -149,6 +151,8 @@ if ($type == 'join' || $command == '/menu') {
             'label' => 'Show',
             'text' => 'test2',
           ),
+        ),
+      ),
     ),
     'imageAspectRatio' => 'rectangle',
     'imageSize' => 'cover',
