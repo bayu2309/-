@@ -101,64 +101,62 @@ if ($type == 'join' || $command == '/menu') {
         'replyToken' => $replyToken,
         'messages' => array(
           array (
-  'type' => 'template',
-  'altText' => 'this is a carousel template',
-  'template' =>
-  array (
-    'type' => 'carousel',
-    'columns' =>
+    'type' => 'template',
+    'altText' => 'this is a carousel template',
+    'template' =>
     array (
-      0 =>
+      'type' => 'carousel',
+      'columns' =>
       array (
-        'thumbnailImageUrl' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLzRnN5Y98uL_hzhaYpTniP6f6mncGyNKRa8Q1MbLfC9nbvPj7',
-        'imageBackgroundColor' => '#FFFFFF',
-        'title' => 'Youtube',
-        'text' => 'memberikan hasil pencarian di youtube berdasarkan query',
-        'defaultAction' =>
+        0 =>
         array (
-          'type' => 'uri',
-          'label' => 'View detail',
-          'uri' => 'http://example.com/page/123',
-        ),
-        'actions' =>
-        array (
-          0 =>
+          'thumbnailImageUrl' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLzRnN5Y98uL_hzhaYpTniP6f6mncGyNKRa8Q1MbLfC9nbvPj7',
+          'imageBackgroundColor' => '#FFFFFF',
+          'title' => 'this is menu',
+          'text' => 'description',
+          'defaultAction' =>
           array (
-            'type' => 'postback',
-            'label' => 'Show',
-            'text' => 'testing1',
+            'type' => 'uri',
+            'label' => 'View detail',
+            'uri' => 'http://example.com/page/123',
+          ),
+          'actions' =>
+          array (
+            0 =>
+            array (
+              'type' => 'postback',
+              'label' => 'Show',
+              'text' => 'hahaha',
+            ),
+          ),
+        ),
+        1 =>
+        array (
+          'thumbnailImageUrl' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgwBHz-yylXPO-QX98OkG1rUAaxzsnl50gaqbza2OWLGJTpCoIeQ',
+          'imageBackgroundColor' => '#000000',
+          'title' => 'Weather',
+          'text' => 'description',
+          'defaultAction' =>
+          array (
+            'type' => 'uri',
+            'label' => 'View detail',
+            'uri' => 'http://example.com/page/222',
+          ),
+          'actions' =>
+          array (
+            0 =>
+            array (
+              'type' => 'postback',
+              'label' => 'Show',
+              'uri' => 'haha',
+            ),
           ),
         ),
       ),
-      1 =>
-      array (
-        'thumbnailImageUrl' => 'https://www.google.com/imgres?imgurl=https%3A%2F%2Fimage.moboplay.com%2Fimages%2Fapk%2F397%2Fcom.tohsoft.weather.live_icon.png&imgrefurl=https%3A%2F%2Fapk.moboplay.com%2Fid%2Fdownload-prakiraan-cuaca-apk-54976.html&docid=CbjgRLeAb1IwLM&tbnid=RYmu_Wrty6VLPM%3A&vet=10ahUKEwiknfjekpbaAhVDNY8KHXUSCgEQMwiGASg_MD8..i&w=512&h=512&itg=1&client=firefox-b-ab&bih=786&biw=1600&q=cuaca%20icon&ved=0ahUKEwiknfjekpbaAhVDNY8KHXUSCgEQMwiGASg_MD8&iact=mrc&uact=8',
-        'imageBackgroundColor' => '#000000',
-        'title' => 'Weather',
-        'text' => 'memberikan data tentang cuaca sesuai kota yang kamu cari',
-        'defaultAction' =>
-        array (
-          'type' => 'uri',
-          'label' => 'View detail',
-          'uri' => 'http://example.com/page/222',
-        ),
-        'actions' =>
-        array (
-          0 =>
-          array (
-            'type' => 'postback',
-            'label' => 'Show',
-            'text' => 'test2',
-          ),
-        ),
-      ),
+      'imageAspectRatio' => 'rectangle',
+      'imageSize' => 'cover',
     ),
-    'imageAspectRatio' => 'rectangle',
-    'imageSize' => 'cover',
-  ),
-),
-),
-)
+  )
 }
 
 //pesan bergambar
