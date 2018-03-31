@@ -126,7 +126,7 @@ if ($type == 'join' || $command == '/menu') {
           array (
             'type' => 'postback',
             'label' => 'Example',
-            'text' => '/shalat bandung',
+            'data' => 'action=add&itemid=222',
           ),
           1 =>
           array (
@@ -160,9 +160,9 @@ if ($type == 'join' || $command == '/menu') {
           array (
             'type' => 'postback',
             'label' => 'Example',
-            'text' => '/cuaca jakarta',
+            'data' => 'action=add&itemid=222',
           ),
-          1 => 
+          1 =>
           array (
             'type' => 'postback',
             'label' => 'empty',
