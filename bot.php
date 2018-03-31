@@ -83,80 +83,101 @@ if ($command == '/bye'){
   $balas = array(
       'replyToken' => $replyToken,
       'messages' => array(
-          array(
-              'type' => 'text',
-              'text' => 'kakak jahat -_-',
-               array ('type' => 'leave',
-                      'timestamp' => $timestamp,
-                      'source' =>
-                       array ( 'type' => 'group',
-                              'groupId' => $groupId )
-                                     )
-                                     )
-                                     )
-                                     );
+          array (
+  'type' => 'leave',
+  'timestamp' => 1462629479859,
+  'source' => 
+  array (
+    'type' => 'group',
+    'groupId' => 'C4af4980629...',
+  ),
+)
 }
 if ($type == 'join' || $command == '/menu') {
     $balas = array(
         'replyToken' => $replyToken,
         'messages' => array(
           array (
-    'type' => 'template',
-    'altText' => 'this is a carousel template',
-    'template' =>
+  'type' => 'template',
+  'altText' => 'this is a carousel template',
+  'template' => 
+  array (
+    'type' => 'carousel',
+    'columns' => 
     array (
-      'type' => 'carousel',
-      'columns' =>
+      0 => 
       array (
-        0 =>
+        'thumbnailImageUrl' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQbpGtTo9pMAk4_QAKtHaym2bPLIfCnC2ufh9UlidUXoOnc3z8',
+        'imageBackgroundColor' => '#FFFFFF',
+        'title' => 'Pray time',
+        'text' => 'Info waktu shalat berdasarkan kota yang kamu inginkan',
+        'defaultAction' => 
         array (
-          'thumbnailImageUrl' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLzRnN5Y98uL_hzhaYpTniP6f6mncGyNKRa8Q1MbLfC9nbvPj7',
-          'imageBackgroundColor' => '#FFFFFF',
-          'title' => 'this is menu',
-          'text' => 'description',
-          'defaultAction' =>
-          array (
-            'type' => 'uri',
-            'label' => 'View detail',
-            'uri' => 'http://example.com/page/123',
-          ),
-          'actions' =>
-          array (
-            0 =>
-            array (
-              'type' => 'postback',
-              'label' => 'Show',
-              'text' => 'hahaha',
-            ),
-          ),
+          'type' => 'uri',
+          'label' => 'View detail',
+          'uri' => 'http://example.com/page/123',
         ),
-        1 =>
+        'actions' => 
         array (
-          'thumbnailImageUrl' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgwBHz-yylXPO-QX98OkG1rUAaxzsnl50gaqbza2OWLGJTpCoIeQ',
-          'imageBackgroundColor' => '#000000',
-          'title' => 'Weather',
-          'text' => 'description',
-          'defaultAction' =>
+          0 => 
+          array (
+            'type' => 'postback',
+            'label' => 'Example',
+            'data' => '/shalat bandung',
+          ),
+          1 => 
+          array (
+            'type' => 'postback',
+            'label' => 'empty',
+            'data' => 'action=add&itemid=111',
+          ),
+          2 => 
           array (
             'type' => 'uri',
-            'label' => 'View detail',
-            'uri' => 'http://example.com/page/222',
-          ),
-          'actions' =>
-          array (
-            0 =>
-            array (
-              'type' => 'postback',
-              'label' => 'Show',
-              'uri' => 'haha',
-            ),
+            'label' => 'empty',
+            'uri' => 'http://example.com/page/111',
           ),
         ),
       ),
-      'imageAspectRatio' => 'rectangle',
-      'imageSize' => 'cover',
+      1 => 
+      array (
+        'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
+        'imageBackgroundColor' => '#000000',
+        'title' => 'Weather',
+        'text' => 'Info cuaca berdasarka kota yang kamu inginkan',
+        'defaultAction' => 
+        array (
+          'type' => 'uri',
+          'label' => 'View detail',
+          'uri' => 'http://example.com/page/222',
+        ),
+        'actions' => 
+        array (
+          0 => 
+          array (
+            'type' => 'postback',
+            'label' => 'Example',
+            'data' => '/cuaca jakarta',
+          ),
+          1 => 
+          array (
+            'type' => 'postback',
+            'label' => 'empty',
+            'data' => 'action=add&itemid=222',
+          ),
+          2 => 
+          array (
+            'type' => 'uri',
+            'label' => 'empty',
+            'uri' => 'http://example.com/page/222',
+          ),
+        ),
+      ),
     ),
-  )
+    'imageAspectRatio' => 'rectangle',
+    'imageSize' => 'cover',
+  ),
+)
 }
 
 //pesan bergambar
