@@ -79,23 +79,7 @@ function cuaca($keyword) {
 # require_once('./src/function/hard.php');
 
 //show menu, saat join dan command /menu
-if ($command == '/bye'){
-  $balas = array(
-      'replyToken' => $replyToken,
-      'messages' => array(
-          array(
-              'type' => 'text',
-              'text' => 'kakak jahat -_-',
-               array ('type' => 'leave',
-                      'timestamp' => $timestamp,
-                      'source' =>
-                       array ( 'type' => 'group',
-                              'groupId' => $groupId )
-                                     )
-                                     )
-                                     )
-                                     );
-}
+
 if ($type == 'join' || $command == '/menu') {
     $balas = array(
         'replyToken' => $replyToken,
