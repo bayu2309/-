@@ -83,41 +83,41 @@ if ($type == 'join' || $command == '/menu') {
     $balas = array(
         'replyToken' => $replyToken,
         'messages' => array(
-         array (
+                   array (
   'type' => 'template',
   'altText' => 'this is a carousel template',
-  'template' =>
+  'template' => 
   array (
     'type' => 'carousel',
-    'columns' =>
+    'columns' => 
     array (
-      0 =>
+      0 => 
       array (
         'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
         'imageBackgroundColor' => '#FFFFFF',
         'title' => 'this is menu',
         'text' => 'description',
-        'defaultAction' =>
+        'defaultAction' => 
         array (
           'type' => 'uri',
           'label' => 'View detail',
           'uri' => 'http://example.com/page/123',
         ),
-        'actions' =>
+        'actions' => 
         array (
-          0 =>
+          0 => 
           array (
             'type' => 'postback',
             'label' => 'Buy',
             'data' => 'action=buy&itemid=111',
           ),
-          1 =>
+          1 => 
           array (
             'type' => 'postback',
             'label' => 'Add to cart',
             'data' => 'action=add&itemid=111',
           ),
-          2 =>
+          2 => 
           array (
             'type' => 'uri',
             'label' => 'View detail',
@@ -125,33 +125,33 @@ if ($type == 'join' || $command == '/menu') {
           ),
         ),
       ),
-      1 =>
+      1 => 
       array (
         'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
         'imageBackgroundColor' => '#000000',
         'title' => 'this is menu',
         'text' => 'description',
-        'defaultAction' =>
+        'defaultAction' => 
         array (
           'type' => 'uri',
           'label' => 'View detail',
           'uri' => 'http://example.com/page/222',
         ),
-        'actions' =>
+        'actions' => 
         array (
-          0 =>
+          0 => 
           array (
             'type' => 'postback',
             'label' => 'Buy',
             'data' => 'action=buy&itemid=222',
           ),
-          1 =>
+          1 => 
           array (
             'type' => 'postback',
             'label' => 'Add to cart',
             'data' => 'action=add&itemid=222',
           ),
-          2 =>
+          2 => 
           array (
             'type' => 'uri',
             'label' => 'View detail',
