@@ -173,22 +173,22 @@ if ($type == 'join' || $command == '/menu') {
               array (
                 0 =>
                 array (
-                  'imageUrl' => 'https://example.com/bot/images/item2.jpg',
+                  'imageUrl' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS2MSHr44gCWwexWafpEszDShb_d4IxTfn_lKTne3kF-YqJ-eglw',
                   'action' =>
                   array (
                     'type' => 'message',
-                    'label' => 'Yes',
-                    'text' => 'yes',
+                    'label' => 'Klik',
+                    'text' => '/cuaca <nama kota>',
                   ),
                 ),
                 1 =>
                 array (
-                  'imageUrl' => 'https://example.com/bot/images/item2.jpg',
+                  'imageUrl' => 'https://www.google.co.id/imgres?imgurl=https%3A%2F%2Flh3.ggpht.com%2FPRxnzarktRAN-xPh6PEHWA8TEk2UM1VfoU7aqsZedy8vByHcL_slumY8LZBWuztxucN6%3Dw300&imgrefurl=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.prayertimes%26hl%3Din&docid=CfTY-2O0Fh2lpM&tbnid=UIajzIB1t_7FwM%3A&vet=10ahUKEwj_sd_eqJjaAhUJrY8KHYZPCH0QMwg_KAcwBw..i&w=300&h=300&bih=786&biw=1600&q=jadwal%20shalat%20icon&ved=0ahUKEwj_sd_eqJjaAhUJrY8KHYZPCH0QMwg_KAcwBw&iact=mrc&uact=8',
                   'action' =>
                   array (
                     'type' => 'message',
-                    'label' => 'Yes',
-                    'text' => 'yes',
+                    'label' => 'Klik',
+                    'text' => '/shalat <nama kota>',
                   ),
                 ),
           	  2 =>
@@ -197,7 +197,7 @@ if ($type == 'join' || $command == '/menu') {
                   'action' =>
                   array (
                     'type' => 'message',
-                    'label' => 'Yes',
+                    'label' => 'Klik',
                     'text' => 'yes',
                   ),
                 ),
@@ -207,7 +207,7 @@ if ($type == 'join' || $command == '/menu') {
                   'action' =>
                   array (
                     'type' => 'message',
-                    'label' => 'Yes',
+                    'label' => 'Klik',
                     'text' => 'yes',
                   )
                 )
@@ -231,7 +231,8 @@ if($message['type']=='text') {
             'messages' => array(
                 array(
                   'type' => 'audio',
-                  'originalContentUrl' => $result
+                  'originalContentUrl' => $result,
+                  'duration' => 30000,
                 )
             )
         );
