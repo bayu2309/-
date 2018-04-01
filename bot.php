@@ -141,7 +141,7 @@ if ($command == 'Hi'){
       'replyToken' => $replyToken,
       'messages' => array(
         array ('type' => 'text',
-               'text' => 'halo '.$profil => displayName.' senang bertemu dengan mu :v'
+               'text' => 'halo '.$profil -> displayName.' senang bertemu dengan mu :v'
              )
            )
          );
