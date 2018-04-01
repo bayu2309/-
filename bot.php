@@ -141,7 +141,7 @@ if ($command == 'Hi'){
       'replyToken' => $replyToken,
       'messages' => array(
         array ('type' => 'text',
-               'text' => 'halo '.$profil->displayName.' senang bertemu dengan mu :v'
+               'text' => 'halo '.$profil => displayName.' senang bertemu dengan mu :v'
              )
            )
          );
@@ -222,7 +222,7 @@ else if ($type == 'join' || $command == '/menu') {
 }
 
 //pesan khusus
-else if($message['type']=='text') {
+if($message['type']=='text') {
 	    if ($command == '/gtts') {
 
         $result = textspech($options);
@@ -239,7 +239,7 @@ else if($message['type']=='text') {
     }
 
 }
-else if($message['type']=='text') {
+if($message['type']=='text') {
 	    if ($command == '/gambar') {
 
         $result = gambarnya($options);
@@ -256,7 +256,7 @@ else if($message['type']=='text') {
     }
 
 }
-else if($message['type']=='text') {
+if($message['type']=='text') {
 	    if ($command == '/musik') {
 
         $result = musiknya($options);
@@ -272,7 +272,7 @@ else if($message['type']=='text') {
     }
 
 }
-else if($message['type']=='text') {
+if($message['type']=='text') {
 	    if ($command == '/fansign') {
 
         $result = fansign($options);
@@ -289,7 +289,7 @@ else if($message['type']=='text') {
     }
 
 }
-else if($message['type']=='text') {
+if($message['type']=='text') {
 	    if ($command == '/jadwaltv') {
 
         $result = jadwaltv($options);
@@ -305,7 +305,7 @@ else if($message['type']=='text') {
     }
 
 }
-else if($message['type']=='text') {
+if($message['type']=='text') {
 	    if ($command == '/shalat') {
 
         $result = shalat($options);
@@ -321,7 +321,7 @@ else if($message['type']=='text') {
     }
 
 }
-else if($message['type']=='text') {
+if($message['type']=='text') {
 	    if ($command == '/cuaca') {
         $result = cuaca($options);
         $balas = array(
