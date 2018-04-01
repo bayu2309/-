@@ -191,7 +191,7 @@ if ($type == 'join' || $command == '/menu') {
                 ),
           	    2 =>
                 array (
-                  'imageUrl' => '',
+                  'imageUrl' => 'http://www.psdgraphics.com/file/blank-lcd-tv.jpg',
                   'action' =>
                   array (
                     'type' => 'message',
@@ -200,8 +200,18 @@ if ($type == 'join' || $command == '/menu') {
                   ),
                 ),
                 3 =>
+                  array (
+                    'imageUrl' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwZdOL1BZMTte3vfb4bRNl5bpNcSLlMtuNYhkNJmok3Cl36pYu',
+                    'action' =>
+                    array (
+                      'type' => 'message',
+                      'label' => 'Klik',
+                      'text' => '/fansign <text>',
+                    ),
+                  ),
+                4 =>
                 array (
-                  'imageUrl' => 'https://icon-icons.com/icons2/537/PNG/512/images_icon-icons.com_52936.png',
+                  'imageUrl' => 'http://embec2017.org/wp-content/uploads/2017/07/image-icon.jpg',
                   'action' =>
                   array (
                     'type' => 'message',
