@@ -34,39 +34,96 @@ if (count($pesan_datang) > 2) {
 }
 
 #-------------------------[Function]-------------------------#
+
+function textspech($keyword) {
+    $uri = "https://farzain.xyz/api/tts.php?apikey=9YzAAXsDGYHWFRf6gWzdG5EQECW7oo&id=" . $keyword;
+
+    $response = Unirest\Request::get("$uri");
+
+    $json = json_decode($response->raw_body, true);
+    $result .= $json['result'];
+    return $result;
+}
+function gambarnya($keyword) {
+    $uri = "https://farzain.xyz/api/gambarg.php?apikey=9YzAAXsDGYHWFRf6gWzdG5EQECW7oo&id=" . $keyword;
+
+    $response = Unirest\Request::get("$uri");
+
+    $json = json_decode($response->raw_body, true);
+    $result .= $json['url'];
+    return $result;
+}
+function musiknya($keyword) {
+    $uri = "https://farzain.xyz/api/joox.php?apikey=9YzAAXsDGYHWFRf6gWzdG5EQECW7oo&id=" . $keyword;
+
+    $response = Unirest\Request::get("$uri");
+
+    $json = json_decode($response->raw_body, true);
+    $result = "「Music Result」";
+    $result = "\n\nJudul: ";
+	  $result .= $json['info']['judul'];
+    $result = "\nPenyanyi: ";
+    $result .= $json['info']['penyanyi'];
+    $result = "\nAlbum: ";
+    $result .= $json['info']['album'];
+    $result = "\nUrl: \n";
+    $result .= $json['audio']['mp3'];
+    $result = "\nLiriknya: \n";
+    $result .= $json['lirik'];
+    return $result;
+}
+function fansign($keyword) {
+    $uri = "https://farzain.xyz/api/fs.php?apikey=9YzAAXsDGYHWFRf6gWzdG5EQECW7oo&id=" . $keyword;
+
+    $response = Unirest\Request::get("$uri");
+
+    $json = json_decode($response->raw_body, true);
+	  $result .= $json['url'];
+    return $result;
+}
+function jadwaltv($keyword) {
+    $uri = "https://farzain.xyz/api/acaratv.php?apikey=9YzAAXsDGYHWFRf6gWzdG5EQECW7oo&id=" . $keyword;
+
+    $response = Unirest\Request::get("$uri");
+
+    $json = json_decode($response->raw_body, true);
+    $result = "「TV Schedule」";
+	  $result .= $json['url'];
+    return $result;
+}
 function shalat($keyword) {
     $uri = "https://time.siswadi.com/pray/" . $keyword;
 
     $response = Unirest\Request::get("$uri");
 
     $json = json_decode($response->raw_body, true);
-    $result = "Jadwal Shalat Sekitar ";
-	$result .= $json['location']['address'];
-	$result .= "\nTanggal : ";
-	$result .= $json['time']['date'];
-	$result .= "\n\nShubuh : ";
-	$result .= $json['data']['Fajr'];
-	$result .= "\nDzuhur : ";
-	$result .= $json['data']['Dhuhr'];
-	$result .= "\nAshar : ";
-	$result .= $json['data']['Asr'];
-	$result .= "\nMaghrib : ";
-	$result .= $json['data']['Maghrib'];
-	$result .= "\nIsya : ";
-	$result .= $json['data']['Isha'];
+    $result = "「Praytime Schedule」\n\n";
+	  $result .= $json['location']['address'];
+	  $result .= "\nTanggal : ";
+	  $result .= $json['time']['date'];
+	  $result .= "\n\nShubuh : ";
+	  $result .= $json['data']['Fajr'];
+	  $result .= "\nDzuhur : ";
+	  $result .= $json['data']['Dhuhr'];
+	  $result .= "\nAshar : ";
+	  $result .= $json['data']['Asr'];
+	  $result .= "\nMaghrib : ";
+	  $result .= $json['data']['Maghrib'];
+	  $result .= "\nIsya : ";
+	  $result .= $json['data']['Isha'];
     return $result;
 }
 function cuaca($keyword) {
     $uri = "http://api.openweathermap.org/data/2.5/weather?q=" . $keyword . ",ID&units=metric&appid=e172c2f3a3c620591582ab5242e0e6c4";
     $response = Unirest\Request::get("$uri");
     $json = json_decode($response->raw_body, true);
-    $result = "Halo Kak ^_^ Ini ada Ramalan Cuaca Untuk Daerah ";
-	$result .= $json['name'];
-	$result .= " Dan Sekitarnya";
-	$result .= "\n\nCuaca : ";
-	$result .= $json['weather']['0']['main'];
-	$result .= "\nDeskripsi : ";
-	$result .= $json['weather']['0']['description'];
+    $result = "「Weather Result」";
+    $result .= "\n\nNama kota:";
+	  $result .= $json['name'];
+	  $result .= "\n\nCuaca : ";
+	  $result .= $json['weather']['0']['main'];
+	  $result .= "\nDeskripsi : ";
+	  $result .= $json['weather']['0']['description'];
     return $result;
 }
 
@@ -79,95 +136,176 @@ function cuaca($keyword) {
 # require_once('./src/function/hard.php');
 
 //show menu, saat join dan command /menu
-if ($type == 'join' || $command == '/menu') {
+if ($command == 'Hi'){
+  $balas = array(
+      'replyToken' => $replyToken,
+      'messages' => array(
+        array ('type' => 'text',
+               'text' => 'halo '.$profil->displayName.' senang bertemu dengan mu :v'
+             )
+           )
+         );
+}
+else if ($command == '/bye'){
+  $balas = array(
+      'replyToken' => $replyToken,
+      'messages' => array(
+               array ('type' => 'leave',
+                      'timestamp' => $timestamp,
+                      'source' =>
+                       array ( 'type' => 'group',
+                              'groupId' => $groupId )
+                                     )
+                                     )
+                                   );
+}
+else if ($type == 'join' || $command == '/menu') {
     $balas = array(
         'replyToken' => $replyToken,
         'messages' => array(
-                   array (
-  'type' => 'template',
-  'altText' => 'this is a carousel template',
-  'template' => 
-  array (
-    'type' => 'carousel',
-    'columns' => 
-    array (
-      0 => 
-      array (
-        'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
-        'imageBackgroundColor' => '#FFFFFF',
-        'title' => 'this is menu',
-        'text' => 'description',
-        'defaultAction' => 
-        array (
-          'type' => 'uri',
-          'label' => 'View detail',
-          'uri' => 'http://example.com/page/123',
-        ),
-        'actions' => 
-        array (
-          0 => 
           array (
-            'type' => 'postback',
-            'label' => 'Buy',
-            'data' => 'action=buy&itemid=111',
-          ),
-          1 => 
-          array (
-            'type' => 'postback',
-            'label' => 'Add to cart',
-            'data' => 'action=add&itemid=111',
-          ),
-          2 => 
-          array (
-            'type' => 'uri',
-            'label' => 'View detail',
-            'uri' => 'http://example.com/page/111',
-          ),
-        ),
-      ),
-      1 => 
-      array (
-        'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
-        'imageBackgroundColor' => '#000000',
-        'title' => 'this is menu',
-        'text' => 'description',
-        'defaultAction' => 
-        array (
-          'type' => 'uri',
-          'label' => 'View detail',
-          'uri' => 'http://example.com/page/222',
-        ),
-        'actions' => 
-        array (
-          0 => 
-          array (
-            'type' => 'postback',
-            'label' => 'Buy',
-            'data' => 'action=buy&itemid=222',
-          ),
-          1 => 
-          array (
-            'type' => 'postback',
-            'label' => 'Add to cart',
-            'data' => 'action=add&itemid=222',
-          ),
-          2 => 
-          array (
-            'type' => 'uri',
-            'label' => 'View detail',
-            'uri' => 'http://example.com/page/222',
-          ),
-        ),
-      ),
-    ),
-    'imageAspectRatio' => 'rectangle',
-    'imageSize' => 'cover',
-  ),
+            'type' => 'template',
+            'altText' => 'this is a image carousel template',
+            'template' =>
+            array (
+              'type' => 'image_carousel',
+              'columns' =>
+              array (
+                0 =>
+                array (
+                  'imageUrl' => 'https://example.com/bot/images/item2.jpg',
+                  'action' =>
+                  array (
+                    'type' => 'message',
+                    'label' => 'Yes',
+                    'text' => 'yes',
+                  ),
+                ),
+                1 =>
+                array (
+                  'imageUrl' => 'https://example.com/bot/images/item2.jpg',
+                  'action' =>
+                  array (
+                    'type' => 'message',
+                    'label' => 'Yes',
+                    'text' => 'yes',
+                  ),
+                ),
+          	  2 =>
+                array (
+                  'imageUrl' => 'https://example.com/bot/images/item2.jpg',
+                  'action' =>
+                  array (
+                    'type' => 'message',
+                    'label' => 'Yes',
+                    'text' => 'yes',
+                  ),
+                ),
+                3 =>
+                array (
+                  'imageUrl' => 'https://example.com/bot/images/item2.jpg',
+                  'action' =>
+                  array (
+                    'type' => 'message',
+                    'label' => 'Yes',
+                    'text' => 'yes',
+                  )
+                )
+              )
+            )
+          )
+
+
+
 )
+);
 }
 
-//pesan bergambar
-if($message['type']=='text') {
+//pesan khusus
+else if($message['type']=='text') {
+	    if ($command == '/gtts') {
+
+        $result = textspech($options);
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                  'type' => 'audio',
+                  'originalContentUrl' => $result,
+                  'duration' => 30000
+                )
+            )
+        );
+    }
+
+}
+else if($message['type']=='text') {
+	    if ($command == '/gambar') {
+
+        $result = gambarnya($options);
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                  'type' => 'image',
+                  'originalContentUrl' => $result,
+                  'previewImageUrl' => $result
+                )
+            )
+        );
+    }
+
+}
+else if($message['type']=='text') {
+	    if ($command == '/musik') {
+
+        $result = musiknya($options);
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                    'type' => 'text',
+                    'text' => $result
+                )
+            )
+        );
+    }
+
+}
+else if($message['type']=='text') {
+	    if ($command == '/fansign') {
+
+        $result = fansign($options);
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                    'type' => 'image',
+                    'originalContentUrl' => $result,
+                    'previewImageUrl' => $result
+                )
+            )
+        );
+    }
+
+}
+else if($message['type']=='text') {
+	    if ($command == '/jadwaltv') {
+
+        $result = jadwaltv($options);
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                    'type' => 'text',
+                    'text' => $result
+                )
+            )
+        );
+    }
+
+}
+else if($message['type']=='text') {
 	    if ($command == '/shalat') {
 
         $result = shalat($options);
@@ -183,7 +321,7 @@ if($message['type']=='text') {
     }
 
 }
-if($message['type']=='text') {
+else if($message['type']=='text') {
 	    if ($command == '/cuaca') {
         $result = cuaca($options);
         $balas = array(
