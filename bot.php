@@ -144,19 +144,7 @@ if ($command == 'Hi'){
            )
          );
 }
-if ($command == '/bye'){
-  $balas = array(
-      'replyToken' => $replyToken,
-      'messages' => array(
-               array ('type' => 'leave',
-                      'timestamp' => $timestamp,
-                      'source' =>
-                       array ( 'type' => 'group',
-                              'groupId' => $groupId )
-                                     )
-                                     )
-                                   );
-}
+
 if ($type == 'join' || $command == '/menu') {
     $balas = array(
         'replyToken' => $replyToken,
@@ -191,12 +179,12 @@ if ($type == 'join' || $command == '/menu') {
                 ),
           	    2 =>
                 array (
-                  'imageUrl' => 'http://www.psdgraphics.com/file/blank-lcd-tv.jpg',
+                  'imageUrl' => 'https://st3.depositphotos.com/3921439/12696/v/950/depositphotos_126961774-stock-illustration-the-tv-icon-television-and.jpg',
                   'action' =>
                   array (
                     'type' => 'message',
                     'label' => 'Klik',
-                    'text' => '/jadwaltv <channel tv>',
+                    'text' => '/jadwaltv <..>',
                   ),
                 ),
                 3 =>
@@ -206,17 +194,17 @@ if ($type == 'join' || $command == '/menu') {
                     array (
                       'type' => 'message',
                       'label' => 'Klik',
-                      'text' => '/fansign <text>',
+                      'text' => '/fansign <txt>',
                     ),
                   ),
                 4 =>
                 array (
-                  'imageUrl' => 'http://embec2017.org/wp-content/uploads/2017/07/image-icon.jpg',
+                  'imageUrl' => 'https://image.freepik.com/free-icon/instagram-social-network-logo-of-photo-camera_318-64651.jpg',
                   'action' =>
                   array (
                     'type' => 'message',
                     'label' => 'Klik',
-                    'text' => '/gambar <query>',
+                    'text' => '/gambar <txt>',
                   )
                 )
               )
