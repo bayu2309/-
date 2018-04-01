@@ -68,8 +68,6 @@ function musiknya($keyword) {
     $result .= $json['info']['album'];
     $result = "\nUrl: \n";
     $result .= $json['audio']['mp3'];
-    $result = "\nLiriknya: \n";
-    $result .= $json['lirik'];
     return $result;
 }
 function fansign($keyword) {
@@ -173,7 +171,7 @@ if ($type == 'join' || $command == '/menu') {
               array (
                 0 =>
                 array (
-                  'imageUrl' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS2MSHr44gCWwexWafpEszDShb_d4IxTfn_lKTne3kF-YqJ-eglw',
+                  'imageUrl' => 'https://4vector.com/i/free-vector-cartoon-weather-icon-05-vector_018885_cartoon_weather_icon_05_vector.jpg',
                   'action' =>
                   array (
                     'type' => 'message',
@@ -183,7 +181,7 @@ if ($type == 'join' || $command == '/menu') {
                 ),
                 1 =>
                 array (
-                  'imageUrl' => 'https://www.google.co.id/imgres?imgurl=https%3A%2F%2Flh3.ggpht.com%2FPRxnzarktRAN-xPh6PEHWA8TEk2UM1VfoU7aqsZedy8vByHcL_slumY8LZBWuztxucN6%3Dw300&imgrefurl=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.prayertimes%26hl%3Din&docid=CfTY-2O0Fh2lpM&tbnid=UIajzIB1t_7FwM%3A&vet=10ahUKEwj_sd_eqJjaAhUJrY8KHYZPCH0QMwg_KAcwBw..i&w=300&h=300&bih=786&biw=1600&q=jadwal%20shalat%20icon&ved=0ahUKEwj_sd_eqJjaAhUJrY8KHYZPCH0QMwg_KAcwBw&iact=mrc&uact=8',
+                  'imageUrl' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBHy8WmB87lHXF--lZzaix_2VZbGDfxqkF7XOAAszld2lPIdgt',
                   'action' =>
                   array (
                     'type' => 'message',
@@ -193,22 +191,32 @@ if ($type == 'join' || $command == '/menu') {
                 ),
           	  2 =>
                 array (
-                  'imageUrl' => 'https://example.com/bot/images/item2.jpg',
+                  'imageUrl' => 'http://ram.by/media/product/origin/s/a/samsung_ue32d6530_0.jpg',
                   'action' =>
                   array (
                     'type' => 'message',
                     'label' => 'Klik',
-                    'text' => 'yes',
+                    'text' => '/jadwaltv <channel tv>',
                   ),
                 ),
                 3 =>
+                  array (
+                    'imageUrl' => 'https://orig00.deviantart.net/41d0/f/2013/332/1/c/fan_sign__by_doddlefur-d6vy9rv.png',
+                    'action' =>
+                    array (
+                      'type' => 'message',
+                      'label' => 'Klik',
+                      'text' => '/fansign <text>',
+                    ),
+                  ),
+                4 =>
                 array (
-                  'imageUrl' => 'https://example.com/bot/images/item2.jpg',
+                  'imageUrl' => 'https://icon-icons.com/icons2/537/PNG/512/images_icon-icons.com_52936.png',
                   'action' =>
                   array (
                     'type' => 'message',
                     'label' => 'Klik',
-                    'text' => 'yes',
+                    'text' => '/gambar <query>',
                   )
                 )
               )
