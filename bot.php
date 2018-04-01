@@ -34,7 +34,54 @@ if (count($pesan_datang) > 2) {
 }
 
 #-------------------------[Function]-------------------------#
+function animeinfo($keyword) {
+    $uri = "https://farzain.xyz/api/anime.php?apikey=9YzAAXsDGYHWFRf6gWzdG5EQECW7oo&id=" . $keyword;
 
+    $response = Unirest\Request::get("$uri");
+
+    $json = json_decode($response->raw_body, true);
+    $result = "「Anime Result」\n";
+    $result = "\n\nJudul: \n";
+    $result .= $json['judul']['0'];
+    $result = "\n\nId: \n";
+    $result .= $json['id']['0'];
+    $result = "\n\nEpisode: \n";
+    $result .= $json['episode']['0'];
+    $result = "\n\nScore: \n";
+    $result .= $json['scores']['0'];
+    $result = "\n\nType: \n";
+    $result .= $json['tipe']['0'];
+    $result = "\n\nMulai: \n";
+    $result .= $json['mulai']['0'];
+    $result = "\n\nSelesai: \n";
+    $result .= $json['berakhir']['0'];
+    $result = "\n\nPicture URL: \n";
+    $result .= $json['img']['0'];
+    $result = "\n\nSipnosis: \n";
+    $result .= $json['sinopsi']['0'];
+    return $result;
+}
+function instainfo($keyword) {
+    $uri = "https://farzain.xyz/api/ig_profile.php?apikey=9YzAAXsDGYHWFRf6gWzdG5EQECW7oo&id=" . $keyword;
+
+    $response = Unirest\Request::get("$uri");
+
+    $json = json_decode($response->raw_body, true);
+    $result = "「Instagram Result」\n";
+    $result = "\nUsername: ";
+    $result .= $json['info']['username'];
+    $result = "\nBio: \n";
+    $result .= $json['info']['bio'];
+    $result = "\nFollowers: ";
+    $result .= $json['count']['followers'];
+    $result = "\nFollowing: ";
+    $result .= $json['count']['following'];
+    $result = "\nTotal post: ";
+    $result .= $json['count']['post'];
+    $result = "\nPicture URL\n";
+    $result .= $json['info']['profile_pict'];
+    return $result;
+}
 function textspech($keyword) {
     $uri = "https://farzain.xyz/api/tts.php?apikey=9YzAAXsDGYHWFRf6gWzdG5EQECW7oo&id=" . $keyword;
 
@@ -139,7 +186,7 @@ if ($command == 'Hi'){
       'replyToken' => $replyToken,
       'messages' => array(
         array ('type' => 'text',
-               'text' => 'halo ' . $profil->displayName. ' senang bertemu dengan mu :v'
+               'text' => 'halo senang bertemu dengan mu :v'
              )
            )
          );
@@ -201,7 +248,7 @@ if ($type == 'join' || $command == '/menu') {
           ),
         ),
       ),
-      1 =>
+      2 =>
       array (
         'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
         'imageBackgroundColor' => '#FFFFFF',
@@ -223,7 +270,7 @@ if ($type == 'join' || $command == '/menu') {
           ),
         ),
       ),
-      2 =>
+      3 =>
       array (
         'thumbnailImageUrl' => 'https://st3.depositphotos.com/3921439/12696/v/950/depositphotos_126961774-stock-illustration-the-tv-icon-television-and.jpg',
         'imageBackgroundColor' => '#FFFFFF',
@@ -245,7 +292,7 @@ if ($type == 'join' || $command == '/menu') {
           ),
         ),
       ),
-      3 =>
+      4 =>
       array (
         'thumbnailImageUrl' => 'https://4vector.com/i/free-vector-cartoon-weather-icon-05-vector_018885_cartoon_weather_icon_05_vector.jpg',
         'imageBackgroundColor' => '#FFFFFF',
@@ -280,6 +327,38 @@ if ($type == 'join' || $command == '/menu') {
 }
 
 //pesan khusus
+if($message['type']=='text') {
+	    if ($command == '/instainfo') {
+
+        $result = instainfo($options);
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                    'type' => 'text',
+                    'text' => $result
+                )
+            )
+        );
+    }
+
+}
+if($message['type']=='text') {
+	    if ($command == '/anime') {
+
+        $result = animeinfo($options);
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                    'type' => 'text',
+                    'text' => $result
+                )
+            )
+        );
+    }
+
+}
 if($message['type']=='text') {
 	    if ($command == '/gtts') {
 
