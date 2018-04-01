@@ -181,7 +181,7 @@ if ($type == 'join' || $command == '/menu') {
                 ),
                 1 =>
                 array (
-                  'imageUrl' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBHy8WmB87lHXF--lZzaix_2VZbGDfxqkF7XOAAszld2lPIdgt',
+                  'imageUrl' => 'https://is3-ssl.mzstatic.com/image/thumb/Purple71/v4/9d/8f/c2/9d8fc2d0-8301-2112-76eb-6287e5cfdf2c/source/256x256bb.jpg',
                   'action' =>
                   array (
                     'type' => 'message',
@@ -201,7 +201,7 @@ if ($type == 'join' || $command == '/menu') {
                 ),
                 3 =>
                   array (
-                    'imageUrl' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwZdOL1BZMTte3vfb4bRNl5bpNcSLlMtuNYhkNJmok3Cl36pYu',
+                    'imageUrl' => 'https://i.pinimg.com/736x/10/98/6c/10986ccb21115306acbc4018d65ab38d.jpg',
                     'action' =>
                     array (
                       'type' => 'message',
