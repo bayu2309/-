@@ -59,12 +59,12 @@ function musiknya($keyword) {
     $response = Unirest\Request::get("$uri");
 
     $json = json_decode($response->raw_body, true);
-    $result = "「Music Result」";
-    $result = "\n\nJudul: ";
-	  $result .= $json['info']['judul'];
-    $result = "\nPenyanyi: ";
-    $result .= $json['info']['penyanyi'];
-    $result = "\nAlbum: ";
+    $result = "「Music Result」\n";
+    $result = "\n\nPenyanyinya: \n";
+	  $result .= $json['info']['penyanyi'];
+    $result = "\n\nJudulnya: \n";
+    $result .= $json['info']['judul'];
+    $result = "\n\nAlbumnya: \n";
     $result .= $json['info']['album'];
     $result = "\nUrl: \n";
     $result .= $json['audio']['mp3'];
@@ -139,7 +139,7 @@ if ($command == 'Hi'){
       'replyToken' => $replyToken,
       'messages' => array(
         array ('type' => 'text',
-               'text' => 'halo '.$profil -> displayName.' senang bertemu dengan mu :v'
+               'text' => 'halo ' . $profil->displayName. ' senang bertemu dengan mu :v'
              )
            )
          );
@@ -150,66 +150,128 @@ if ($type == 'join' || $command == '/menu') {
         'replyToken' => $replyToken,
         'messages' => array(
           array (
-            'type' => 'template',
-            'altText' => 'this is a image carousel template',
-            'template' =>
-            array (
-              'type' => 'image_carousel',
-              'columns' =>
-              array (
-                0 =>
-                array (
-                  'imageUrl' => 'https://4vector.com/i/free-vector-cartoon-weather-icon-05-vector_018885_cartoon_weather_icon_05_vector.jpg',
-                  'action' =>
-                  array (
-                    'type' => 'message',
-                    'label' => 'Klik',
-                    'text' => '/cuaca <nama kota>',
-                  ),
-                ),
-                1 =>
-                array (
-                  'imageUrl' => 'https://is3-ssl.mzstatic.com/image/thumb/Purple71/v4/9d/8f/c2/9d8fc2d0-8301-2112-76eb-6287e5cfdf2c/source/256x256bb.jpg',
-                  'action' =>
-                  array (
-                    'type' => 'message',
-                    'label' => 'Klik',
-                    'text' => '/shalat <nama kota>',
-                  ),
-                ),
-          	    2 =>
-                array (
-                  'imageUrl' => 'https://st3.depositphotos.com/3921439/12696/v/950/depositphotos_126961774-stock-illustration-the-tv-icon-television-and.jpg',
-                  'action' =>
-                  array (
-                    'type' => 'message',
-                    'label' => 'Klik',
-                    'text' => '/jadwaltv <..>',
-                  ),
-                ),
-                3 =>
-                  array (
-                    'imageUrl' => 'https://i.pinimg.com/736x/10/98/6c/10986ccb21115306acbc4018d65ab38d.jpg',
-                    'action' =>
-                    array (
-                      'type' => 'message',
-                      'label' => 'Klik',
-                      'text' => '/fansign <txt>',
-                    ),
-                  ),
-                4 =>
-                array (
-                  'imageUrl' => 'https://image.freepik.com/free-icon/instagram-social-network-logo-of-photo-camera_318-64651.jpg',
-                  'action' =>
-                  array (
-                    'type' => 'message',
-                    'label' => 'Klik',
-                    'text' => '/gambar <txt>',
-                  )
-                )
-              )
-            )
-          )
+  'type' => 'template',
+  'altText' => 'Anda di sebut',
+  'template' =>
+  array (
+    'type' => 'carousel',
+    'columns' =>
+    array (
+      0 =>
+      array (
+        'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
+        'imageBackgroundColor' => '#FFFFFF',
+        'title' => 'Praytime',
+        'text' => 'Info jadwal shalat sesuai dengan yang di cari',
+        'defaultAction' =>
+        array (
+          'type' => 'uri',
+          'label' => 'View detail',
+          'uri' => 'http://example.com/page/123',
+        ),
+        'actions' =>
+        array (
+          0 =>
+          array (
+            'type' => 'message',
+            'label' => 'Example',
+            'text' => '/shalat jakarta',
+          ),
+        ),
+      ),
+      1 =>
+      array (
+        'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
+        'imageBackgroundColor' => '#FFFFFF',
+        'title' => 'Fansign',
+        'text' => 'Text yang di tulis d kertas',
+        'defaultAction' =>
+        array (
+          'type' => 'uri',
+          'label' => 'View detail',
+          'uri' => 'http://example.com/page/123',
+        ),
+        'actions' =>
+        array (
+          0 =>
+          array (
+            'type' => 'message',
+            'label' => 'Example',
+            'text' => '/fansign saya',
+          ),
+        ),
+      ),
+      1 =>
+      array (
+        'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
+        'imageBackgroundColor' => '#FFFFFF',
+        'title' => 'Picture',
+        'text' => 'Pencarian gambar sesuai dengan yg kamu mau',
+        'defaultAction' =>
+        array (
+          'type' => 'uri',
+          'label' => 'View detail',
+          'uri' => 'http://example.com/page/123',
+        ),
+        'actions' =>
+        array (
+          0 =>
+          array (
+            'type' => 'message',
+            'label' => 'Example',
+            'text' => '/gambar kucing',
+          ),
+        ),
+      ),
+      2 =>
+      array (
+        'thumbnailImageUrl' => 'https://st3.depositphotos.com/3921439/12696/v/950/depositphotos_126961774-stock-illustration-the-tv-icon-television-and.jpg',
+        'imageBackgroundColor' => '#FFFFFF',
+        'title' => 'Television',
+        'text' => 'Info jadwal TV sesuai dengan yang di cari',
+        'defaultAction' =>
+        array (
+          'type' => 'uri',
+          'label' => 'View detail',
+          'uri' => 'http://example.com/page/123',
+        ),
+        'actions' =>
+        array (
+          0 =>
+          array (
+            'type' => 'message',
+            'label' => 'Example',
+            'text' => '/jadwaltv globaltv',
+          ),
+        ),
+      ),
+      3 =>
+      array (
+        'thumbnailImageUrl' => 'https://4vector.com/i/free-vector-cartoon-weather-icon-05-vector_018885_cartoon_weather_icon_05_vector.jpg',
+        'imageBackgroundColor' => '#FFFFFF',
+        'title' => 'Weather',
+        'text' => 'Info cuaca sesuai dgn yang di cari',
+        'defaultAction' =>
+        array (
+          'type' => 'uri',
+          'label' => 'View detail',
+          'uri' => 'http://example.com/page/222',
+        ),
+        'actions' =>
+        array (
+          0 =>
+          array (
+            'type' => 'message',
+            'label' => 'Example',
+            'text' => '/cuaca jakarta',
+          ),
+        ),
+      ),
+    ),
+    'imageAspectRatio' => 'rectangle',
+    'imageSize' => 'cover',
+  ),
+)
 
 
 
@@ -227,8 +289,8 @@ if($message['type']=='text') {
             'messages' => array(
                 array(
                   'type' => 'audio',
-                  'originalContentUrl' => $result,
-                  'duration' => 30000
+                  'originalContentUrl' => $result,/*link https only and format m4a*/
+                  'duration' => 60000
                 )
             )
         );
