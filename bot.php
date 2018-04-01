@@ -189,9 +189,9 @@ if ($type == 'join' || $command == '/menu') {
                     'text' => '/shalat <nama kota>',
                   ),
                 ),
-          	  2 =>
+          	    2 =>
                 array (
-                  'imageUrl' => 'http://ram.by/media/product/origin/s/a/samsung_ue32d6530_0.jpg',
+                  'imageUrl' => '',
                   'action' =>
                   array (
                     'type' => 'message',
