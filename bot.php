@@ -200,16 +200,6 @@ if ($type == 'join' || $command == '/menu') {
                   ),
                 ),
                 3 =>
-                  array (
-                    'imageUrl' => 'https://orig00.deviantart.net/41d0/f/2013/332/1/c/fan_sign__by_doddlefur-d6vy9rv.png',
-                    'action' =>
-                    array (
-                      'type' => 'message',
-                      'label' => 'Klik',
-                      'text' => '/fansign <text>',
-                    ),
-                  ),
-                4 =>
                 array (
                   'imageUrl' => 'https://icon-icons.com/icons2/537/PNG/512/images_icon-icons.com_52936.png',
                   'action' =>
