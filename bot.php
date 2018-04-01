@@ -146,7 +146,7 @@ if ($command == 'Hi'){
            )
          );
 }
-else if ($command == '/bye'){
+if ($command == '/bye'){
   $balas = array(
       'replyToken' => $replyToken,
       'messages' => array(
@@ -159,7 +159,7 @@ else if ($command == '/bye'){
                                      )
                                    );
 }
-else if ($type == 'join' || $command == '/menu') {
+if ($type == 'join' || $command == '/menu') {
     $balas = array(
         'replyToken' => $replyToken,
         'messages' => array(
