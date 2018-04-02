@@ -40,24 +40,24 @@ function animeinfo($keyword) {
     $response = Unirest\Request::get("$uri");
 
     $json = json_decode($response->raw_body, true);
-    $result = "「Anime Result」\n";
-    $result = "\n\nJudul: \n";
+    $result = "「Anime Result」";
+    $result = "\n\nJudul: ";
     $result .= $json['judul']['0'];
-    $result = "\n\nId: \n";
+    $result = "\n\nId: ";
     $result .= $json['id']['0'];
-    $result = "\n\nEpisode: \n";
+    $result = "\n\nEpisode: ";
     $result .= $json['episode']['0'];
-    $result = "\n\nScore: \n";
+    $result = "\n\nScore: ";
     $result .= $json['scores']['0'];
-    $result = "\n\nType: \n";
+    $result = "\n\nType: ";
     $result .= $json['tipe']['0'];
-    $result = "\n\nMulai: \n";
+    $result = "\n\nMulai: ";
     $result .= $json['mulai']['0'];
-    $result = "\n\nSelesai: \n";
+    $result = "\n\nSelesai: ";
     $result .= $json['berakhir']['0'];
-    $result = "\n\nPicture URL: \n";
+    $result = "\n\nPicture URL: ";
     $result .= $json['img']['0'];
-    $result = "\n\nSipnosis: \n";
+    $result = "\n\nSipnosis: ";
     $result .= $json['sinopsi']['0'];
     return $result;
 }
@@ -68,10 +68,10 @@ function instainfo($keyword) {
     $response = Unirest\Request::get("$uri");
 
     $json = json_decode($response->raw_body, true);
-    $result = "「Instagram Result」\n";
+    $result = "「Instagram Result」";
     $result = "\nUsername: ";
     $result .= $json['info']['username'];
-    $result = "\nBio: \n";
+    $result = "\nBio: ";
     $result .= $json['info']['bio'];
     $result = "\nFollowers: ";
     $result .= $json['count']['followers'];
