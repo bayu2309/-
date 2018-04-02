@@ -61,16 +61,7 @@ function animeinfo($keyword) {
     $result .= $json['sinopsi']['0'];
     return $result;
 }
-function instainfo2($keyword) {
-    $uri = "https://farzain.xyz/api/ig_profile.php?apikey=9YzAAXsDGYHWFRf6gWzdG5EQECW7oo&id=" . $keyword;
 
-    $response = Unirest\Request::get("$uri");
-
-    $json = json_decode($response->raw_body, true);
-    $result = "\nPicture URL\n";
-    $result .= $json['info']['profile_pict'];
-    return $result;
-}
 function instainfo($keyword) {
     $uri = "https://farzain.xyz/api/ig_profile.php?apikey=9YzAAXsDGYHWFRf6gWzdG5EQECW7oo&id=" . $keyword;
 
@@ -116,11 +107,9 @@ function musiknya($keyword) {
     $json = json_decode($response->raw_body, true);
     $result = "「Music Result」\n";
     $result = "\n\nPenyanyinya: \n";
-	  $result .= $json['info']['penyanyi'];
+    $result .= $json['info']['penyanyi'];
     $result = "\n\nJudulnya: \n";
     $result .= $json['info']['judul'];
-    $result = "\nUrl: \n";
-    $result .= $json['audio']['mp3'];
     return $result;
 }
 function fansign($keyword) {
@@ -335,17 +324,6 @@ if ($type == 'join' || $command == '/menu') {
 //pesan khusus
 if($message['type']=='text') {
 	    if ($command == '/instainfo') {
-
-        $result = instainfo2($options);
-        $balas = array(
-            'replyToken' => $replyToken,
-            'messages' => array(
-                array(
-                    'type' => 'text',
-                    'text' => $result
-                )
-            )
-        );
         $result = instainfo($options);
         $balas = array(
             'replyToken' => $replyToken,
