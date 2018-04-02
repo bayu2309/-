@@ -58,7 +58,7 @@ function animeinfo($keyword) {
     $result .= "\n\nPicture URL: \n";
     $result .= $json['img']['0'];
     $result .= "\n\nSipnosis: \n";
-    $result .= $json['sinopsi']['0'];
+    $result .= $json['sinopsi'];
     return $result;
 }
 
@@ -380,6 +380,28 @@ if ($type == 'join' || $command == '/menu') {
         ),
       ),
       7 =>
+      array (
+        'thumbnailImageUrl' => 'https://i.ytimg.com/vi/3hz1e4d0f9I/maxresdefault.jpg',
+        'imageBackgroundColor' => '#00FFFF',
+        'title' => 'Music',
+        'text' => 'Info music sesuai dengan yang di cari',
+        'defaultAction' =>
+        array (
+          'type' => 'uri',
+          'label' => 'View detail',
+          'uri' => 'http://example.com/page/123',
+        ),
+        'actions' =>
+        array (
+          0 =>
+          array (
+            'type' => 'message',
+            'label' => 'Example',
+            'text' => '/musik amy diamond heartbeat',
+          ),
+        ),
+      ),
+      8 =>
       array (
         'thumbnailImageUrl' => 'https://4vector.com/i/free-vector-cartoon-weather-icon-05-vector_018885_cartoon_weather_icon_05_vector.jpg',
         'imageBackgroundColor' => '#00FFFF',
