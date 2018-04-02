@@ -40,24 +40,24 @@ function animeinfo($keyword) {
     $response = Unirest\Request::get("$uri");
 
     $json = json_decode($response->raw_body, true);
-    $result = "「Anime Result」";
-    $result = "\n\nJudul: ";
+    $result = "「Anime Result」\n\n";
+    $result .= "\nJudul: ";
     $result .= $json['judul']['0'];
-    $result = "\n\nId: ";
+    $result .= "\nId: ";
     $result .= $json['id']['0'];
-    $result = "\n\nEpisode: ";
+    $result .= "\nEpisode: ";
     $result .= $json['episode']['0'];
-    $result = "\n\nScore: ";
+    $result .= "\nScore: ";
     $result .= $json['scores']['0'];
-    $result = "\n\nType: ";
+    $result .= "\nType: ";
     $result .= $json['tipe']['0'];
-    $result = "\n\nMulai: ";
+    $result .= "\nMulai: ";
     $result .= $json['mulai']['0'];
-    $result = "\n\nSelesai: ";
+    $result .= "\nSelesai: ";
     $result .= $json['berakhir']['0'];
-    $result = "\n\nPicture URL: ";
+    $result .= "\n\nPicture URL: \n";
     $result .= $json['img']['0'];
-    $result = "\n\nSipnosis: ";
+    $result .= "\n\nSipnosis: \n";
     $result .= $json['sinopsi']['0'];
     return $result;
 }
@@ -68,17 +68,19 @@ function instainfo($keyword) {
     $response = Unirest\Request::get("$uri");
 
     $json = json_decode($response->raw_body, true);
-    $result = "「Instagram Result」";
-    $result = "\nUsername: ";
+    $result = "「Instagram Result」\n\n";
+    $result .= "\nUsername: ";
     $result .= $json['info']['username'];
-    $result = "\nBio: ";
+    $result .= "\nBio: \n";
     $result .= $json['info']['bio'];
-    $result = "\nFollowers: ";
+    $result .= "\n\nFollowers: ";
     $result .= $json['count']['followers'];
-    $result = "\nFollowing: ";
+    $result .= "\nFollowing: ";
     $result .= $json['count']['following'];
-    $result = "\nTotal post: ";
+    $result .= "\nTotal post: ";
     $result .= $json['count']['post'];
+    $result .= "\nPicture URL\n";
+    $result .= $json['info']['profile_pict'];
     return $result;
 }
 function textspech($keyword) {
@@ -106,10 +108,20 @@ function musiknya($keyword) {
 
     $json = json_decode($response->raw_body, true);
     $result = "「Music Result」\n";
-    $result = "\n\nPenyanyinya: \n";
-    $result .= $json['info']['penyanyi'];
-    $result = "\n\nJudulnya: \n";
+    $result .= "\n\nPenyanyinya: ";
+	  $result .= $json['info']['penyanyi'];
+    $result .= "\n\nJudulnya: ";
     $result .= $json['info']['judul'];
+    $result .= "\n\nAlbum: ";
+    $result .= $json['info']['album'];
+    $result .= "\nMp3: \n";
+    $result .= $json['audio']['mp3'];
+    $result .= "\n\nM4a: \n";
+    $result .= $json['audio']['m4a'];
+    $result .= "\n\nIcon: \n";
+    $result .= $json['gambar'];
+    $result .= "\n\nLirik: \n";
+    $result .= $json['lirik'];
     return $result;
 }
 function fansign($keyword) {
@@ -166,7 +178,21 @@ function cuaca($keyword) {
 	  $result .= $json['weather']['0']['description'];
     return $result;
 }
-
+function waktu($keyword) {
+    $uri = "https://farzain.xyz/api/jam.php?apikey=9YzAAXsDGYHWFRf6gWzdG5EQECW7oo&id=" . $keyword;
+    $response = Unirest\Request::get("$uri");
+    $json = json_decode($response->raw_body, true);
+    $result = "「Time Result」\n";
+    $result .= "\nNama kota: ";
+	  $result .= $json['location']['address'];
+	  $result .= "\nZona waktu: ";
+	  $result .= $json['time']['timezone'];
+	  $result .= "\nWaktu: \n";
+	  $result .= $json['time']['time'];
+    $result .= "\n";
+    $result .= $json['time']['date'];
+    return $result;
+}
 #-------------------------[Function]-------------------------#
 
 # require_once('./src/function/search-1.php');
@@ -201,8 +227,74 @@ if ($type == 'join' || $command == '/menu') {
     array (
       0 =>
       array (
-        'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
-        'imageBackgroundColor' => '#FFFFFF',
+        'thumbnailImageUrl' => 'https://image.freepik.com/icones-gratis/relogios-de-parede-com-horas_318-32867.jpg',
+        'imageBackgroundColor' => '#00FFFF',
+        'title' => 'Zona waktu',
+        'text' => 'Informasi waktu di setiap kota yang ingin kamu cari',
+        'defaultAction' =>
+        array (
+          'type' => 'uri',
+          'label' => 'View detail',
+          'uri' => 'http://example.com/page/123',
+        ),
+        'actions' =>
+        array (
+          0 =>
+          array (
+            'type' => 'message',
+            'label' => 'Example',
+            'text' => '/waktu jakarta',
+          ),
+        ),
+      ),
+      1 =>
+      array (
+        'thumbnailImageUrl' => 'https://1c7qp243xy9g1qeffp1k1nvo-wpengine.netdna-ssl.com/wp-content/uploads/2016/03/instagram_logo.jpg',
+        'imageBackgroundColor' => '#00FFFF',
+        'title' => 'Instagram',
+        'text' => 'Informasi akun instagram yang ingin kamu cari',
+        'defaultAction' =>
+        array (
+          'type' => 'uri',
+          'label' => 'View detail',
+          'uri' => 'http://example.com/page/123',
+        ),
+        'actions' =>
+        array (
+          0 =>
+          array (
+            'type' => 'message',
+            'label' => 'Example',
+            'text' => '/instagram kamu',
+          ),
+        ),
+      ),
+      2 =>
+      array (
+        'thumbnailImageUrl' => 'https://unnecessaryexclamationmark.files.wordpress.com/2016/05/myanimelist-logo.jpg',
+        'imageBackgroundColor' => '#00FFFF',
+        'title' => 'Anime',
+        'text' => 'Info anime yang ingin kamu cari',
+        'defaultAction' =>
+        array (
+          'type' => 'uri',
+          'label' => 'View detail',
+          'uri' => 'http://example.com/page/123',
+        ),
+        'actions' =>
+        array (
+          0 =>
+          array (
+            'type' => 'message',
+            'label' => 'Example',
+            'text' => '/anime onepiece',
+          ),
+        ),
+      ),
+      3 =>
+      array (
+        'thumbnailImageUrl' => 'https://is3-ssl.mzstatic.com/image/thumb/Purple62/v4/cc/68/6c/cc686c29-ffd2-5115-2b97-c4821b548fe3/AppIcon-1x_U007emarketing-85-220-6.png/246x0w.jpg',
+        'imageBackgroundColor' => '#00FFFF',
         'title' => 'Praytime',
         'text' => 'Info jadwal shalat sesuai dengan yang di cari',
         'defaultAction' =>
@@ -221,10 +313,10 @@ if ($type == 'join' || $command == '/menu') {
           ),
         ),
       ),
-      1 =>
+      4 =>
       array (
-        'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
-        'imageBackgroundColor' => '#FFFFFF',
+        'thumbnailImageUrl' => 'https://i.pinimg.com/originals/d7/d8/a5/d7d8a5c1017dff37a359c95e88e0897b.jpg',
+        'imageBackgroundColor' => '#00FFFF',
         'title' => 'Fansign',
         'text' => 'Text yang di tulis d kertas',
         'defaultAction' =>
@@ -243,10 +335,10 @@ if ($type == 'join' || $command == '/menu') {
           ),
         ),
       ),
-      2 =>
+      5 =>
       array (
-        'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
-        'imageBackgroundColor' => '#FFFFFF',
+        'thumbnailImageUrl' => 'https://png.pngtree.com/element_origin_min_pic/16/10/19/1758073fffac5db.jpg',
+        'imageBackgroundColor' => '#00FFFF',
         'title' => 'Picture',
         'text' => 'Pencarian gambar sesuai dengan yg kamu mau',
         'defaultAction' =>
@@ -265,10 +357,10 @@ if ($type == 'join' || $command == '/menu') {
           ),
         ),
       ),
-      3 =>
+      6 =>
       array (
         'thumbnailImageUrl' => 'https://st3.depositphotos.com/3921439/12696/v/950/depositphotos_126961774-stock-illustration-the-tv-icon-television-and.jpg',
-        'imageBackgroundColor' => '#FFFFFF',
+        'imageBackgroundColor' => '#00FFFF',
         'title' => 'Television',
         'text' => 'Info jadwal TV sesuai dengan yang di cari',
         'defaultAction' =>
@@ -287,10 +379,10 @@ if ($type == 'join' || $command == '/menu') {
           ),
         ),
       ),
-      4 =>
+      7 =>
       array (
         'thumbnailImageUrl' => 'https://4vector.com/i/free-vector-cartoon-weather-icon-05-vector_018885_cartoon_weather_icon_05_vector.jpg',
-        'imageBackgroundColor' => '#FFFFFF',
+        'imageBackgroundColor' => '#00FFFF',
         'title' => 'Weather',
         'text' => 'Info cuaca sesuai dgn yang di cari',
         'defaultAction' =>
@@ -323,7 +415,24 @@ if ($type == 'join' || $command == '/menu') {
 
 //pesan khusus
 if($message['type']=='text') {
-	    if ($command == '/instainfo') {
+	    if ($command == '/waktu') {
+
+        $result = waktu($options);
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                    'type' => 'text',
+                    'text' => $result
+                )
+            )
+        );
+    }
+
+}
+if($message['type']=='text') {
+	    if ($command == '/instagram') {
+
         $result = instainfo($options);
         $balas = array(
             'replyToken' => $replyToken,
