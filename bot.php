@@ -380,7 +380,7 @@ if($msg_type == 'text'){
     if($filter[0] == 'Apakah') {
         $balas = send(jawabs(), $replyToken);
     } else {}
- } else {}
+ } else {} 
 if ($command == '/menu') {
     $balas = array(
         'replyToken' => $replyToken,
