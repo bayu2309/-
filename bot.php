@@ -125,7 +125,7 @@ function musiknya($keyword) {
     return $result;
 }
 function fansign($keyword) {
-    $uri = "https://farzain.xyz/api/fs.php?apikey=9YzAAXsDGYHWFRf6gWzdG5EQECW7oo&id=" . $keyword;
+    $uri = "https://farzain.xyz/api/premium/fs.php?apikey=ag73837ung43838383jdhdhd&id=" . $keyword;
 
     $response = Unirest\Request::get("$uri");
 
@@ -134,7 +134,7 @@ function fansign($keyword) {
     return $result;
 }
 function jadwaltv($keyword) {
-    $uri = "https://farzain.xyz/api/acaratv.php?apikey=9YzAAXsDGYHWFRf6gWzdG5EQECW7oo&id=" . $keyword;
+    $uri = "https://farzain.xyz/api/premium/acaratv.php?apikey=ag73837ung43838383jdhdhd&id=" . $keyword;
 
     $response = Unirest\Request::get("$uri");
 
@@ -192,6 +192,79 @@ function waktu($keyword) {
     $result .= "\n";
     $result .= $json['time']['date'];
     return $result;
+}
+function quotes($keyword) {
+    $uri = "http://quotes.rest/qod.json?category=" . $keyword;
+    $response = Unirest\Request::get("$uri");
+    $json = json_decode($response->raw_body, true);
+    $result = "Result : ";
+	$result .= $json['success']['total'];
+	$result .= "\n\n[Quotes]\n";
+	$result .= $json['contents']['quotes']['quote'];
+	$result .= "\n\n[Author]\n";
+	$result .= $json['contents']['quotes']['author'];
+    return $result;
+}
+function tren($keyword) {
+    $uri = "http://api.secold.com/translate/en/" . $keyword;
+    $response = Unirest\Request::get("$uri");
+    $json = json_decode($response->raw_body, true);
+    $result = "Type : English";
+    $result .= "\nTranslate : ";
+	$result .= $json['result'];
+    return $result;
+}
+function trid($keyword) {
+    $uri = "http://api.secold.com/translate/id/" . $keyword;
+    $response = Unirest\Request::get("$uri");
+    $json = json_decode($response->raw_body, true);
+    $result = "Type : Indonesian";
+    $result .= "\nTranslate : ";
+	$result .= $json['result'];
+    return $result;
+}
+function trja($keyword) {
+    $uri = "http://api.secold.com/translate/ja/" . $keyword;
+    $response = Unirest\Request::get("$uri");
+    $json = json_decode($response->raw_body, true);
+    $result = "Type : Japanese";
+    $result .= "\nTranslate : ";
+	$result .= $json['result'];
+    return $result;
+}
+function trar($keyword) {
+    $uri = "http://api.secold.com/translate/ar/" . $keyword;
+    $response = Unirest\Request::get("$uri");
+    $json = json_decode($response->raw_body, true);
+    $result = "Type : Arabic";
+    $result .= "\nTranslate : ";
+	$result .= $json['result'];
+    return $result;
+}
+function anime($keyword) {
+    $fullurl = 'https://myanimelist.net/api/anime/search.xml?q=' . $keyword;
+    $username = 'jamal3213';
+    $password = 'FZQYeZ6CE9is';
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_VERBOSE, 1);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_USERPWD, "$username:$password");
+    curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+    curl_setopt($ch, CURLOPT_URL, $fullurl);
+    $returned = curl_exec($ch);
+    $xml = new SimpleXMLElement($returned);
+    $parsed = array();
+    $parsed['id'] = (string) $xml->entry[0]->id;
+    $parsed['image'] = (string) $xml->entry[0]->image;
+    $parsed['title'] = (string) $xml->entry[0]->title;
+    $parsed['desc'] = "Episode : ";
+    $parsed['desc'] .= $xml->entry[0]->episodes;
+    $parsed['desc'] .= "\nNilai : ";
+    $parsed['desc'] .= $xml->entry[0]->score;
+    $parsed['desc'] .= "\nTipe : ";
+    $parsed['desc'] .= $xml->entry[0]->type;
+    $parsed['synopsis'] = str_replace("<br />", "\n", html_entity_decode((string) $xml->entry[0]->synopsis, ENT_QUOTES | ENT_XHTML, 'UTF-8'));
+    return $parsed;
 }
 #-------------------------[Function]-------------------------#
 
