@@ -561,7 +561,241 @@ if ($command == '/menu') {
 
 //pesan khusus
 
+if($message['type']=='text') {
+	    if ($command == '/lokasi' || $command == '/Lokasi') {
+        $result = lokasi($options);
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                    'type' => 'location',
+                    'title' => 'Lokasi',
+                    'address' => $result['address'],
+                    'latitude' => $result['latitude'],
+                    'longitude' => $result['longitude']
+                ),
+            )
+        );
+    }
+}
+if($message['type']=='text') {
+	    if ($command == '/waktu') {
 
+        $result = waktu($options);
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                    'type' => 'text',
+                    'text' => $result
+                )
+            )
+        );
+    }
+
+}
+if($message['type']=='text') {
+	    if ($command == '/instagram') {
+
+        $result = instainfo($options);
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                    'type' => 'text',
+                    'text' => $result
+                )
+            )
+        );
+    }
+
+}
+if($message['type']=='text') {
+	    if ($command == '/anime') {
+        $result = anime($options);
+        $altText = "Title : " . $result['title'];
+        $altText .= "\n\n" . $result['desc'];
+        $altText .= "\nMAL Page : https://myanimelist.net/anime/" . $result['id'];
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                    'type' => 'template',
+                    'altText' => $altText,
+                    'template' => array(
+                        'type' => 'buttons',
+                        'title' => $result['title'],
+                        'thumbnailImageUrl' => $result['image'],
+                        'text' => $result['desc'],
+                        'actions' => array(
+                            array(
+                                'type' => 'postback',
+                                'label' => 'Baca Sinopsis-nya',
+                                'data' => 'action=add&itemid=123',
+                                'text' => '/anime-syn ' . $options
+                            ),
+                            array(
+                                'type' => 'uri',
+                                'label' => 'Website MAL',
+                                'uri' => 'https://myanimelist.net/anime/' . $result['id']
+                            )
+                        )
+                    )
+                )
+            )
+        );
+    }
+}
+if($message['type']=='text') {
+	    if ($command == '/manga') {
+        $result = manga($options);
+        $altText = "Title : " . $result['title'];
+        $altText .= "\n\n" . $result['desc'];
+        $altText .= "\nMAL Page : https://myanimelist.net/manga/" . $result['id'];
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                    'type' => 'template',
+                    'altText' => $altText,
+                    'template' => array(
+                        'type' => 'buttons',
+                        'title' => $result['title'],
+                        'thumbnailImageUrl' => $result['image'],
+                        'text' => $result['desc'],
+                        'actions' => array(
+                            array(
+                                'type' => 'postback',
+                                'label' => 'Baca Sinopsis-nya',
+                                'data' => 'action=add&itemid=123',
+                                'text' => '/manga-syn' . $options
+                            ),
+                            array(
+                                'type' => 'uri',
+                                'label' => 'Website MAL',
+                                'uri' => 'https://myanimelist.net/manga/' . $result['id']
+                            )
+                        )
+                    )
+                )
+            )
+        );
+    }
+}
+if($message['type']=='text') {
+	    if ($command == '/gtts') {
+
+        $result = textspech($options);
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                  'type' => 'audio',
+                  'originalContentUrl' => $result,/*link https only and format m4a*/
+                  'duration' => 60000
+                )
+            )
+        );
+    }
+
+}
+if($message['type']=='text') {
+	    if ($command == '/gambar') {
+
+        $result = gambarnya($options);
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                  'type' => 'image',
+                  'originalContentUrl' => $result,
+                  'previewImageUrl' => $result
+                )
+            )
+        );
+    }
+
+}
+if($message['type']=='text') {
+	    if ($command == '/musik') {
+
+        $result = musiknya($options);
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                    'type' => 'text',
+                    'text' => $result
+                )
+            )
+        );
+    }
+
+}
+if($message['type']=='text') {
+	    if ($command == '/fansign') {
+
+        $result = fansign($options);
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                    'type' => 'image',
+                    'originalContentUrl' => $result,
+                    'previewImageUrl' => $result
+                )
+            )
+        );
+    }
+
+}
+if($message['type']=='text') {
+	    if ($command == '/jadwaltv') {
+
+        $result = jadwaltv($options);
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                    'type' => 'text',
+                    'text' => $result
+                )
+            )
+        );
+    }
+
+}
+if($message['type']=='text') {
+	    if ($command == '/shalat') {
+
+        $result = shalat($options);
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                    'type' => 'text',
+                    'text' => $result
+                )
+            )
+        );
+    }
+
+}
+
+if($message['type']=='text') {
+	    if ($command == '/cuaca') {
+        $result = cuaca($options);
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                    'type' => 'text',
+                    'text' => $result
+                )
+            )
+        );
+    }
+}
 
 if (isset($balas)) {
     $result = json_encode($balas);
