@@ -34,33 +34,6 @@ if (count($pesan_datang) > 2) {
 }
 
 #-------------------------[Function]-------------------------#
-function animeinfo($keyword) {
-    $uri = "https://farzain.xyz/api/anime.php?apikey=9YzAAXsDGYHWFRf6gWzdG5EQECW7oo&id=" . $keyword;
-
-    $response = Unirest\Request::get("$uri");
-
-    $json = json_decode($response->raw_body, true);
-    $result = "「Anime Result」\n\n";
-    $result .= "\nJudul: ";
-    $result .= $json['judul']['0'];
-    $result .= "\nId: ";
-    $result .= $json['id']['0'];
-    $result .= "\nEpisode: ";
-    $result .= $json['episode']['0'];
-    $result .= "\nScore: ";
-    $result .= $json['scores']['0'];
-    $result .= "\nType: ";
-    $result .= $json['tipe']['0'];
-    $result .= "\nMulai: ";
-    $result .= $json['mulai']['0'];
-    $result .= "\nSelesai: ";
-    $result .= $json['berakhir']['0'];
-    $result .= "\n\nPicture URL: \n";
-    $result .= $json['img']['0'];
-    $result .= "\n\nSipnosis: \n";
-    $result .= $json['sinopsi'];
-    return $result;
-}
 
 function instainfo($keyword) {
     $uri = "https://farzain.xyz/api/ig_profile.php?apikey=9YzAAXsDGYHWFRf6gWzdG5EQECW7oo&id=" . $keyword;
@@ -102,7 +75,7 @@ function gambarnya($keyword) {
     return $result;
 }
 function musiknya($keyword) {
-    $uri = "https://farzain.xyz/api/joox.php?apikey=9YzAAXsDGYHWFRf6gWzdG5EQECW7oo&id=" . $keyword;
+    $uri = "https://farzain.xyz/api/premium/joox.php?apikey=ag73837ung43838383jdhdhd&id=" . $keyword;
 
     $response = Unirest\Request::get("$uri");
 
@@ -266,6 +239,31 @@ function trar($keyword) {
     $result .= "\nTranslate : ";
 	$result .= $json['result'];
     return $result;
+}
+function manga($keyword) {
+    $fullurl = 'https://myanimelist.net/api/manga/search.xml?q=' . $keyword;
+    $username = 'jamal3213';
+    $password = 'FZQYeZ6CE9is';
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_VERBOSE, 1);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_USERPWD, "$username:$password");
+    curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+    curl_setopt($ch, CURLOPT_URL, $fullurl);
+    $returned = curl_exec($ch);
+    $xml = new SimpleXMLElement($returned);
+    $parsed = array();
+    $parsed['id'] = (string) $xml->entry[0]->id;
+    $parsed['image'] = (string) $xml->entry[0]->image;
+    $parsed['title'] = (string) $xml->entry[0]->title;
+    $parsed['desc'] = "Episode : ";
+    $parsed['desc'] .= $xml->entry[0]->episodes;
+    $parsed['desc'] .= "\nNilai : ";
+    $parsed['desc'] .= $xml->entry[0]->score;
+    $parsed['desc'] .= "\nTipe : ";
+    $parsed['desc'] .= $xml->entry[0]->type;
+    $parsed['synopsis'] = str_replace("<br />", "\n", html_entity_decode((string) $xml->entry[0]->synopsis, ENT_QUOTES | ENT_XHTML, 'UTF-8'));
+    return $parsed;
 }
 function anime($keyword) {
     $fullurl = 'https://myanimelist.net/api/anime/search.xml?q=' . $keyword;
@@ -627,19 +625,75 @@ if($message['type']=='text') {
 }
 if($message['type']=='text') {
 	    if ($command == '/anime') {
-
-        $result = animeinfo($options);
+        $result = anime($options);
+        $altText = "Title : " . $result['title'];
+        $altText .= "\n\n" . $result['desc'];
+        $altText .= "\nMAL Page : https://myanimelist.net/anime/" . $result['id'];
         $balas = array(
             'replyToken' => $replyToken,
             'messages' => array(
                 array(
-                    'type' => 'text',
-                    'text' => $result
+                    'type' => 'template',
+                    'altText' => $altText,
+                    'template' => array(
+                        'type' => 'buttons',
+                        'title' => $result['title'],
+                        'thumbnailImageUrl' => $result['image'],
+                        'text' => $result['desc'],
+                        'actions' => array(
+                            array(
+                                'type' => 'postback',
+                                'label' => 'Baca Sinopsis-nya',
+                                'data' => 'action=add&itemid=123',
+                                'text' => '/anime-syn ' . $options
+                            ),
+                            array(
+                                'type' => 'uri',
+                                'label' => 'Website MAL',
+                                'uri' => 'https://myanimelist.net/anime/' . $result['id']
+                            )
+                        )
+                    )
                 )
             )
         );
     }
-
+}
+if($message['type']=='text') {
+	    if ($command == '/manga') {
+        $result = manga($options);
+        $altText = "Title : " . $result['title'];
+        $altText .= "\n\n" . $result['desc'];
+        $altText .= "\nMAL Page : https://myanimelist.net/manga/" . $result['id'];
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                    'type' => 'template',
+                    'altText' => $altText,
+                    'template' => array(
+                        'type' => 'buttons',
+                        'title' => $result['title'],
+                        'thumbnailImageUrl' => $result['image'],
+                        'text' => $result['desc'],
+                        'actions' => array(
+                            array(
+                                'type' => 'postback',
+                                'label' => 'Baca Sinopsis-nya',
+                                'data' => 'action=add&itemid=123',
+                                'text' => '/manga-syn' . $options
+                            ),
+                            array(
+                                'type' => 'uri',
+                                'label' => 'Website MAL',
+                                'uri' => 'https://myanimelist.net/manga/' . $result['id']
+                            )
+                        )
+                    )
+                )
+            )
+        );
+    }
 }
 if($message['type']=='text') {
 	    if ($command == '/gtts') {
