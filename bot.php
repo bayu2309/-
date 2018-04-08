@@ -23,7 +23,7 @@ $messageid 	= $client->parseEvents()[0]['message']['id'];
 $profil = $client->profil($userId);
 
 $pesan_datang = explode(" ", $message['text']);
-
+$msg_type = $message['type'];
 $command = $pesan_datang[0];
 $options = $pesan_datang[1];
 if (count($pesan_datang) > 2) {
