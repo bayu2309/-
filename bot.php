@@ -351,52 +351,7 @@ if ($type == 'join'){
            )
          );
 }
-if($message['type']=='text') {
-	    if ($command == '/myinfo') {
-        $balas = array(
-            'replyToken' => $replyToken,
-            'messages' => array(
-                array(
-		  'type' => 'text',					
-		  'text' => '====[InfoProfile]====
-                             Nama: '.$profil->displayName.'
-                             Status: '.$profil->statusMessage.'
-                             Picture: '.$profil->pictureUrl.'
-									)
-							)
-						);
-				
-	}
-}
-if($message['type']=='text') {
-	    if ($command == '/lokasi' || $command == '/Lokasi') {
-        $result = lokasi($options);
-        $balas = array(
-            'replyToken' => $replyToken,
-            'messages' => array(
-                array(
-                    'type' => 'location',
-                    'title' => 'Lokasi',
-                    'address' => $result['address'],
-                    'latitude' => $result['latitude'],
-                    'longitude' => $result['longitude']
-                ),
-            )
-        );
-    }
-}
-if($msg_type == 'text'){
-    $pesan_datang = strtolower($message['text']);
-    $filter = explode(' ', $pesan_datang);
-    if($filter[0] == 'apakah') {
-        $balas = send(jawabs(), $replyToken);
-    } else {}
-if($msg_type == 'text'){
-    $pesan_datang = strtolower($message['text']);
-    $filter = explode(' ', $pesan_datang);
-    if($filter[0] == 'Apakah') {
-        $balas = send(jawabs(), $replyToken);
-    } else {}
+
 if ($command == '/menu') {
     $balas = array(
         'replyToken' => $replyToken,
@@ -620,6 +575,24 @@ if ($command == '/menu') {
 }
 
 //pesan khusus
+
+if($message['type']=='text') {
+	    if ($command == '/lokasi' || $command == '/Lokasi') {
+        $result = lokasi($options);
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                    'type' => 'location',
+                    'title' => 'Lokasi',
+                    'address' => $result['address'],
+                    'latitude' => $result['latitude'],
+                    'longitude' => $result['longitude']
+                ),
+            )
+        );
+    }
+}
 if($message['type']=='text') {
 	    if ($command == '/waktu') {
 
@@ -767,6 +740,33 @@ if($message['type']=='text') {
     }
 
 }
+if($message['type']=='text') {
+	    if ($command == '/myinfo') {
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+		  'type' => 'text',					
+		  'text' => '====[InfoProfile]====
+                             Nama: '.$profil->displayName.'
+                             Status: '.$profil->statusMessage.'
+                             Picture: '.$profil->pictureUrl.'
+			     ====================='
+									)
+							)
+						);
+				
+	}
+}
+
+if($msg_type == 'text'){
+    $pesan_datang = strtolower($message['text']);
+    $filter = explode(' ', $pesan_datang);
+    if($filter[0] == 'apakah') {
+        $balas = send(jawabs(), $replyToken);
+    }
+    }
+
 if($message['type']=='text') {
 	    if ($command == '/cuaca') {
         $result = cuaca($options);
