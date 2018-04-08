@@ -133,6 +133,32 @@ function fansign($keyword) {
 	  $result .= $json['url'];
     return $result;
 }
+function saveitoffline($keyword) {
+    $uri = "https://www.saveitoffline.com/process/?url=" . $keyword . '&type=json';
+    $response = Unirest\Request::get("$uri");
+    $json = json_decode($response->raw_body, true);
+	$result = "====[SaveOffline]====\n";
+	$result .= "Judul : \n";
+	$result .= $json['title'];
+	$result .= "\n\nUkuran : \n";
+	$result .= $json['urls'][0]['label'];
+	$result .= "\n\nURL Download : \n";
+	$result .= $json['urls'][0]['id'];
+	$result .= "\n\nUkuran : \n";
+	$result .= $json['urls'][1]['label'];
+	$result .= "\n\nURL Download : \n";
+	$result .= $json['urls'][1]['id'];
+	$result .= "\n\nUkuran : \n";
+	$result .= $json['urls'][2]['label'];	
+	$result .= "\n\nURL Download : \n";
+	$result .= $json['urls'][2]['id'];
+	$result .= "\n\nUkuran : \n";
+	$result .= $json['urls'][3]['label'];	
+	$result .= "\n\nURL Download : \n";
+	$result .= $json['urls'][3]['id'];	
+	$result .= "\n\nPencarian : Google\n";
+    return $result;
+}
 function jadwaltv($keyword) {
     $uri = "https://farzain.xyz/api/premium/acaratv.php?apikey=ag73837ung43838383jdhdhd&id=" . $keyword;
 
@@ -266,6 +292,44 @@ function anime($keyword) {
     $parsed['synopsis'] = str_replace("<br />", "\n", html_entity_decode((string) $xml->entry[0]->synopsis, ENT_QUOTES | ENT_XHTML, 'UTF-8'));
     return $parsed;
 }
+function lokasi($keyword) { 
+    $uri = "https://time.siswadi.com/pray/" . $keyword; 
+ 
+    $response = Unirest\Request::get("$uri"); 
+ 
+    $json = json_decode($response->raw_body, true); 
+ $result['address'] .= $json['location']['address'];
+ $result['latitude'] .= $json['location']['latitude'];
+ $result['longitude'] .= $json['location']['longitude'];
+    return $result; 
+}
+function send($input, $rt){
+    $send = array(
+        'replyToken' => $rt,
+        'messages' => array(
+            array(
+                'type' => 'text',					
+                'text' => $input
+            )
+        )
+    );
+    return($send);
+}
+function jawabs(){
+    $list_jwb = array(
+		'Ya',
+	        'Bisa jadi'
+	        'Mungkin'
+	        'Gak tau'
+	        'Woya donk'
+	        'Jawab gk yah!'
+		'Tidak',
+		'Coba ajukan pertanyaan lain',	    
+		);
+    $jaws = array_rand($list_jwb);
+    $jawab = $list_jwb[$jaws];
+    return($jawab);
+}
 #-------------------------[Function]-------------------------#
 
 # require_once('./src/function/search-1.php');
@@ -275,18 +339,65 @@ function anime($keyword) {
 # require_once('./src/function/hard.php');
 
 //show menu, saat join dan command /menu
-if ($command == 'Hi'){
+if ($type == 'join'){
+   $text = "Makasih dh invite aku ke grup kak!! Ketik /menu untuk melihat fitur keren yang aku punya\n\n";
+   $text .= "Kalau kakak mau menggunakan fitur ku secara penuh . add aku dulu ya kk!";
   $balas = array(
       'replyToken' => $replyToken,
       'messages' => array(
         array ('type' => 'text',
-               'text' => 'halo senang bertemu dengan mu :v'
+               'text' => $text
              )
            )
          );
 }
-
-if ($type == 'join' || $command == '/menu') {
+if($message['type']=='text') {
+	    if ($command == '/myinfo') {
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+		  'type' => 'text',					
+		  'text' => '====[InfoProfile]====
+                             Nama: '.$profil->displayName.'
+                             Status: '.$profil->statusMessage.'
+                             Picture: '.$profil->pictureUrl.'
+									)
+							)
+						);
+				
+	}
+}
+if($message['type']=='text') {
+	    if ($command == '/lokasi' || $command == '/Lokasi') {
+        $result = lokasi($options);
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                    'type' => 'location',
+                    'title' => 'Lokasi',
+                    'address' => $result['address'],
+                    'latitude' => $result['latitude'],
+                    'longitude' => $result['longitude']
+                ),
+            )
+        );
+    }
+}
+if($msg_type == 'text'){
+    $pesan_datang = strtolower($message['text']);
+    $filter = explode(' ', $pesan_datang);
+    if($filter[0] == 'apakah') {
+        $balas = send(jawabs(), $replyToken);
+    } else {}
+if($msg_type == 'text'){
+    $pesan_datang = strtolower($message['text']);
+    $filter = explode(' ', $pesan_datang);
+    if($filter[0] == 'Apakah') {
+        $balas = send(jawabs(), $replyToken);
+    } else {}
+if ($command == '/menu') {
     $balas = array(
         'replyToken' => $replyToken,
         'messages' => array(
