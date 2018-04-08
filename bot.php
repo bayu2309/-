@@ -818,9 +818,13 @@ if($msg_type == 'text'){
     $filter = explode(' ', $pesan_datang);
     if($filter[0] == 'apakah') {
         $balas = send(jawabs(), $replyToken);
-    }
-    }
-
+    } else {}
+if($msg_type == 'text'){
+    $pesan_datang = strtolower($message['text']);
+    $filter = explode(' ', $pesan_datang);
+    if($filter[0] == 'Apakah') {
+        $balas = send(jawabs(), $replyToken);
+    } else {}
 if($message['type']=='text') {
 	    if ($command == '/cuaca') {
         $result = cuaca($options);
