@@ -337,18 +337,7 @@ function jawabs(){
 # require_once('./src/function/hard.php');
 
 //show menu, saat join dan command /menu
-if ($type == 'join'){
-   $text = "Makasih dh invite aku ke grup kak!! Ketik /menu untuk melihat fitur keren yang aku punya\n\n";
-   $text .= "Kalau kakak mau menggunakan fitur ku secara penuh . add aku dulu ya kk!";
-  $balas = array(
-      'replyToken' => $replyToken,
-      'messages' => array(
-        array ('type' => 'text',
-               'text' => $text
-             )
-           )
-         );
-}
+
 if($message['type']=='text') {
 	    if ($command == '/myinfo') {
         $balas = array(
