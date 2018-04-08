@@ -337,26 +337,6 @@ function jawabs(){
 # require_once('./src/function/hard.php');
 
 //show menu, saat join dan command /menu
-
-if($message['type']=='text') {
-	    if ($command == '/myinfo') {
-        $balas = array(
-            'replyToken' => $replyToken,
-            'messages' => array(
-                array(
-		  'type' => 'text',					
-		  'text' => '====[InfoProfile]====
-                             Nama: '.$profil->displayName.'
-                             Status: '.$profil->statusMessage.'
-                             Picture: '.$profil->pictureUrl.'
-			     ====================='
-									)
-							)
-						);
-				
-	}
-}
-
 if ($command == '/menu') {
     $balas = array(
         'replyToken' => $replyToken,
