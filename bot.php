@@ -368,20 +368,6 @@ if($message['type']=='text') {
 	}
 }
 
-if($msg_type == 'text'){
-    $pesan_datang = strtolower($message['text']);
-    $filter = explode(' ', $pesan_datang);
-    if($filter[0] == 'apakah') {
-        $balas = send(jawabs(), $replyToken);
-    }
-}
-if($msg_type == 'text'){
-    $pesan_datang = strtolower($message['text']);
-    $filter = explode(' ', $pesan_datang);
-    if($filter[0] == 'Apakah') {
-        $balas = send(jawabs(), $replyToken);
-    }
-}
 if ($command == '/menu') {
     $balas = array(
         'replyToken' => $replyToken,
