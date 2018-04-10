@@ -728,8 +728,8 @@ if($message['type']=='text') {
             'messages' => array(
                 array(
                   'type' => 'image',
-                  'originalContentUrl' => ''.$result.'',
-                  'previewImageUrl' => ''.$result.''
+                  'originalContentUrl' => $result,
+                  'previewImageUrl' => $result
                 )
             )
         );
