@@ -622,8 +622,8 @@ if($message['type']=='text') {
                     'text' =>  '「Instagram Result」
 			       Username: '.$result['a'].'
 			       Bio: '.$result['b'].'
-			       Followers: '.$result['c'].'
-			      '
+			       Followers: '.$result['c'].''
+			      
                 )
             )
         );
@@ -728,8 +728,8 @@ if($message['type']=='text') {
             'messages' => array(
                 array(
                   'type' => 'image',
-                  'originalContentUrl' => $result,
-                  'previewImageUrl' => $result
+                  'originalContentUrl' => ''.$result.'',
+                  'previewImageUrl' => ''.$result.''
                 )
             )
         );
