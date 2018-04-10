@@ -41,19 +41,18 @@ function instainfo($keyword) {
     $response = Unirest\Request::get("$uri");
 
     $json = json_decode($response->raw_body, true);
-    $result = "「Instagram Result」\n\n";
-    $result .= "\nUsername: ";
-    $result .= $json['info']['username'];
-    $result .= "\nBio: \n";
-    $result .= $json['info']['bio'];
-    $result .= "\n\nFollowers: ";
-    $result .= $json['count']['followers'];
-    $result .= "\nFollowing: ";
-    $result .= $json['count']['following'];
-    $result .= "\nTotal post: ";
-    $result .= $json['count']['post'];
-    $result .= "\nPicture URL\n";
-    $result .= $json['info']['profile_pict'];
+    $result['a'] .= "\nUsername: ";
+    $result['b'] .= $json['info']['username'];
+    $result['c'] .= "\nBio: \n";
+    $result['d'] .= $json['info']['bio'];
+    $result['e'] .= "\n\nFollowers: ";
+    $result['f'] .= $json['count']['followers'];
+    $result['g'] .= "\nFollowing: ";
+    $result['h'] .= $json['count']['following'];
+    $result['i'] .= "\nTotal post: ";
+    $result['j'] .= $json['count']['post'];
+    $result['k'] .= "\nPicture URL\n";
+    $result['l'] .= $json['info']['profile_pict'];
     return $result;
 }
 function textspech($keyword) {
@@ -316,11 +315,11 @@ function send($input, $rt){
 function jawabs(){
     $list_jwb = array(
 		'Ya',
-	        'Bisa jadi'
-	        'Mungkin'
-	        'Gak tau'
-	        'Woya donk'
-	        'Jawab gk yah!'
+	        'Bisa jadi',
+	        'Mungkin',
+	        'Gak tau',
+	        'Woya donk',
+	        'Jawab gk yah!',
 		'Tidak',
 		'Coba ajukan pertanyaan lain',	    
 		);
@@ -335,7 +334,19 @@ function jawabs(){
 # require_once('./src/function/random.php');
 # require_once('./src/function/search-2.php');
 # require_once('./src/function/hard.php');
-
+if ($type == 'join') {
+    $text = "Makasih dh invite aku ke grup kak!! Ketik /menu untuk melihat fitur yang aq punya\n\n";
+    $text .= "untuk menggunakan fitur secara maksimal add aq dulu y kak :)\n";
+    $balas = array(
+        'replyToken' => $replyToken,
+        'messages' => array(
+            array(
+                'type' => 'text',
+                'text' => $text
+            )
+        )
+    );
+}
 //show menu, saat join dan command /menu
 if ($command == '/menu') {
     $balas = array(
@@ -601,9 +612,18 @@ if($message['type']=='text') {
         $balas = array(
             'replyToken' => $replyToken,
             'messages' => array(
+		    array(
+                     'type' => 'image',
+                    'originalContentUrl' => ''.$result['l'].'',
+                    'previewImageUrl' => ''.$result['l'].''
+                ),
                 array(
                     'type' => 'text',
-                    'text' => $result
+                    'text' =>  '「Instagram Result」
+			       Username: '.$result['a'].'
+			       Bio: '.$result['b'].'
+			       Followers: '.$result['c'].'
+			      '
                 )
             )
         );
