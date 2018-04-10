@@ -41,18 +41,18 @@ function instainfo($keyword) {
     $response = Unirest\Request::get("$uri");
 
     $json = json_decode($response->raw_body, true);
-    $result['a'] .= "\nUsername: ";
-    $result['b'] .= $json['info']['username'];
-    $result['c'] .= "\nBio: \n";
-    $result['d'] .= $json['info']['bio'];
-    $result['e'] .= "\n\nFollowers: ";
-    $result['f'] .= $json['count']['followers'];
-    $result['g'] .= "\nFollowing: ";
-    $result['h'] .= $json['count']['following'];
-    $result['i'] .= "\nTotal post: ";
-    $result['j'] .= $json['count']['post'];
-    $result['k'] .= "\nPicture URL\n";
-    $result['l'] .= $json['info']['profile_pict'];
+    $result['a'] = "\nUsername: ";
+    $result['b'] = $json['info']['username'];
+    $result['c'] = "\nBio: \n";
+    $result['d'] = $json['info']['bio'];
+    $result['e'] = "\n\nFollowers: ";
+    $result['f'] = $json['count']['followers'];
+    $result['g'] = "\nFollowing: ";
+    $result['h'] = $json['count']['following'];
+    $result['i'] = "\nTotal post: ";
+    $result['j'] = $json['count']['post'];
+    $result['k'] = "\nPicture URL\n";
+    $result['l'] = $json['info']['profile_pict'];
     return $result;
 }
 function textspech($keyword) {
@@ -614,15 +614,15 @@ if($message['type']=='text') {
             'messages' => array(
 		    array(
                      'type' => 'image',
-                    'originalContentUrl' => ''.$result['l'].'',
-                    'previewImageUrl' => ''.$result['l'].''
+                    'originalContentUrl' => $result['l'],
+                    'previewImageUrl' => $result['l']
                 ),
                 array(
                     'type' => 'text',
-                    'text' =>  '「Instagram Result」
-			       Username: '.$result['a'].'
-			       Bio: '.$result['b'].'
-			       Followers: '.$result['c'].''
+                    'text' =>  '「Instagram Result」'.
+			       'Username: '.$result['a'].
+			       'Bio: '.$result['b'].
+			       'Followers: '.$result['c']
 			      
                 )
             )
