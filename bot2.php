@@ -41,8 +41,14 @@ function instainfo($keyword) {
     $response = Unirest\Request::get("$uri");
 
     $json = json_decode($response->raw_body, true);
-    $result['a'] = "\nUsername: ";
-    $result['b'] = $json["graphql"]["user"]["full_name"];
+    $result['iconnya'] .= $json["graphql"]["user"]["profile_pic_url_hd"];
+    $result = "「Instagram Result」\n\n";
+	$result .= "Name:";
+    $result .= $json['graphql']['user']['full_name'];
+	$result .= "Username:";
+    $result .= $json["graphql"]["user"]["username"];
+	$result .= "Bio:\n";
+    $result .= $json["graphql"]["user"]["biography"]
     return $result;
 }
 function textspech($keyword) {
@@ -553,10 +559,14 @@ if($message['type']=='text') {
         $balas = array(
             'replyToken' => $replyToken,
             'messages' => array(
+		    array(
+                  'type' => 'image',
+                  'originalContentUrl' => $result['iconnya'],
+                  'previewImageUrl' => $result['iconnya']
+                ),
                 array(
                     'type' => 'text',
-                    'text' =>  'a'.$result['a'].
-			       'b'.$result['b']
+                    'text' =>  $result
 			      
                 )
             )
