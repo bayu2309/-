@@ -388,7 +388,9 @@ if ($command == '/menu') {
     'imageSize' => 'cover',
   ),
 )
-
+)
+);
+}
 //pesan khusus
 
 if($message['type']=='text') {
