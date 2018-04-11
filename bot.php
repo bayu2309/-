@@ -553,7 +553,7 @@ if($message['type']=='text') {
 			$result['a'].
 $result['b'].
 $result['c'].
-$result['d'].
+$result['d']
                 )
             )
         );
