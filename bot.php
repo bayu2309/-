@@ -333,7 +333,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'Ketik /waktu <judul musik>',
+            'text' => 'Ketik /soundcloud [judul musik]',
           ),
         ),
       ),
@@ -355,7 +355,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'Ketik /instagram <username>',
+            'text' => 'Ketik /instagram [username]',
           ),
         ),
       ),
@@ -377,7 +377,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'ketik /anime <nama anime>',
+            'text' => 'ketik /anime [nama anime]',
           ),
         ),
       ),
@@ -399,7 +399,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'Ketik /shalat <nama kota>',
+            'text' => 'Ketik /shalat [nama kota]',
           ),
         ),
       ),
@@ -421,7 +421,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'Ketik /fansign <text>',
+            'text' => 'Ketik /fansign [text]',
           ),
         ),
       ),
@@ -443,7 +443,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'Ketik /film <nama film>',
+            'text' => 'Ketik /film [nama film]',
           ),
         ),
       ),
@@ -465,7 +465,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'Ketik /jadwaltv <nama station TV>',
+            'text' => 'Ketik /jadwaltv [station TV]',
           ),
         ),
       ),
@@ -487,7 +487,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'ketik /joox <judul musik>',
+            'text' => 'ketik /joox [judul musik]',
           ),
         ),
       ),
@@ -509,7 +509,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'Ketik /cuaca <nama kota>',
+            'text' => 'Ketik /cuaca [nama kota]',
           ),
         ),
       ),
