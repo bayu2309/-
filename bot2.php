@@ -47,7 +47,7 @@ function instainfo($keyword) {
 	$result .= "Username:";
     $result .= $json["graphql"]["user"]["username"];
 	$result .= "Bio:\n";
-    $result .= $json["graphql"]["user"]["biography"]
+    $result .= $json["graphql"]["user"]["biography"];
     return $result;
 }
 function textspech($keyword) {
