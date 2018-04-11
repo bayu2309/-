@@ -44,10 +44,10 @@ function instainfo($keyword) {
     $result = "「Instagram Result」\n\n";
 	$result .= "Name:";
     $result .= $json['graphql']['user']['full_name'];
-	$result .= "Username:";
-    $result .= $json["graphql"]["user"]["username"];
-	$result .= "Bio:\n";
-    $result .= $json["graphql"]["user"]["biography"];
+	$result .= "\nUsername:";
+    $result .= $json['graphql']['user']['username'];
+	$result .= "\nBio:\n";
+    $result .= $json['graphql']['user']['biography'];
     return $result;
 }
 function textspech($keyword) {
