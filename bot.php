@@ -41,13 +41,15 @@ function instainfo($keyword) {
     $response = Unirest\Request::get("$uri");
 
     $json = json_decode($response->raw_body, true);
-    $result = "「Instagram Result」\n\n";
-	$result .= "Name:";
-    $result .= $json['graphql']['user']['full_name'];
-	$result .= "\nUsername:";
-    $result .= $json['graphql']['user']['username'];
-	$result .= "\nBio:\n";
-    $result .= $json['graphql']['user']['biography'];
+    $result['atas']      .= $json["graphql"]["user"]["profile_pic_url_hd"];
+    $result['nama']      .= $json['graphql']['user']['full_name'];
+    $result['username']  .= $json['graphql']['user']['username'];
+    $result['followers'] .= $json["graphql"]["user"]["edge_followed_by"]["count"];
+    $result['following'] .= $json["graphql"]["user"]["edge_follow"]["count"];
+    $result['private']   .= $json["graphql"]["user"]["is_private"];
+    $result['totalpost'] .= $json["graphql"]["user"]["edge_owner_to_timeline_media"]["count"];
+    $result['bio']       .= $json['graphql']['user']['biography'];
+    
     return $result;
 }
 function textspech($keyword) {
@@ -558,9 +560,16 @@ if($message['type']=='text') {
         $balas = array(
             'replyToken' => $replyToken,
             'messages' => array(
+		array(
+                  'type' => 'image',
+                  'originalContentUrl' => $result['atas'],
+                  'previewImageUrl' => $result['atas']
+                ),
                 array(
                     'type' => 'text',
-                    'text' =>  $result
+                    'text' =>  '「Instagram Result」\n\n'.
+			       'Name:'.$result['username'].
+			       '\nUsername:'.$result['username']
 			      
                 )
             )
