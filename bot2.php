@@ -605,7 +605,7 @@ if($message['type']=='text') {
                 array(
                     'type' => 'text',
                     'text' =>  '「Instagram Result」'.
-			       'Username: '.$result['a']
+			       'Username: '.$result['b']
 			      
                 )
             )
