@@ -555,6 +555,21 @@ if($message['type']=='text') {
 
 }
 if($message['type']=='text') {
+	if ($command == '/bye') {
+		$push = array(
+			'to' => $groupId,
+			'messages' => array(
+				array(
+					'type' => 'text'
+					'text' => 'kaka jahat :('
+					)
+				)
+			);
+		$client->pushMessage($push);
+		$psn = $client->leaveGroup($groupId);
+	}
+}
+if($message['type']=='text') {
 	    if ($command == '/instagram') {
 
         $result = instainfo($options);
