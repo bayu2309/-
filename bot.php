@@ -49,7 +49,7 @@ function instainfo($keyword) {
     $result['private']   .= $json["graphql"]["user"]["is_private"];
     $result['totalpost'] .= $json["graphql"]["user"]["edge_owner_to_timeline_media"]["count"];
     $result['bio']       .= $json['graphql']['user']['biography'];
-    $result['bawah']     .= 'https://www.instagram.com/'. $keyword
+    $result['bawah']     .= 'https://www.instagram.com/'. $keyword;
     
     return $result;
 }
