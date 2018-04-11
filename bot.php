@@ -333,7 +333,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'Ketik /soundcloud [judul musik]',
+            'text' => 'Ketik /soundcloud ......',
           ),
         ),
       ),
@@ -355,7 +355,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'Ketik /instagram [username]',
+            'text' => 'Ketik /instagram ......',
           ),
         ),
       ),
@@ -377,7 +377,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'ketik /anime [nama anime]',
+            'text' => 'ketik /anime ......',
           ),
         ),
       ),
@@ -399,7 +399,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'Ketik /shalat [nama kota]',
+            'text' => 'Ketik /shalat ......',
           ),
         ),
       ),
@@ -421,7 +421,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'Ketik /fansign [text]',
+            'text' => 'Ketik /fansign ......',
           ),
         ),
       ),
@@ -443,7 +443,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'Ketik /film [nama film]',
+            'text' => 'Ketik /film ......',
           ),
         ),
       ),
@@ -452,7 +452,7 @@ if ($command == '/menu') {
         'thumbnailImageUrl' => 'https://st3.depositphotos.com/3921439/12696/v/950/depositphotos_126961774-stock-illustration-the-tv-icon-television-and.jpg',
         'imageBackgroundColor' => '#00FFFF',
         'title' => 'Television',
-        'text' => 'Mencari Jadwal Acara Televisi Indonesia & Jakarta',
+        'text' => 'Mencari Jadwal Acara Televisi Indonesia',
         'defaultAction' =>
         array (
           'type' => 'uri',
@@ -465,7 +465,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'Ketik /jadwaltv [station TV]',
+            'text' => 'Ketik /jadwaltv ......',
           ),
         ),
       ),
@@ -487,7 +487,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'ketik /joox [judul musik]',
+            'text' => 'ketik /joox ......',
           ),
         ),
       ),
@@ -509,7 +509,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'Ketik /cuaca [nama kota]',
+            'text' => 'Ketik /cuaca ......',
           ),
         ),
       ),
