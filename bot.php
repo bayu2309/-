@@ -309,207 +309,77 @@ if ($command == '/menu') {
         'messages' => array(
           array (
   'type' => 'template',
-  'altText' => 'Anda di sebut',
-  'template' =>
+  'altText' => 'this is a carousel template',
+  'template' => 
   array (
     'type' => 'carousel',
-    'columns' =>
+    'columns' => 
     array (
-      0 =>
+      0 => 
       array (
-        'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
-        'imageBackgroundColor' => '#00FFFF',
-        'title' => 'Soundcloud',
-        'text' => 'Mencari Dan Unduh Musik Di SoundCloud',
-        'defaultAction' =>
+        'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
+        'imageBackgroundColor' => '#FFFFFF',
+        'title' => 'this is menu',
+        'text' => 'description',
+        'defaultAction' => 
         array (
           'type' => 'uri',
           'label' => 'View detail',
           'uri' => 'http://example.com/page/123',
         ),
-        'actions' =>
+        'actions' => 
         array (
-          0 =>
+          0 => 
           array (
-            'type' => 'message',
-            'label' => 'Detail',
-            'text' => 'Ketik /soundcloud ......',
+            'type' => 'postback',
+            'label' => 'Buy',
+            'data' => 'action=buy&itemid=111',
+          ),
+          1 => 
+          array (
+            'type' => 'postback',
+            'label' => 'Add to cart',
+            'data' => 'action=add&itemid=111',
+          ),
+          2 => 
+          array (
+            'type' => 'uri',
+            'label' => 'View detail',
+            'uri' => 'http://example.com/page/111',
           ),
         ),
       ),
-      1 =>
+      1 => 
       array (
         'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
-        'imageBackgroundColor' => '#00FFFF',
-        'title' => 'Instagram',
-        'text' => 'Menemukan Informasi Akun Instagram Berdasarkan Keyword',
-        'defaultAction' =>
-        array (
-          'type' => 'uri',
-          'label' => 'View detail',
-          'uri' => 'http://example.com/page/123',
-        ),
-        'actions' =>
-        array (
-          0 =>
-          array (
-            'type' => 'message',
-            'label' => 'Detail',
-            'text' => 'Ketik /instagram ......',
-          ),
-        ),
-      ),
-      2 =>
-      array (
-        'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
-        'imageBackgroundColor' => '#00FFFF',
-        'title' => 'Anime',
-        'text' => 'Mencari Informasi Anime Berdasarkan Keyword',
-        'defaultAction' =>
-        array (
-          'type' => 'uri',
-          'label' => 'View detail',
-          'uri' => 'http://example.com/page/123',
-        ),
-        'actions' =>
-        array (
-          0 =>
-          array (
-            'type' => 'message',
-            'label' => 'Detail',
-            'text' => 'ketik /anime ......',
-          ),
-        ),
-      ),
-      3 =>
-      array (
-        'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
-        'imageBackgroundColor' => '#00FFFF',
-        'title' => 'Praytime',
-        'text' => 'Mengetahui Jadwal Shalat Wilayah Indonesia Berdasarkan Tempat',
-        'defaultAction' =>
-        array (
-          'type' => 'uri',
-          'label' => 'View detail',
-          'uri' => 'http://example.com/page/123',
-        ),
-        'actions' =>
-        array (
-          0 =>
-          array (
-            'type' => 'message',
-            'label' => 'Detail',
-            'text' => 'Ketik /shalat ......',
-          ),
-        ),
-      ),
-      4 =>
-      array (
-        'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
-        'imageBackgroundColor' => '#00FFFF',
-        'title' => 'Fansign',
-        'text' => 'Membuat FS Anime Berdasarkan Keyword',
-        'defaultAction' =>
-        array (
-          'type' => 'uri',
-          'label' => 'View detail',
-          'uri' => 'http://example.com/page/123',
-        ),
-        'actions' =>
-        array (
-          0 =>
-          array (
-            'type' => 'message',
-            'label' => 'Detail',
-            'text' => 'Ketik /fansign ......',
-          ),
-        ),
-      ),
-      5 =>
-      array (
-        'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
-        'imageBackgroundColor' => '#00FFFF',
-        'title' => 'IndoXXI',
-        'text' => 'Cari Film Di IndoXXI',
-        'defaultAction' =>
-        array (
-          'type' => 'uri',
-          'label' => 'View detail',
-          'uri' => 'http://example.com/page/123',
-        ),
-        'actions' =>
-        array (
-          0 =>
-          array (
-            'type' => 'message',
-            'label' => 'Detail',
-            'text' => 'Ketik /film ......',
-          ),
-        ),
-      ),
-      6 =>
-      array (
-        'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
-        'imageBackgroundColor' => '#00FFFF',
-        'title' => 'Television',
-        'text' => 'Mencari Jadwal Acara Televisi Indonesia',
-        'defaultAction' =>
-        array (
-          'type' => 'uri',
-          'label' => 'View detail',
-          'uri' => 'http://example.com/page/123',
-        ),
-        'actions' =>
-        array (
-          0 =>
-          array (
-            'type' => 'message',
-            'label' => 'Detail',
-            'text' => 'Ketik /jadwaltv ......',
-          ),
-        ),
-      ),
-      7 =>
-      array (
-        'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
-        'imageBackgroundColor' => '#00FFFF',
-        'title' => 'Music',
-        'text' => 'Mengunduh Musik Dari Joox Dengan Lirik',
-        'defaultAction' =>
-        array (
-          'type' => 'uri',
-          'label' => 'View detail',
-          'uri' => 'http://example.com/page/123',
-        ),
-        'actions' =>
-        array (
-          0 =>
-          array (
-            'type' => 'message',
-            'label' => 'Detail',
-            'text' => 'ketik /joox ......',
-          ),
-        ),
-      ),
-      8 =>
-      array (
-        'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
-        'imageBackgroundColor' => '#00FFFF',
-        'title' => 'Weather',
-        'text' => 'Mengetahui Prakiraan Cuaca Seluruh Dunia',
-        'defaultAction' =>
+        'imageBackgroundColor' => '#000000',
+        'title' => 'this is menu',
+        'text' => 'description',
+        'defaultAction' => 
         array (
           'type' => 'uri',
           'label' => 'View detail',
           'uri' => 'http://example.com/page/222',
         ),
-        'actions' =>
+        'actions' => 
         array (
-          0 =>
+          0 => 
           array (
-            'type' => 'message',
-            'label' => 'Detail',
-            'text' => 'Ketik /cuaca ......',
+            'type' => 'postback',
+            'label' => 'Buy',
+            'data' => 'action=buy&itemid=222',
+          ),
+          1 => 
+          array (
+            'type' => 'postback',
+            'label' => 'Add to cart',
+            'data' => 'action=add&itemid=222',
+          ),
+          2 => 
+          array (
+            'type' => 'uri',
+            'label' => 'View detail',
+            'uri' => 'http://example.com/page/222',
           ),
         ),
       ),
@@ -518,12 +388,6 @@ if ($command == '/menu') {
     'imageSize' => 'cover',
   ),
 )
-
-
-
-)
-);
-}
 
 //pesan khusus
 
