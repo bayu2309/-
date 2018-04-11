@@ -63,11 +63,13 @@ function textspech($keyword) {
     return $result;
 }
 function gambarnya($keyword) {
-    $uri = "https://farzain.xyz/api/gambarg.php?apikey=9YzAAXsDGYHWFRf6gWzdG5EQECW7oo&id=" . $keyword;
+    $uri = "http://rahandiapi.herokuapp.com/imageapi?key=betakey&q=" . $keyword;
     $response = Unirest\Request::get("$uri");
     $json = json_decode($response->raw_body, true);
-    $result['link'] .= $json['url'];
-    return $result;
+    $$list_jwb .= $json['result'];
+    $jaws = array_rand($list_jwb);
+    $jawab = $list_jwb[$jaws];
+    return $jawab;
 }
 function musiknya($keyword) {
     $uri = "https://farzain.xyz/api/premium/joox.php?apikey=ag73837ung43838383jdhdhd&id=" . $keyword;
@@ -717,8 +719,8 @@ if($message['type']=='text') {
             'messages' => array(
                 array(
                   'type' => 'image',
-                  'originalContentUrl' => 'https://pbs.twimg.com/profile_images/670173721705844736/LCxYY-60_400x400.jpg',
-                  'previewImageUrl' => 'https://pbs.twimg.com/profile_images/670173721705844736/LCxYY-60_400x400.jpg'
+                  'originalContentUrl' => $jawab,
+                  'previewImageUrl' => $jawab
                 )
             )
         );
