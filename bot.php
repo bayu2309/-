@@ -178,15 +178,15 @@ function waktu($keyword) {
     $uri = "https://farzain.xyz/api/jam.php?apikey=9YzAAXsDGYHWFRf6gWzdG5EQECW7oo&id=" . $keyword;
     $response = Unirest\Request::get("$uri");
     $json = json_decode($response->raw_body, true);
-    $result = "「Time Result」\n";
-    $result .= "\nNama kota: ";
-    $result .= $json['location']['address'];
-    $result .= "\nZona waktu: ";
-    $result .= $json['time']['timezone'];
-    $result .= "\nWaktu: \n";
-    $result .= $json['time']['time'];
-    $result .= "\n";
-    $result .= $json['time']['date'];
+    $result['a'] .= "「Time Result」\n";
+    $result['b'] .= "\nNama kota: ";
+    $result['c'] .= $json['location']['address'];
+    $result['d'] .= "\nZona waktu: ";
+    $result['e'] .= $json['time']['timezone'];
+    $result['f'] .= "\nWaktu: \n";
+    $result['g'] .= $json['time']['time'];
+    $result['h'] .= "\n";
+    $result['i'] .= $json['time']['date'];
     return $result;
 }
 
@@ -549,7 +549,10 @@ if($message['type']=='text') {
             'messages' => array(
                 array(
                     'type' => 'text',
-                    'text' => $result
+                    'text' => 
+			$result['a'].
+$result['b'].
+$result['c']
                 )
             )
         );
