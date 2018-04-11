@@ -576,8 +576,8 @@ if($message['type']=='text') {
 			       Private:'.$result['private'].'
 			       Total post:'.$result['totalpost'].'
 			       Bio:
-			       '.$result['bio'].''
-			       $result['bawah']
+			       '.$result['bio']
+			       .$result['bawah']
                 )
             )
         );
