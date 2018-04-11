@@ -49,6 +49,7 @@ function instainfo($keyword) {
     $result['private']   .= $json["graphql"]["user"]["is_private"];
     $result['totalpost'] .= $json["graphql"]["user"]["edge_owner_to_timeline_media"]["count"];
     $result['bio']       .= $json['graphql']['user']['biography'];
+    $result['bawah']     .= 'https://www.instagram.com/'. $keyword
     
     return $result;
 }
@@ -567,10 +568,18 @@ if($message['type']=='text') {
                 ),
                 array(
                     'type' => 'text',
-                    'text' =>  '「Instagram Result」\n\n'.
-			       'Name:'.$result['username'].
-			       '\nUsername:'.$result['username']
-			      
+                    'text' =>  '「Instagram Result」'.
+			
+			       'Name:'.$result['name'].
+			       'Username:'.$result['username'].
+			       'Follower:'.$result['followers'].
+			       'Following:'.$result['following'].
+			       'Private:'.$result['private'].
+			       'Total post:'.$result['totalpost'].
+			       'Bio:'.
+			       $result['bio'].
+			
+			       $result['bawah']
                 )
             )
         );
