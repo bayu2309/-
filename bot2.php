@@ -36,23 +36,13 @@ if (count($pesan_datang) > 2) {
 #-------------------------[Function]-------------------------#
 
 function instainfo($keyword) {
-    $uri = "https://farzain.xyz/api/ig_profile.php?apikey=9YzAAXsDGYHWFRf6gWzdG5EQECW7oo&id=" . $keyword;
+    $uri = "https://farzain.xyz/api/ig_profile.php?apikey=9YzAAXsDGYHWFRf6gWzdG5EQECW7oo&id=".$keyword;
 
     $response = Unirest\Request::get("$uri");
 
     $json = json_decode($response->raw_body, true);
     $result['a'] = "\nUsername: ";
     $result['b'] = $json['info']['username'];
-    $result['c'] = "\nBio: \n";
-    $result['d'] = $json['info']['bio'];
-    $result['e'] = "\n\nFollowers: ";
-    $result['f'] = $json['count']['followers'];
-    $result['g'] = "\nFollowing: ";
-    $result['h'] = $json['count']['following'];
-    $result['i'] = "\nTotal post: ";
-    $result['j'] = $json['count']['post'];
-    $result['k'] = "\nPicture URL\n";
-    $result['l'] = $json['info']['profile_pict'];
     return $result;
 }
 function textspech($keyword) {
@@ -612,17 +602,10 @@ if($message['type']=='text') {
         $balas = array(
             'replyToken' => $replyToken,
             'messages' => array(
-		    array(
-                     'type' => 'image',
-                    'originalContentUrl' => $result['l'],
-                    'previewImageUrl' => $result['l']
-                ),
                 array(
                     'type' => 'text',
                     'text' =>  '「Instagram Result」'.
-			       'Username: '.$result['a'].
-			       'Bio: '.$result['b'].
-			       'Followers: '.$result['c']
+			       'Username: '.$result['a']
 			      
                 )
             )
