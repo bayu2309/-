@@ -180,13 +180,13 @@ function waktu($keyword) {
     $json = json_decode($response->raw_body, true);
     $result = "「Time Result」\n";
     $result .= "\nNama kota: ";
-    $result .= $json["location"]["address"];
+    $result .= $json['location']['address'];
     $result .= "\nZona waktu: ";
-    $result .= $json["time"]["timezone"];
+    $result .= $json['time']['timezone'];
     $result .= "\nWaktu: \n";
-    $result .= $json["time"]["time"];
+    $result .= $json['time']['time'];
     $result .= "\n";
-    $result .= $json["time"]["date"];
+    $result .= $json['time']['date'];
     return $result;
 }
 
