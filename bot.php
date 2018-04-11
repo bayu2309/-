@@ -427,7 +427,7 @@ if ($command == '/menu') {
       ),
       5 =>
       array (
-        'thumbnailImageUrl' => 'https://i0.wp.com/bioskopmini21.com/wp-content/uploads/2018/01/vDQcuLJ2.jpg',
+        'thumbnailImageUrl' => 'https://img9.androidappsapk.co/300/d/6/7/com.xxi.movie.png',
         'imageBackgroundColor' => '#00FFFF',
         'title' => 'IndoXXI',
         'text' => 'Cari Film Di IndoXXI',
