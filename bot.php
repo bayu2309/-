@@ -570,7 +570,7 @@ if($message['type']=='text') {
                     'type' => 'text',
                     'text' =>  
 			      '「Instagram Result」'.
-''.'
+' '.'
 Name: '.$result['nama'].'
 Username: '.$result['username'].'
 Follower: '.$result['followers'].'
@@ -579,8 +579,7 @@ Private: '.$result['private'].'
 Total post: '.$result['totalpost'].'
 Bio:
 '.$result['bio'].
-''.
-.$result['bawah']
+$result['bawah']
                 )
             )
         );
