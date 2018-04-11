@@ -427,7 +427,7 @@ if ($command == '/menu') {
       ),
       5 =>
       array (
-        'thumbnailImageUrl' => 'https://img9.androidappsapk.co/300/d/6/7/com.xxi.movie.png',
+        'thumbnailImageUrl' => 'https://i.pinimg.com/originals/d7/d8/a5/d7d8a5c1017dff37a359c95e88e0897b.jpg',
         'imageBackgroundColor' => '#00FFFF',
         'title' => 'IndoXXI',
         'text' => 'Cari Film Di IndoXXI',
