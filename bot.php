@@ -62,11 +62,11 @@ function textspech($keyword) {
     $result .= $json['result'];
     return $result;
 }
-function anu($keyword) {
-    $uri = "rahandiapi.herokuapp.com/imageapi?key=betakey&q=" . $keyword;
+function gambarnya($keyword) {
+    $uri = "https://farzain.xyz/api/gambarg.php?apikey=9YzAAXsDGYHWFRf6gWzdG5EQECW7oo&id=" . $keyword;
     $response = Unirest\Request::get("$uri");
     $json = json_decode($response->raw_body, true);
-    $result .= $json['result'][0];
+    $result['link'] .= $json['url'];
     return $result;
 }
 function musiknya($keyword) {
@@ -711,14 +711,14 @@ if($message['type']=='text') {
 if($message['type']=='text') {
 	    if ($command == '/gambar') {
 
-        $result = anu($options);
+        $result = gambarnya($options);
         $balas = array(
             'replyToken' => $replyToken,
             'messages' => array(
                 array(
                   'type' => 'image',
-                  'originalContentUrl' => $result,
-                  'previewImageUrl' => $result
+                  'originalContentUrl' => $result['link'],
+                  'previewImageUrl' => $result['link']
                 )
             )
         );
