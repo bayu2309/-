@@ -36,7 +36,7 @@ if (count($pesan_datang) > 2) {
 #-------------------------[Function]-------------------------#
 
 function instainfo($keyword) {
-    $uri = "https://www.instagram.com/{}/?__a=1".$keyword;
+    $uri = "https://www.instagram.com/" . $keyword . "/?__a=1";
 
     $response = Unirest\Request::get("$uri");
 
