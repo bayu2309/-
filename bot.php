@@ -578,8 +578,7 @@ Following: '.$result['following'].'
 Private: '.$result['private'].'
 Total post: '.$result['totalpost'].'
 Bio:
-'.$result['bio'].'
- '.'.'
+'.$result['bio'].''.
 $result['bawah']
                 )
             )
