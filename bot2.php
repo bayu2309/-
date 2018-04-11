@@ -36,13 +36,13 @@ if (count($pesan_datang) > 2) {
 #-------------------------[Function]-------------------------#
 
 function instainfo($keyword) {
-    $uri = "https://farzain.xyz/api/ig_profile.php?apikey=9YzAAXsDGYHWFRf6gWzdG5EQECW7oo&id=".$keyword;
+    $uri = "https://www.instagram.com/{}/?__a=1".$keyword;
 
     $response = Unirest\Request::get("$uri");
 
     $json = json_decode($response->raw_body, true);
-    $result = "\nUsername: ";
-    $result = $json['info']['username'];
+    $result['a'] = "\nUsername: ";
+    $result['b'] = $json["graphql"]["user"]["full_name"];
     return $result;
 }
 function textspech($keyword) {
@@ -555,7 +555,8 @@ if($message['type']=='text') {
             'messages' => array(
                 array(
                     'type' => 'text',
-                    'text' =>  $result
+                    'text' =>  'a'.$result['a'].
+			       'b'.$result['b']
 			      
                 )
             )
