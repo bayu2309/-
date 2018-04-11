@@ -580,7 +580,7 @@ Total post: '.$result['totalpost'].'
 Bio:
 '.$result['bio'].'
  '.
-$result['bawah']
+.$result['bawah']
                 )
             )
         );
