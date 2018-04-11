@@ -70,7 +70,7 @@ function gambarnya($keyword) {
     $response = Unirest\Request::get("$uri");
 
     $json = json_decode($response->raw_body, true);
-    $result = $json['url'];
+          $result .= $json['url'];
     return $result;
 }
 function musiknya($keyword) {
