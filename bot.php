@@ -560,7 +560,7 @@ if($message['type']=='text') {
 			'to' => $groupId,
 			'messages' => array(
 				array(
-					'type' => 'text'
+					'type' => 'text',
 					'text' => 'kaka jahat :('
 					)
 				)
