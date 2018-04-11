@@ -62,11 +62,11 @@ function textspech($keyword) {
     $result .= $json['result'];
     return $result;
 }
-function gambarnya($keyword) {
+function cloud($keyword) {
     $uri = "http://rahandiapi.herokuapp.com/imageapi?key=betakey&q=" . $keyword;
     $response = Unirest\Request::get("$uri");
     $json = json_decode($response->raw_body, true);
-    $$list_jwb .= $json['result'];
+    $list_jwb .= $json['result'];
     $jaws = array_rand($list_jwb);
     $jawab = $list_jwb[$jaws];
     return $jawab;
