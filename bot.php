@@ -333,7 +333,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'Ketik /waktu <judul musik> tanpa tanda<>',
+            'text' => 'Ketik /waktu <judul musik>',
           ),
         ),
       ),
@@ -355,7 +355,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'Ketik /instagram <username> tanpa tanda<>',
+            'text' => 'Ketik /instagram <username>',
           ),
         ),
       ),
@@ -377,7 +377,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'ketik /anime <nama anime> tanpa tanda<>',
+            'text' => 'ketik /anime <nama anime>',
           ),
         ),
       ),
@@ -399,7 +399,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'Ketik /shalat <nama kota> tanpa tanda<>',
+            'text' => 'Ketik /shalat <nama kota>',
           ),
         ),
       ),
@@ -421,7 +421,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'Ketik /fansign <text> tanpa tanda<>',
+            'text' => 'Ketik /fansign <text>',
           ),
         ),
       ),
@@ -443,7 +443,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'Ketik /film <nama film> tanpa tanda<>',
+            'text' => 'Ketik /film <nama film>',
           ),
         ),
       ),
@@ -465,7 +465,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'Ketik /jadwaltv <nama station TV> tanpa tanda<>',
+            'text' => 'Ketik /jadwaltv <nama station TV>',
           ),
         ),
       ),
@@ -474,7 +474,7 @@ if ($command == '/menu') {
         'thumbnailImageUrl' => 'https://pbs.twimg.com/profile_images/948155209603170312/-6CCwlWt_400x400.jpg',
         'imageBackgroundColor' => '#00FFFF',
         'title' => 'Music',
-        'text' => 'Mengunduh Musik Dari Joox (Dengan Lirik)',
+        'text' => 'Mengunduh Musik Dari Joox Dengan Lirik',
         'defaultAction' =>
         array (
           'type' => 'uri',
@@ -487,7 +487,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'ketik /joox <judul musik> tanpa tanda<>',
+            'text' => 'ketik /joox <judul musik>',
           ),
         ),
       ),
@@ -509,7 +509,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'Ketik /cuaca <nama kota> tanpa tanda<>',
+            'text' => 'Ketik /cuaca <nama kota>',
           ),
         ),
       ),
