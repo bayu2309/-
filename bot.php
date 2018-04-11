@@ -320,7 +320,7 @@ if ($command == '/menu') {
         'thumbnailImageUrl' => 'https://mirror.umd.edu/xbmc/addons/gotham/plugin.audio.soundcloud/icon.png',
         'imageBackgroundColor' => '#00FFFF',
         'title' => 'Soundcloud',
-        'text' => 'Informasi waktu di setiap kota yang ingin kamu cari',
+        'text' => 'Mencari Dan Unduh Musik Di SoundCloud',
         'defaultAction' =>
         array (
           'type' => 'uri',
@@ -332,8 +332,8 @@ if ($command == '/menu') {
           0 =>
           array (
             'type' => 'message',
-            'label' => 'Example',
-            'text' => '/waktu jakarta',
+            'label' => 'Detail',
+            'text' => 'Ketik /waktu <judul musik> tanpa tanda<>',
           ),
         ),
       ),
@@ -342,7 +342,7 @@ if ($command == '/menu') {
         'thumbnailImageUrl' => 'https://1c7qp243xy9g1qeffp1k1nvo-wpengine.netdna-ssl.com/wp-content/uploads/2016/03/instagram_logo.jpg',
         'imageBackgroundColor' => '#00FFFF',
         'title' => 'Instagram',
-        'text' => 'Informasi akun instagram yang ingin kamu cari',
+        'text' => 'Menemukan Informasi Akun Instagram Berdasarkan Keyword',
         'defaultAction' =>
         array (
           'type' => 'uri',
@@ -354,8 +354,8 @@ if ($command == '/menu') {
           0 =>
           array (
             'type' => 'message',
-            'label' => 'Example',
-            'text' => '/instagram kamu',
+            'label' => 'Detail',
+            'text' => 'Ketik /instagram <username> tanpa tanda<>',
           ),
         ),
       ),
@@ -364,7 +364,7 @@ if ($command == '/menu') {
         'thumbnailImageUrl' => 'https://unnecessaryexclamationmark.files.wordpress.com/2016/05/myanimelist-logo.jpg',
         'imageBackgroundColor' => '#00FFFF',
         'title' => 'Anime',
-        'text' => 'Info anime yang ingin kamu cari',
+        'text' => 'Mencari Informasi Anime Berdasarkan Keyword',
         'defaultAction' =>
         array (
           'type' => 'uri',
@@ -376,8 +376,8 @@ if ($command == '/menu') {
           0 =>
           array (
             'type' => 'message',
-            'label' => 'Example',
-            'text' => '/anime onepiece',
+            'label' => 'Detail',
+            'text' => 'ketik /anime <nama anime> tanpa tanda<>',
           ),
         ),
       ),
@@ -386,7 +386,7 @@ if ($command == '/menu') {
         'thumbnailImageUrl' => 'https://is3-ssl.mzstatic.com/image/thumb/Purple62/v4/cc/68/6c/cc686c29-ffd2-5115-2b97-c4821b548fe3/AppIcon-1x_U007emarketing-85-220-6.png/246x0w.jpg',
         'imageBackgroundColor' => '#00FFFF',
         'title' => 'Praytime',
-        'text' => 'Info jadwal shalat sesuai dengan yang di cari',
+        'text' => 'Mengetahui Jadwal Shalat Wilayah Indonesia Berdasarkan Tempat',
         'defaultAction' =>
         array (
           'type' => 'uri',
@@ -398,8 +398,8 @@ if ($command == '/menu') {
           0 =>
           array (
             'type' => 'message',
-            'label' => 'Example',
-            'text' => '/shalat jakarta',
+            'label' => 'Detail',
+            'text' => 'Ketik /shalat <nama kota> tanpa tanda<>',
           ),
         ),
       ),
@@ -408,7 +408,7 @@ if ($command == '/menu') {
         'thumbnailImageUrl' => 'https://i.pinimg.com/originals/d7/d8/a5/d7d8a5c1017dff37a359c95e88e0897b.jpg',
         'imageBackgroundColor' => '#00FFFF',
         'title' => 'Fansign',
-        'text' => 'Text yang di tulis d kertas',
+        'text' => 'Membuat FS Anime Berdasarkan Keyword',
         'defaultAction' =>
         array (
           'type' => 'uri',
@@ -420,17 +420,17 @@ if ($command == '/menu') {
           0 =>
           array (
             'type' => 'message',
-            'label' => 'Example',
-            'text' => '/fansign saya',
+            'label' => 'Detail',
+            'text' => 'Ketik /fansign <text> tanpa tanda<>',
           ),
         ),
       ),
       5 =>
       array (
-        'thumbnailImageUrl' => 'https://png.pngtree.com/element_origin_min_pic/16/10/19/1758073fffac5db.jpg',
+        'thumbnailImageUrl' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIpL8rfxfo2wRwvplC2ZjqUeaGgFNbobwGGjGT2o0Aa8dbc2mx',
         'imageBackgroundColor' => '#00FFFF',
-        'title' => 'Picture',
-        'text' => 'Pencarian gambar sesuai dengan yg kamu mau',
+        'title' => 'IndoXXI',
+        'text' => 'Cari Film Di IndoXXI',
         'defaultAction' =>
         array (
           'type' => 'uri',
@@ -442,8 +442,8 @@ if ($command == '/menu') {
           0 =>
           array (
             'type' => 'message',
-            'label' => 'Example',
-            'text' => '/gambar kucing',
+            'label' => 'Detail',
+            'text' => 'Ketik /film <nama film> tanpa tanda<>',
           ),
         ),
       ),
@@ -452,7 +452,7 @@ if ($command == '/menu') {
         'thumbnailImageUrl' => 'https://st3.depositphotos.com/3921439/12696/v/950/depositphotos_126961774-stock-illustration-the-tv-icon-television-and.jpg',
         'imageBackgroundColor' => '#00FFFF',
         'title' => 'Television',
-        'text' => 'Info jadwal TV sesuai dengan yang di cari',
+        'text' => 'Mencari Jadwal Acara Televisi Indonesia & Jakarta',
         'defaultAction' =>
         array (
           'type' => 'uri',
@@ -464,17 +464,17 @@ if ($command == '/menu') {
           0 =>
           array (
             'type' => 'message',
-            'label' => 'Example',
-            'text' => '/jadwaltv globaltv',
+            'label' => 'Detail',
+            'text' => 'Ketik /jadwaltv <nama station TV> tanpa tanda<>',
           ),
         ),
       ),
       7 =>
       array (
-        'thumbnailImageUrl' => 'https://i.ytimg.com/vi/3hz1e4d0f9I/maxresdefault.jpg',
+        'thumbnailImageUrl' => 'https://pbs.twimg.com/profile_images/948155209603170312/-6CCwlWt_400x400.jpg',
         'imageBackgroundColor' => '#00FFFF',
         'title' => 'Music',
-        'text' => 'Info music sesuai dengan yang di cari',
+        'text' => 'Mengunduh Musik Dari Joox (Dengan Lirik)',
         'defaultAction' =>
         array (
           'type' => 'uri',
@@ -486,8 +486,8 @@ if ($command == '/menu') {
           0 =>
           array (
             'type' => 'message',
-            'label' => 'Example',
-            'text' => '/musik amy diamond heartbeat',
+            'label' => 'Detail',
+            'text' => 'ketik /joox <judul musik> tanpa tanda<>',
           ),
         ),
       ),
@@ -496,7 +496,7 @@ if ($command == '/menu') {
         'thumbnailImageUrl' => 'https://4vector.com/i/free-vector-cartoon-weather-icon-05-vector_018885_cartoon_weather_icon_05_vector.jpg',
         'imageBackgroundColor' => '#00FFFF',
         'title' => 'Weather',
-        'text' => 'Info cuaca sesuai dgn yang di cari',
+        'text' => 'Mengetahui Prakiraan Cuaca Seluruh Dunia',
         'defaultAction' =>
         array (
           'type' => 'uri',
@@ -508,8 +508,8 @@ if ($command == '/menu') {
           0 =>
           array (
             'type' => 'message',
-            'label' => 'Example',
-            'text' => '/cuaca jakarta',
+            'label' => 'Detail',
+            'text' => 'Ketik /cuaca <nama kota> tanpa tanda<>',
           ),
         ),
       ),
