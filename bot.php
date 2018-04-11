@@ -552,7 +552,8 @@ if($message['type']=='text') {
                     'text' => 
 			$result['a'].
 $result['b'].
-$result['c']
+$result['c'].
+$result['d'].
                 )
             )
         );
