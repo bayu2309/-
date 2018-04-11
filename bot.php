@@ -303,6 +303,227 @@ if ($type == 'join') {
     );
 }
 //show menu, saat join dan command /menu
+if ($command == '/menu') {
+    $balas = array(
+        'replyToken' => $replyToken,
+        'messages' => array(
+          array (
+  'type' => 'template',
+  'altText' => 'Anda di sebut',
+  'template' =>
+  array (
+    'type' => 'carousel',
+    'columns' =>
+    array (
+      0 =>
+      array (
+        'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
+        'imageBackgroundColor' => '#00FFFF',
+        'title' => 'Soundcloud',
+        'text' => 'Mencari Dan Unduh Musik Di SoundCloud',
+        'defaultAction' =>
+        array (
+          'type' => 'uri',
+          'label' => 'View detail',
+          'uri' => 'http://example.com/page/123',
+        ),
+        'actions' =>
+        array (
+          0 =>
+          array (
+            'type' => 'message',
+            'label' => 'Detail',
+            'text' => 'Ketik /soundcloud ......',
+          ),
+        ),
+      ),
+      1 =>
+      array (
+        'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
+        'imageBackgroundColor' => '#00FFFF',
+        'title' => 'Instagram',
+        'text' => 'Menemukan Informasi Akun Instagram Berdasarkan Keyword',
+        'defaultAction' =>
+        array (
+          'type' => 'uri',
+          'label' => 'View detail',
+          'uri' => 'http://example.com/page/123',
+        ),
+        'actions' =>
+        array (
+          0 =>
+          array (
+            'type' => 'message',
+            'label' => 'Detail',
+            'text' => 'Ketik /instagram ......',
+          ),
+        ),
+      ),
+      2 =>
+      array (
+        'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
+        'imageBackgroundColor' => '#00FFFF',
+        'title' => 'Anime',
+        'text' => 'Mencari Informasi Anime Berdasarkan Keyword',
+        'defaultAction' =>
+        array (
+          'type' => 'uri',
+          'label' => 'View detail',
+          'uri' => 'http://example.com/page/123',
+        ),
+        'actions' =>
+        array (
+          0 =>
+          array (
+            'type' => 'message',
+            'label' => 'Detail',
+            'text' => 'ketik /anime ......',
+          ),
+        ),
+      ),
+      3 =>
+      array (
+        'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
+        'imageBackgroundColor' => '#00FFFF',
+        'title' => 'Praytime',
+        'text' => 'Mengetahui Jadwal Shalat Wilayah Indonesia Berdasarkan Tempat',
+        'defaultAction' =>
+        array (
+          'type' => 'uri',
+          'label' => 'View detail',
+          'uri' => 'http://example.com/page/123',
+        ),
+        'actions' =>
+        array (
+          0 =>
+          array (
+            'type' => 'message',
+            'label' => 'Detail',
+            'text' => 'Ketik /shalat ......',
+          ),
+        ),
+      ),
+      4 =>
+      array (
+        'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
+        'imageBackgroundColor' => '#00FFFF',
+        'title' => 'Fansign',
+        'text' => 'Membuat FS Anime Berdasarkan Keyword',
+        'defaultAction' =>
+        array (
+          'type' => 'uri',
+          'label' => 'View detail',
+          'uri' => 'http://example.com/page/123',
+        ),
+        'actions' =>
+        array (
+          0 =>
+          array (
+            'type' => 'message',
+            'label' => 'Detail',
+            'text' => 'Ketik /fansign ......',
+          ),
+        ),
+      ),
+      5 =>
+      array (
+        'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
+        'imageBackgroundColor' => '#00FFFF',
+        'title' => 'IndoXXI',
+        'text' => 'Cari Film Di IndoXXI',
+        'defaultAction' =>
+        array (
+          'type' => 'uri',
+          'label' => 'View detail',
+          'uri' => 'http://example.com/page/123',
+        ),
+        'actions' =>
+        array (
+          0 =>
+          array (
+            'type' => 'message',
+            'label' => 'Detail',
+            'text' => 'Ketik /film ......',
+          ),
+        ),
+      ),
+      6 =>
+      array (
+        'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
+        'imageBackgroundColor' => '#00FFFF',
+        'title' => 'Television',
+        'text' => 'Mencari Jadwal Acara Televisi Indonesia',
+        'defaultAction' =>
+        array (
+          'type' => 'uri',
+          'label' => 'View detail',
+          'uri' => 'http://example.com/page/123',
+        ),
+        'actions' =>
+        array (
+          0 =>
+          array (
+            'type' => 'message',
+            'label' => 'Detail',
+            'text' => 'Ketik /jadwaltv ......',
+          ),
+        ),
+      ),
+      7 =>
+      array (
+        'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
+        'imageBackgroundColor' => '#00FFFF',
+        'title' => 'Music',
+        'text' => 'Mengunduh Musik Dari Joox Dengan Lirik',
+        'defaultAction' =>
+        array (
+          'type' => 'uri',
+          'label' => 'View detail',
+          'uri' => 'http://example.com/page/123',
+        ),
+        'actions' =>
+        array (
+          0 =>
+          array (
+            'type' => 'message',
+            'label' => 'Detail',
+            'text' => 'ketik /joox ......',
+          ),
+        ),
+      ),
+      8 =>
+      array (
+        'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
+        'imageBackgroundColor' => '#00FFFF',
+        'title' => 'Weather',
+        'text' => 'Mengetahui Prakiraan Cuaca Seluruh Dunia',
+        'defaultAction' =>
+        array (
+          'type' => 'uri',
+          'label' => 'View detail',
+          'uri' => 'http://example.com/page/222',
+        ),
+        'actions' =>
+        array (
+          0 =>
+          array (
+            'type' => 'message',
+            'label' => 'Detail',
+            'text' => 'Ketik /cuaca ......',
+          ),
+        ),
+      ),
+    ),
+    'imageAspectRatio' => 'rectangle',
+    'imageSize' => 'cover',
+  ),
+)
+
+
+
+)
+);
+}
 
 //pesan khusus
 
@@ -350,21 +571,6 @@ URL: '. $result['link']
         );
     }
 
-}
-if($message['type']=='text') {
-	if ($command == '/bye') {
-		$push = array(
-			'to' => $groupId,
-			'messages' => array(
-				array(
-					'type' => 'text',
-					'text' => 'kaka jahat :('
-					)
-				)
-			);
-		$client->pushMessage($push);
-		$psn = $client->leaveGroup($groupId);
-	}
 }
 if($message['type']=='text') {
 	    if ($command == '/instagram') {
