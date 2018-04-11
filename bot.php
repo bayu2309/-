@@ -41,14 +41,14 @@ function instainfo($keyword) {
     $response = Unirest\Request::get("$uri");
 
     $json = json_decode($response->raw_body, true);
-    $result['atas']      .= $json["graphql"]["user"]["profile_pic_url_hd"].'\n';
-    $result['nama']      .= $json['graphql']['user']['full_name'].'\n';
-    $result['username']  .= $json['graphql']['user']['username'].'\n';
-    $result['followers'] .= $json["graphql"]["user"]["edge_followed_by"]["count"].'\n';
-    $result['following'] .= $json["graphql"]["user"]["edge_follow"]["count"].'\n';
-    $result['private']   .= $json["graphql"]["user"]["is_private"].'\n';
-    $result['totalpost'] .= $json["graphql"]["user"]["edge_owner_to_timeline_media"]["count"].'\n';
-    $result['bio']       .= '\n'.$json['graphql']['user']['biography'].'\n';
+    $result['atas']      .= $json["graphql"]["user"]["profile_pic_url_hd"];
+    $result['nama']      .= $json['graphql']['user']['full_name'];
+    $result['username']  .= $json['graphql']['user']['username'];
+    $result['followers'] .= $json["graphql"]["user"]["edge_followed_by"]["count"];
+    $result['following'] .= $json["graphql"]["user"]["edge_follow"]["count"];
+    $result['private']   .= $json["graphql"]["user"]["is_private"];
+    $result['totalpost'] .= $json["graphql"]["user"]["edge_owner_to_timeline_media"]["count"];
+    $result['bio']       .= $json['graphql']['user']['biography'];
     $result['bawah']     .= 'https://www.instagram.com/'. $keyword;
     
     return $result;
@@ -569,13 +569,14 @@ if($message['type']=='text') {
                 array(
                     'type' => 'text',
                     'text' =>  '「Instagram Result」'.
-			       'Name:'.$result['name'].
-			       'Username:'.$result['username'].
-			       'Follower:'.$result['followers'].
-			       'Following:'.$result['following'].
-			       'Private:'.$result['private'].
-			       'Total post:'.$result['totalpost'].
-			       'Bio:'.$result['bio'].
+			       'Name:'.$result['name'].'
+			       Username:'.$result['username'].'
+			       Follower:'.$result['followers'].'
+			       Following:'.$result['following'].'
+			       Private:'.$result['private'].'
+			       Total post:'.$result['totalpost'].'
+			       Bio:
+			       '.$result['bio'].
 			       $result['bawah']
                 )
             )
