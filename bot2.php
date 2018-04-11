@@ -41,8 +41,8 @@ function instainfo($keyword) {
     $response = Unirest\Request::get("$uri");
 
     $json = json_decode($response->raw_body, true);
-    $result['a'] = "\nUsername: ";
-    $result['b'] = $json['info']['username'];
+    $result = "\nUsername: ";
+    $result = $json['info']['username'];
     return $result;
 }
 function textspech($keyword) {
@@ -604,8 +604,7 @@ if($message['type']=='text') {
             'messages' => array(
                 array(
                     'type' => 'text',
-                    'text' =>  '「Instagram Result」'.
-			       'Username: '.$result['b']
+                    'text' =>  $result
 			      
                 )
             )
