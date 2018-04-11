@@ -55,13 +55,11 @@ function textspech($keyword) {
     return $result;
 }
 function gambarnya($keyword) {
-    $uri = "https://farzain.xyz/api/gambarg.php?apikey=9YzAAXsDGYHWFRf6gWzdG5EQECW7oo&id=" . $keyword;
-
+    $uri = 'https://www.google.co.id/search?q=' . $keyword . '&safe=off&source=lnms&tbm=isch';
     $response = Unirest\Request::get("$uri");
-
-    $json = json_decode($response->raw_body, true);
-          $result .= $json['url'];
-    return $result;
+    $hasil = str_replace(">", "&gt;", $response->raw_body);
+    $arrays = explode("<", $hasil);
+    return explode('"', $arrays[291])[3];
 }
 function musiknya($keyword) {
     $uri = "https://farzain.xyz/api/premium/joox.php?apikey=ag73837ung43838383jdhdhd&id=" . $keyword;
