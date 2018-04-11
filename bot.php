@@ -63,13 +63,17 @@ function textspech($keyword) {
     return $result;
 }
 function cloud($keyword) {
-    $uri = "http://rahandiapi.herokuapp.com/imageapi?key=betakey&q=" . $keyword;
+    $uri = "https://farzain.xyz/api/premium/soundcloud.php?apikey=ag73837ung43838383jdhdhd&id=" . $keyword;
     $response = Unirest\Request::get("$uri");
     $json = json_decode($response->raw_body, true);
-    $list_jwb .= $json['result'];
-    $jaws = array_rand($list_jwb);
-    $jawab = $list_jwb[$jaws];
-    return $jawab;
+    
+    $result['id']    .= $json['result'][0]['id'];
+    $result['judul'] .= $json['result'][0]['title'];
+    $result['link']  .= $json['result'][0]['url'];
+    $result['audio'] .= $json['result'][0]['url_download'];
+    $result['icon']  .= $json['result'][0]['img'];
+	
+    return $result;
 }
 function musiknya($keyword) {
     $uri = "https://farzain.xyz/api/premium/joox.php?apikey=ag73837ung43838383jdhdhd&id=" . $keyword;
@@ -541,19 +545,27 @@ if($message['type']=='text') {
     }
 }
 if($message['type']=='text') {
-	    if ($command == '/waktu') {
+	    if ($command == '/soundcloud') {
 
-        $result = waktu($options);
+        $result = cloud($options);
         $balas = array(
             'replyToken' => $replyToken,
             'messages' => array(
+		    array(
+                  'type' => 'image',
+                  'originalContentUrl' => $result['icon'],
+                  'previewImageUrl' => $result['icon']
+                ),
                 array(
                     'type' => 'text',
-                    'text' => 
-			$result['a'].
-$result['b'].
-$result['c'].
-$result['d']
+                    'text' => 'ID: '.$result['id'].'
+TITLE: '. $result['judul'].'
+URL: '. $result['link']
+                ),
+		    array(
+                  'type' => 'audio',
+                  'originalContentUrl' => $result['audio'],/*link https only and format m4a*/
+                  'duration' => 60000
                 )
             )
         );
