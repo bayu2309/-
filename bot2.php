@@ -54,7 +54,7 @@ function textspech($keyword) {
     $result .= $json['result'];
     return $result;
 }
-function gambarnya($keyword) {
+function anu($keyword) {
     $uri = "rahandiapi.herokuapp.com/imageapi?key=betakey&q=" . $keyword;
     $response = Unirest\Request::get("$uri");
     $json = json_decode($response->raw_body, true);
@@ -179,54 +179,7 @@ function waktu($keyword) {
     $result .= $json["time"]["date"];
     return $result;
 }
-function quotes($keyword) {
-    $uri = "http://quotes.rest/qod.json?category=" . $keyword;
-    $response = Unirest\Request::get("$uri");
-    $json = json_decode($response->raw_body, true);
-    $result = "Result : ";
-	$result .= $json['success']['total'];
-	$result .= "\n\n[Quotes]\n";
-	$result .= $json['contents']['quotes']['quote'];
-	$result .= "\n\n[Author]\n";
-	$result .= $json['contents']['quotes']['author'];
-    return $result;
-}
-function tren($keyword) {
-    $uri = "http://api.secold.com/translate/en/" . $keyword;
-    $response = Unirest\Request::get("$uri");
-    $json = json_decode($response->raw_body, true);
-    $result = "Type : English";
-    $result .= "\nTranslate : ";
-	$result .= $json['result'];
-    return $result;
-}
-function trid($keyword) {
-    $uri = "http://api.secold.com/translate/id/" . $keyword;
-    $response = Unirest\Request::get("$uri");
-    $json = json_decode($response->raw_body, true);
-    $result = "Type : Indonesian";
-    $result .= "\nTranslate : ";
-	$result .= $json['result'];
-    return $result;
-}
-function trja($keyword) {
-    $uri = "http://api.secold.com/translate/ja/" . $keyword;
-    $response = Unirest\Request::get("$uri");
-    $json = json_decode($response->raw_body, true);
-    $result = "Type : Japanese";
-    $result .= "\nTranslate : ";
-	$result .= $json['result'];
-    return $result;
-}
-function trar($keyword) {
-    $uri = "http://api.secold.com/translate/ar/" . $keyword;
-    $response = Unirest\Request::get("$uri");
-    $json = json_decode($response->raw_body, true);
-    $result = "Type : Arabic";
-    $result .= "\nTranslate : ";
-	$result .= $json['result'];
-    return $result;
-}
+
 function manga($keyword) {
     $fullurl = 'https://myanimelist.net/api/manga/search.xml?q=' . $keyword;
     $username = 'jamal3213';
@@ -699,23 +652,7 @@ if($message['type']=='text') {
     }
 
 }
-if($message['type']=='text') {
-	    if ($command == '/gambar') {
 
-        $result = gambarnya($options);
-        $balas = array(
-            'replyToken' => $replyToken,
-            'messages' => array(
-                array(
-                  'type' => 'image',
-                  'originalContentUrl' => $result,
-                  'previewImageUrl' => $result
-                )
-            )
-        );
-    }
-
-}
 if($message['type']=='text') {
 	    if ($command == '/musik') {
 
@@ -726,6 +663,23 @@ if($message['type']=='text') {
                 array(
                     'type' => 'text',
                     'text' => $result
+                )
+            )
+        );
+    }
+
+}
+if($message['type']=='text') {
+	    if ($command == '/gambar') {
+
+        $result = anu($options);
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                  'type' => 'image',
+                  'originalContentUrl' => $result,
+                  'previewImageUrl' => $result
                 )
             )
         );
