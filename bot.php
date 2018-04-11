@@ -569,8 +569,8 @@ if($message['type']=='text') {
                 array(
                     'type' => 'text',
                     'text' =>  
-			      '「Instagram Result」'.
-' '.'
+			      '「Instagram Result」'.'
+'.'
 Name: '.$result['nama'].'
 Username: '.$result['username'].'
 Follower: '.$result['followers'].'
