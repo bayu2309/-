@@ -717,8 +717,8 @@ if($message['type']=='text') {
             'messages' => array(
                 array(
                   'type' => 'image',
-                  'originalContentUrl' => $result['link'],
-                  'previewImageUrl' => $result['link']
+                  'originalContentUrl' => 'https://pbs.twimg.com/profile_images/670173721705844736/LCxYY-60_400x400.jpg',
+                  'previewImageUrl' => 'https://pbs.twimg.com/profile_images/670173721705844736/LCxYY-60_400x400.jpg'
                 )
             )
         );
