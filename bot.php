@@ -310,7 +310,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'ketik /soundcloud ......',
+            'text' => 'ketik /soundcloud ',
           ),
         ),
       ),
@@ -332,7 +332,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'ketik /instagram ......',
+            'text' => 'ketik /instagram ',
           ),
         ),
       ),
@@ -354,7 +354,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'ketik /anime ......',
+            'text' => 'ketik /anime ',
           ),
         ),
       ),
@@ -376,7 +376,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'ketik /shalat ......',
+            'text' => 'ketik /shalat',
           ),
         ),
       ),
@@ -398,7 +398,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'ketik /fansign ......',
+            'text' => 'ketik /fansign ',
           ),
         ),
       ),
@@ -420,7 +420,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'ketik /film ......',
+            'text' => 'ketik /film ',
           ),
         ),
       ),
@@ -486,7 +486,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'ketik /cuaca ......',
+            'text' => 'ketik /cuaca ',
           ),
         ),
       ),
