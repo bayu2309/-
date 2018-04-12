@@ -480,7 +480,7 @@ if ($command == '/menu') {
       ),
       7 =>
       array (
-        'thumbnailImageUrl' => 'https://www.yokekungworld.com/wp-content/uploads/2016/02/joox.jpg',
+        'thumbnailImageUrl' => 'https://www.zetizen.com/uploads/post/2018/03/20/JOOX_Indie_Music.png',
         'imageBackgroundColor' => '#00FFFF',
         'title' => 'Music',
         'text' => 'Info music sesuai dengan yang di cari',
