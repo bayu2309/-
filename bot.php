@@ -157,21 +157,7 @@ function cuaca($keyword) {
 	  $result .= $json['weather']['0']['description'];
     return $result;
 }
-function waktu($keyword) {
-    $uri = "https://farzain.xyz/api/jam.php?apikey=9YzAAXsDGYHWFRf6gWzdG5EQECW7oo&id=" . $keyword;
-    $response = Unirest\Request::get("$uri");
-    $json = json_decode($response->raw_body, true);
-    $result['a'] .= "「Time Result」\n";
-    $result['b'] .= "\nNama kota: ";
-    $result['c'] .= $json['location']['address'];
-    $result['d'] .= "\nZona waktu: ";
-    $result['e'] .= $json['time']['timezone'];
-    $result['f'] .= "\nWaktu: \n";
-    $result['g'] .= $json['time']['time'];
-    $result['h'] .= "\n";
-    $result['i'] .= $json['time']['date'];
-    return $result;
-}
+
 function say($keyword) { 
     $uri = "https://script.google.com/macros/exec?service=AKfycbw7gKzP-WYV2F5mc9RaR7yE3Ve1yN91Tjs91hp_jHSE02dSv9w&nama=" . $keyword . "&tanggal=10-05-2003"; 
  
