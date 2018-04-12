@@ -609,7 +609,7 @@ if($message['type']=='text') {
   'template' => 
   array (
     'type' => 'buttons',
-    'thumbnailImageUrl' => 'https://example.com/bot/images/image.jpg',
+    'thumbnailImageUrl' => $result['poto'],
     'imageAspectRatio' => 'rectangle',
     'imageSize' => 'cover',
     'imageBackgroundColor' => '#FFFFFF',
