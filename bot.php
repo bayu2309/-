@@ -209,12 +209,7 @@ function manga($keyword) {
     $parsed['synopsis'] = str_replace("<br />", "\n", html_entity_decode((string) $xml->entry[0]->synopsis, ENT_QUOTES | ENT_XHTML, 'UTF-8'));
     return $parsed;
 }
-function manga_syn($title) {
-    $parsed = manga($title);
-    $result = "Judul : " . $parsed['title'];
-    $result .= "\n\nSynopsis :\n" . $parsed['synopsis'];
-    return $result;
-}
+
 function anime($keyword) {
     $fullurl = 'https://myanimelist.net/api/anime/search.xml?q=' . $keyword;
     $username = 'jamal3213';
@@ -240,12 +235,7 @@ function anime($keyword) {
     $parsed['synopsis'] = str_replace("<br />", "\n", html_entity_decode((string) $xml->entry[0]->synopsis, ENT_QUOTES | ENT_XHTML, 'UTF-8'));
     return $parsed;
 }
-function anime_syn($title) {
-    $parsed = anime($title);
-    $result = "Judul : " . $parsed['title'];
-    $result .= "\n\nSynopsis :\n" . $parsed['synopsis'];
-    return $result;
-}
+
 function qibla($keyword) { 
     $uri = "https://time.siswadi.com/qibla/" . $keyword; 
  
