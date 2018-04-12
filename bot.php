@@ -480,7 +480,7 @@ if ($command == '/menu') {
       ),
       7 =>
       array (
-        'thumbnailImageUrl' => 'https://www.zetizen.com/uploads/post/2018/03/20/JOOX_Indie_Music.png',
+        'thumbnailImageUrl' => 'https://www.blognone.com/sites/default/files/externals/46584b453aee2e9f40eea8f75314c8a1.jpg',
         'imageBackgroundColor' => '#00FFFF',
         'title' => 'Music',
         'text' => 'Info music sesuai dengan yang di cari',
