@@ -504,8 +504,8 @@ if ($command == '/menu') {
       array (
         'thumbnailImageUrl' => 'https://4vector.com/i/free-vector-cartoon-weather-icon-05-vector_018885_cartoon_weather_icon_05_vector.jpg',
         'imageBackgroundColor' => '#00FFFF',
-        'title' => 'Weather',
-        'text' => 'Info cuaca sesuai dgn yang di cari',
+        'title' => 'WEATHER STATUS',
+        'text' => 'Mengetahui Prakiraan Cuaca Seluruh Dunia',
         'defaultAction' =>
         array (
           'type' => 'uri',
@@ -517,8 +517,8 @@ if ($command == '/menu') {
           0 =>
           array (
             'type' => 'message',
-            'label' => 'Example',
-            'text' => '/cuaca jakarta',
+            'label' => 'Show me',
+            'text' => 'Ketik /cuaca <nama kota>',
           ),
         ),
       ),
