@@ -340,8 +340,8 @@ if ($command == '/menu') {
       array (
         'thumbnailImageUrl' => 'https://unnecessaryexclamationmark.files.wordpress.com/2016/05/myanimelist-logo.jpg',
         'imageBackgroundColor' => '#00FFFF',
-        'title' => 'Anime',
-        'text' => 'Info anime yang ingin kamu cari',
+        'title' => 'Anime Search',
+        'text' => 'Mencari Informasi Anime Berdasarkan Keyword',
         'defaultAction' =>
         array (
           'type' => 'uri',
@@ -353,8 +353,8 @@ if ($command == '/menu') {
           0 =>
           array (
             'type' => 'message',
-            'label' => 'Example',
-            'text' => '/anime onepiece',
+            'label' => 'Show me',
+            'text' => 'Ketik /anime <judul anime>',
           ),
         ),
       ),
