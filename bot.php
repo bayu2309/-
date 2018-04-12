@@ -603,36 +603,47 @@ if($message['type']=='text') {
         $balas = array(
             'replyToken' => $replyToken,
             'messages' => array(
-                array(
-                    'type' => 'template',
-                    'altText' => 'This is a buttons template',
-                    'template' => array(
-                        'type' => 'buttons',
-                        'title' => $result['nama'].' ('.$result['username'].')',
-                        'thumbnailImageUrl' => $result['poto'],
-                        'text' => $result['bio'],
-                        'actions' => array(
-			    0 =>
-			    array(
-                                'type' => 'uri',
-                                'label' => 'Followers: '.$result['followers'],
-                                'uri' => $result['bawah']
-                            ),
-			    1 =>
-			    array(
-                                'type' => 'uri',
-                                'label' => 'Following: '.$result['following'],
-                                'uri' => $result['bawah']
-                            ),
-			    2 =>
-                            array(
-                                'type' => 'uri',
-                                'label' => 'Total post: '.$result['totalpost'],
-                                'uri' => $result['bawah']
-                            )
-                        )
-                    )
-                )
+                array (
+  'type' => 'template',
+  'altText' => 'This is a buttons template',
+  'template' => 
+  array (
+    'type' => 'buttons',
+    'thumbnailImageUrl' => 'https://example.com/bot/images/image.jpg',
+    'imageAspectRatio' => 'rectangle',
+    'imageSize' => 'cover',
+    'imageBackgroundColor' => '#FFFFFF',
+    'title' => 'Menu',
+    'text' => 'Please select',
+    'defaultAction' => 
+    array (
+      'type' => 'uri',
+      'label' => 'View detail',
+      'uri' => 'http://example.com/page/123',
+    ),
+    'actions' => 
+    array (
+      0 => 
+      array (
+        'type' => 'postback',
+        'label' => 'Buy',
+        'data' => 'action=buy&itemid=123',
+      ),
+      1 => 
+      array (
+        'type' => 'postback',
+        'label' => 'Add to cart',
+        'data' => 'action=add&itemid=123',
+      ),
+      2 => 
+      array (
+        'type' => 'uri',
+        'label' => 'View detail',
+        'uri' => 'http://example.com/page/123',
+      ),
+    ),
+  ),
+)
             )
         );
     }
