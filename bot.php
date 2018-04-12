@@ -27,17 +27,16 @@ if (count($pesan_datang) > 2) {
 }
 #-------------------------[Function]-------------------------#
 function instainfo($keyword) {
-    $uri = "https://www.instagram.com/" . $keyword . "/?__a=1";
+    $uri = "https://farzain.xyz/api/ig_profile.php?apikey=9YzAAXsDGYHWFRf6gWzdG5EQECW7oo&id=";
     $response = Unirest\Request::get("$uri");
     $json = json_decode($response->raw_body, true);
-    $result['atas']      .= $json["graphql"]["user"]["profile_pic_url_hd"];
-    $result['nama']      .= $json['graphql']['user']['full_name'];
-    $result['username']  .= $json['graphql']['user']['username'];
-    $result['followers'] .= $json["graphql"]["user"]["edge_followed_by"]["count"];
-    $result['following'] .= $json["graphql"]["user"]["edge_follow"]["count"];
-    $result['private']   .= $json["graphql"]["user"]["is_private"];
-    $result['totalpost'] .= $json["graphql"]["user"]["edge_owner_to_timeline_media"]["count"];
-    $result['bio']       .= $json['graphql']['user']['biography'];
+    $result['poto']      .= $json['info']['profile_pict'];
+    $result['nama']      .= $json['info']['full_name'];
+    $result['username']  .= $json['info']['username'];
+    $result['followers'] .= $json['count']['followers'];
+    $result['following'] .= $json['count']["following"];
+    $result['totalpost'] .= $json['count']['post'];
+    $result['bio']       .= $json['info']['bio'];
     $result['bawah']     .= 'https://www.instagram.com/'. $keyword;
     
     return $result;
@@ -604,26 +603,32 @@ if($message['type']=='text') {
         $balas = array(
             'replyToken' => $replyToken,
             'messages' => array(
-		array(
-                  'type' => 'image',
-                  'originalContentUrl' => $result['atas'],
-                  'previewImageUrl' => $result['atas']
-                ),
                 array(
-                    'type' => 'text',
-                    'text' =>  
-			      '「Instagram Result」'.'
-'.'
-Name: '.$result['nama'].'
-Username: '.$result['username'].'
-Follower: '.$result['followers'].'
-Following: '.$result['following'].'
-Private: '.$result['private'].'
-Total post: '.$result['totalpost'].'
-Bio:
-'.$result['bio'].'
-'.
-$result['bawah']
+                    'type' => 'template',
+                    'altText' => 'This is a buttons template',
+                    'template' => array(
+                        'type' => 'buttons',
+                        'title' => $result['nama'].' ('.$result['username'].')',
+                        'thumbnailImageUrl' => $result['poto'],
+                        'text' => $result['bio'],
+                        'actions' => array(
+			    array(
+                                'type' => 'uri',
+                                'label' => 'Followers: '.$result['followers'],
+                                'uri' => $result['bawah']
+                            ),
+			    array(
+                                'type' => 'uri',
+                                'label' => 'Following: '.$result['following'],
+                                'uri' => $result['bawah']
+                            ),
+                            array(
+                                'type' => 'uri',
+                                'label' => 'Total post: '.$result['totalpost'],
+                                'uri' => $result['bawah']
+                            )
+                        )
+                    )
                 )
             )
         );
