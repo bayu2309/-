@@ -460,8 +460,8 @@ if ($command == '/menu') {
       array (
         'thumbnailImageUrl' => 'https://st3.depositphotos.com/3921439/12696/v/950/depositphotos_126961774-stock-illustration-the-tv-icon-television-and.jpg',
         'imageBackgroundColor' => '#00FFFF',
-        'title' => 'Television',
-        'text' => 'Info jadwal TV sesuai dengan yang di cari',
+        'title' => 'TELEVISION',
+        'text' => 'Mencari Jadwal Acara Televisi Indonesia & Jakarta',
         'defaultAction' =>
         array (
           'type' => 'uri',
@@ -473,8 +473,8 @@ if ($command == '/menu') {
           0 =>
           array (
             'type' => 'message',
-            'label' => 'Example',
-            'text' => '/jadwaltv globaltv',
+            'label' => 'Show me',
+            'text' => 'Ketik /jadwaltv <channel tv>',
           ),
         ),
       ),
