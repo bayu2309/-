@@ -172,6 +172,32 @@ function waktu($keyword) {
     $result['i'] .= $json['time']['date'];
     return $result;
 }
+function say($keyword) { 
+    $uri = "https://script.google.com/macros/exec?service=AKfycbw7gKzP-WYV2F5mc9RaR7yE3Ve1yN91Tjs91hp_jHSE02dSv9w&nama=" . $keyword . "&tanggal=10-05-2003"; 
+ 
+    $response = Unirest\Request::get("$uri"); 
+ 
+    $json = json_decode($response->raw_body, true); 
+ $result .= $json['data']['nama']; 
+    return $result; 
+}
+function waktu($keyword) {
+    $uri = "https://time.siswadi.com/pray/" . $keyword;
+    $response = Unirest\Request::get("$uri");
+    $json = json_decode($response->raw_body, true);
+    $result = "====[Time]====";
+    $result .= "\nLokasi : ";
+	$result .= $json['location']['address'];
+	$result .= "\nJam : ";
+	$result .= $json['time']['time'];
+	$result .= "\nSunrise : ";
+	$result .= $json['debug']['sunrise'];
+	$result .= "\nSunset : ";
+	$result .= $json['debug']['sunset'];
+	$result .= "\n\nPencarian : Google";
+	$result .= "\n====[Time]====";
+    return $result;
+}
 function manga($keyword) {
     $fullurl = 'https://myanimelist.net/api/manga/search.xml?q=' . $keyword;
     $username = 'jamal3213';
@@ -197,6 +223,12 @@ function manga($keyword) {
     $parsed['synopsis'] = str_replace("<br />", "\n", html_entity_decode((string) $xml->entry[0]->synopsis, ENT_QUOTES | ENT_XHTML, 'UTF-8'));
     return $parsed;
 }
+function manga_syn($title) {
+    $parsed = manga($title);
+    $result = "Judul : " . $parsed['title'];
+    $result .= "\n\nSynopsis :\n" . $parsed['synopsis'];
+    return $result;
+}
 function anime($keyword) {
     $fullurl = 'https://myanimelist.net/api/anime/search.xml?q=' . $keyword;
     $username = 'jamal3213';
@@ -221,6 +253,21 @@ function anime($keyword) {
     $parsed['desc'] .= $xml->entry[0]->type;
     $parsed['synopsis'] = str_replace("<br />", "\n", html_entity_decode((string) $xml->entry[0]->synopsis, ENT_QUOTES | ENT_XHTML, 'UTF-8'));
     return $parsed;
+}
+function anime_syn($title) {
+    $parsed = anime($title);
+    $result = "Judul : " . $parsed['title'];
+    $result .= "\n\nSynopsis :\n" . $parsed['synopsis'];
+    return $result;
+}
+function qibla($keyword) { 
+    $uri = "https://time.siswadi.com/qibla/" . $keyword; 
+ 
+    $response = Unirest\Request::get("$uri"); 
+ 
+    $json = json_decode($response->raw_body, true); 
+ $result .= $json['data']['image'];
+    return $result; 
 }
 function lokasi($keyword) { 
     $uri = "https://time.siswadi.com/pray/" . $keyword; 
@@ -354,7 +401,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Show me',
-            'text' => 'Ketik /anime <judul anime>',
+            'text' => 'Ketik /anime <judul anime>   Ketik /manga <judul anime>',
           ),
         ),
       ),
@@ -498,9 +545,9 @@ if ($command == '/menu') {
 )
 );
 }
-//pesan khusus
+//fitur googlemap
 if($message['type']=='text') {
-	    if ($command == '/lokasi' || $command == '/Lokasi') {
+	    if ($command == '/location' || $command == '/Location') {
         $result = lokasi($options);
         $balas = array(
             'replyToken' => $replyToken,
@@ -516,8 +563,9 @@ if($message['type']=='text') {
         );
     }
 }
+//fitur sound cloud
 if($message['type']=='text') {
-	    if ($command == '/soundcloud') {
+	    if ($command == '/soundcloud' || $command == '/Soundcloud') {
         $result = cloud($options);
         $balas = array(
             'replyToken' => $replyToken,
@@ -535,30 +583,16 @@ URL: '. $result['link']
                 ),
 		    array(
                   'type' => 'audio',
-                  'originalContentUrl' => $result['audio'],/*link https only and format m4a*/
+                  'originalContentUrl' => $result['audio'],
                   'duration' => 60000
                 )
             )
         );
     }
 }
+// fitur instagram
 if($message['type']=='text') {
-	if ($command == '/bye') {
-		$push = array(
-			'to' => $groupId,
-			'messages' => array(
-				array(
-					'type' => 'text',
-					'text' => 'kaka jahat :('
-					)
-				)
-			);
-		$client->pushMessage($push);
-		$psn = $client->leaveGroup($groupId);
-	}
-}
-if($message['type']=='text') {
-	    if ($command == '/instagram') {
+	    if ($command == '/instagram' || $command == '/Instagram') {
         $result = instainfo($options);
         $balas = array(
             'replyToken' => $replyToken,
@@ -589,7 +623,7 @@ $result['bawah']
     }
 }
 if($message['type']=='text') {
-	    if ($command == '/anime') {
+	    if ($command == '/anime' || $command == '/Anime') {
         $result = anime($options);
         $altText = "Title : " . $result['title'];
         $altText .= "\n\n" . $result['desc'];
@@ -661,6 +695,20 @@ if($message['type']=='text') {
     }
 }
 if($message['type']=='text') {
+	    if ($command == '/time') {
+        $result = waktu($options);
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                    'type' => 'text',
+                    'text' => $result
+                )
+            )
+        );
+    }
+}
+if($message['type']=='text') {
 	    if ($command == '/gtts') {
         $result = textspech($options);
         $balas = array(
@@ -670,6 +718,35 @@ if($message['type']=='text') {
                   'type' => 'audio',
                   'originalContentUrl' => $result,/*link https only and format m4a*/
                   'duration' => 60000
+                )
+            )
+        );
+    }
+}
+if($message['type']=='text') {
+	    if ($command == '/say') {
+        $result = say($options);
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                    'type' => 'text',
+                    'text' => $result
+                )
+            )
+        );
+    }
+}
+if($message['type']=='text') {
+	    if ($command == '/qiblat') {
+        $hasil = qibla($options);
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                    'type' => 'image',
+                    'originalContentUrl' => $hasil,
+                    'previewImageUrl' => $hasil
                 )
             )
         );
