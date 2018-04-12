@@ -395,7 +395,7 @@ if ($command == '/menu') {
         'thumbnailImageUrl' => 'https://is3-ssl.mzstatic.com/image/thumb/Purple62/v4/cc/68/6c/cc686c29-ffd2-5115-2b97-c4821b548fe3/AppIcon-1x_U007emarketing-85-220-6.png/246x0w.jpg',
         'imageBackgroundColor' => '#00FFFF',
         'title' => 'PRAYTIME',
-        'text' => 'Mengetahui Jadwal Shalat Wilayah Indonesia Berdasarkan Tempat',
+        'text' => 'Mengetahui Jadwal Shalat Wilayah Indonesia',
         'defaultAction' =>
         array (
           'type' => 'uri',
