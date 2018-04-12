@@ -480,10 +480,10 @@ if ($command == '/menu') {
       ),
       7 =>
       array (
-        'thumbnailImageUrl' => 'https://unnecessaryexclamationmark.files.wordpress.com/2016/05/myanimelist-logo.jpg',
+        'thumbnailImageUrl' => 'https://www.blognone.com/sites/default/files/externals/46584b453aee2e9f40eea8f75314c8a1.jpg',
         'imageBackgroundColor' => '#00FFFF',
-        'title' => 'Music',
-        'text' => 'Info music sesuai dengan yang di cari',
+        'title' => 'JOOX MUSIC',
+        'text' => 'Mengunduh Musik Dari Joox Dengan Lyric',
         'defaultAction' =>
         array (
           'type' => 'uri',
@@ -495,8 +495,8 @@ if ($command == '/menu') {
           0 =>
           array (
             'type' => 'message',
-            'label' => 'Example',
-            'text' => '/musik amy diamond heartbeat',
+            'label' => 'Show me',
+            'text' => 'Ketik /joox <judul musik>',
           ),
         ),
       ),
@@ -723,7 +723,7 @@ if($message['type']=='text') {
     }
 }
 if($message['type']=='text') {
-	    if ($command == '/musik') {
+	    if ($command == '/joox') {
         $result = musiknya($options);
         $balas = array(
             'replyToken' => $replyToken,
