@@ -223,8 +223,8 @@ function manga($keyword) {
     $parsed['synopsis'] = str_replace("<br />", "\n", html_entity_decode((string) $xml->entry[0]->synopsis, ENT_QUOTES | ENT_XHTML, 'UTF-8'));
     return $parsed;
 }
-function manga_syn($title) {
-    $parsed = manga($title);
+function manga_syn($keyword) {
+    $parsed = manga($keyword);
     $result = "Judul : " . $parsed['title'];
     $result .= "\n\nSynopsis :\n" . $parsed['synopsis'];
     return $result;
@@ -254,8 +254,8 @@ function anime($keyword) {
     $parsed['synopsis'] = str_replace("<br />", "\n", html_entity_decode((string) $xml->entry[0]->synopsis, ENT_QUOTES | ENT_XHTML, 'UTF-8'));
     return $parsed;
 }
-function anime_syn($title) {
-    $parsed = anime($title);
+function anime_syn($keyword) {
+    $parsed = anime($keyword);
     $result = "Judul : " . $parsed['title'];
     $result .= "\n\nSynopsis :\n" . $parsed['synopsis'];
     return $result;
@@ -401,7 +401,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Show me',
-            'text' => 'Ketik /anime <judul anime>   Ketik /manga <judul anime>',
+            'text' => 'Ketik /anime <judul anime>',
           ),
         ),
       ),
@@ -708,21 +708,7 @@ if($message['type']=='text') {
         );
     }
 }
-if($message['type']=='text') {
-	    if ($command == '/gtts') {
-        $result = textspech($options);
-        $balas = array(
-            'replyToken' => $replyToken,
-            'messages' => array(
-                array(
-                  'type' => 'audio',
-                  'originalContentUrl' => $result,/*link https only and format m4a*/
-                  'duration' => 60000
-                )
-            )
-        );
-    }
-}
+
 if($message['type']=='text') {
 	    if ($command == '/say') {
         $result = say($options);
