@@ -318,8 +318,8 @@ if ($command == '/menu') {
       array (
         'thumbnailImageUrl' => 'https://1c7qp243xy9g1qeffp1k1nvo-wpengine.netdna-ssl.com/wp-content/uploads/2016/03/instagram_logo.jpg',
         'imageBackgroundColor' => '#00FFFF',
-        'title' => 'Instagram',
-        'text' => 'Informasi akun instagram yang ingin kamu cari',
+        'title' => 'INSTAGRAM',
+        'text' => 'Menemukan Informasi Akun Instagram Berdasarkan Keyword',
         'defaultAction' =>
         array (
           'type' => 'uri',
@@ -331,8 +331,8 @@ if ($command == '/menu') {
           0 =>
           array (
             'type' => 'message',
-            'label' => 'Example',
-            'text' => '/instagram kamu',
+            'label' => 'Show me',
+            'text' => 'Ketik /instagram <username>',
           ),
         ),
       ),
@@ -340,7 +340,7 @@ if ($command == '/menu') {
       array (
         'thumbnailImageUrl' => 'https://unnecessaryexclamationmark.files.wordpress.com/2016/05/myanimelist-logo.jpg',
         'imageBackgroundColor' => '#00FFFF',
-        'title' => 'Anime Search',
+        'title' => 'ANIME SEARCH',
         'text' => 'Mencari Informasi Anime Berdasarkan Keyword',
         'defaultAction' =>
         array (
