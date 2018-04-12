@@ -26,6 +26,17 @@ if (count($pesan_datang) > 2) {
     }
 }
 #-------------------------[Function]-------------------------#
+function twitter($keyword) {
+    $uri = "https://farzain.xyz/api/twitter.php?apikey=9YzAAXsDGYHWFRf6gWzdG5EQECW7oo&id=";
+    $response = Unirest\Request::get("$uri");
+    $json = json_decode($response->raw_body, true);
+    $result = "「Twitter Result」\n\n"
+    $result .= "DisplayName: "
+    $result .= $json[0]['user']['name']
+    $result .= "UserName: "
+    $result .= $json[0]['user']['screen_name']
+    return $result;
+}
 function instainfo($keyword) {
     $uri = "https://farzain.xyz/api/ig_profile.php?apikey=9YzAAXsDGYHWFRf6gWzdG5EQECW7oo&id=";
     $response = Unirest\Request::get("$uri");
@@ -737,6 +748,20 @@ if($message['type']=='text') {
 if($message['type']=='text') {
 	    if ($command == '/say') {
         $result = say($options);
+        $balas = array(
+            'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                    'type' => 'text',
+                    'text' => $result
+                )
+            )
+        );
+    }
+}
+if($message['type']=='text') {
+	    if ($command == '/twitter') {
+        $result = twitter($options);
         $balas = array(
             'replyToken' => $replyToken,
             'messages' => array(
