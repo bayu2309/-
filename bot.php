@@ -324,6 +324,50 @@ if ($command == '/menu') {
     'type' => 'carousel',
     'columns' =>
     array (
+        0 =>
+      array (
+        'thumbnailImageUrl' => 'https://assets.hardwarezone.com/img/2017/02/YouTube_Main.jpg',
+        'imageBackgroundColor' => '#00FFFF',
+        'title' => 'YOUTUBE',
+        'text' => 'Menemukan 5 Video Pertama Berdasarkan Keyword',
+        'defaultAction' =>
+        array (
+          'type' => 'uri',
+          'label' => 'View detail',
+          'uri' => 'http://example.com/page/123',
+        ),
+        'actions' =>
+        array (
+          0 =>
+          array (
+            'type' => 'message',
+            'label' => 'Show me',
+            'text' => 'Ketik /youtube <judul vidio>',
+          ),
+        ),
+      ),
+       0 =>
+      array (
+        'thumbnailImageUrl' => 'https://blogs.library.duke.edu/rubenstein/files/2014/04/twitter-icon.png',
+        'imageBackgroundColor' => '#00FFFF',
+        'title' => 'TWITTER',
+        'text' => 'Mencari Informasi Akun Twitter',
+        'defaultAction' =>
+        array (
+          'type' => 'uri',
+          'label' => 'View detail',
+          'uri' => 'http://example.com/page/123',
+        ),
+        'actions' =>
+        array (
+          0 =>
+          array (
+            'type' => 'message',
+            'label' => 'Show me',
+            'text' => 'Ketik /twitter <username>',
+          ),
+        ),
+      ),
       0 =>
       array (
         'thumbnailImageUrl' => 'https://mirror.umd.edu/xbmc/addons/gotham/plugin.audio.soundcloud/icon.png',
