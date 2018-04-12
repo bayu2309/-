@@ -2,26 +2,19 @@
 /*
 just for fun
 */
-
 require_once('./line_class.php');
 require_once('./unirest-php-master/src/Unirest.php');
-
 $channelAccessToken = 'CkHhBC6Ambq9d3NOWNaZc2ymDU11L8tN/z94u6N0ySR8uKhVRExoPFxXa1IwezC2DKKBqaUPhaLLR4KGWtHsx5YZII5Agc75zchhL6pD7jVKwiqZaDZlQ2Gx2aVsYz12aKVnmwxOPR3p72AXU3ke1gdB04t89/1O/w1cDnyilFU='; //sesuaikan
 $channelSecret = 'efdfb084093043e5c501fd0622a52319';//sesuaikan
-
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
-
 $userId 	= $client->parseEvents()[0]['source']['userId'];
 $groupId 	= $client->parseEvents()[0]['source']['groupId'];
 $replyToken = $client->parseEvents()[0]['replyToken'];
 $timestamp	= $client->parseEvents()[0]['timestamp'];
 $type 		= $client->parseEvents()[0]['type'];
-
 $message 	= $client->parseEvents()[0]['message'];
 $messageid 	= $client->parseEvents()[0]['message']['id'];
-
 $profil = $client->profil($userId);
-
 $pesan_datang = explode(" ", $message['text']);
 $msg_type = $message['type'];
 $command = $pesan_datang[0];
@@ -32,14 +25,10 @@ if (count($pesan_datang) > 2) {
         $options .= $pesan_datang[$i];
     }
 }
-
 #-------------------------[Function]-------------------------#
-
 function instainfo($keyword) {
     $uri = "https://www.instagram.com/" . $keyword . "/?__a=1";
-
     $response = Unirest\Request::get("$uri");
-
     $json = json_decode($response->raw_body, true);
     $result['atas']      .= $json["graphql"]["user"]["profile_pic_url_hd"];
     $result['nama']      .= $json['graphql']['user']['full_name'];
@@ -55,9 +44,7 @@ function instainfo($keyword) {
 }
 function textspech($keyword) {
     $uri = "https://farzain.xyz/api/tts.php?apikey=9YzAAXsDGYHWFRf6gWzdG5EQECW7oo&id=" . $keyword;
-
     $response = Unirest\Request::get("$uri");
-
     $json = json_decode($response->raw_body, true);
     $result .= $json['result'];
     return $result;
@@ -77,9 +64,7 @@ function cloud($keyword) {
 }
 function musiknya($keyword) {
     $uri = "https://farzain.xyz/api/premium/joox.php?apikey=ag73837ung43838383jdhdhd&id=" . $keyword;
-
     $response = Unirest\Request::get("$uri");
-
     $json = json_decode($response->raw_body, true);
     $result = "「Music Result」\n";
     $result .= "\n\nPenyanyinya: ";
@@ -100,9 +85,7 @@ function musiknya($keyword) {
 }
 function fansign($keyword) {
     $uri = "https://farzain.xyz/api/premium/fs.php?apikey=ag73837ung43838383jdhdhd&id=" . $keyword;
-
     $response = Unirest\Request::get("$uri");
-
     $json = json_decode($response->raw_body, true);
 	  $result .= $json['url'];
     return $result;
@@ -135,9 +118,7 @@ function saveitoffline($keyword) {
 }
 function jadwaltv($keyword) {
     $uri = "https://farzain.xyz/api/premium/acaratv.php?apikey=ag73837ung43838383jdhdhd&id=" . $keyword;
-
     $response = Unirest\Request::get("$uri");
-
     $json = json_decode($response->raw_body, true);
     $result = "「TV Schedule」";
 	  $result .= $json['url'];
@@ -145,9 +126,7 @@ function jadwaltv($keyword) {
 }
 function shalat($keyword) {
     $uri = "https://time.siswadi.com/pray/" . $keyword;
-
     $response = Unirest\Request::get("$uri");
-
     $json = json_decode($response->raw_body, true);
     $result = "「Praytime Schedule」\n\n";
 	  $result .= $json['location']['address'];
@@ -193,7 +172,6 @@ function waktu($keyword) {
     $result['i'] .= $json['time']['date'];
     return $result;
 }
-
 function manga($keyword) {
     $fullurl = 'https://myanimelist.net/api/manga/search.xml?q=' . $keyword;
     $username = 'jamal3213';
@@ -283,7 +261,6 @@ function jawabs(){
     return($jawab);
 }
 #-------------------------[Function]-------------------------#
-
 # require_once('./src/function/search-1.php');
 # require_once('./src/function/download.php');
 # require_once('./src/function/random.php');
@@ -309,77 +286,207 @@ if ($command == '/menu') {
         'messages' => array(
           array (
   'type' => 'template',
-  'altText' => 'this is a carousel template',
-  'template' => 
+  'altText' => 'Anda di sebut',
+  'template' =>
   array (
     'type' => 'carousel',
-    'columns' => 
+    'columns' =>
     array (
-      0 => 
+      0 =>
       array (
-        'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
-        'imageBackgroundColor' => '#FFFFFF',
-        'title' => 'this is menu',
-        'text' => 'description',
-        'defaultAction' => 
+        'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
+        'imageBackgroundColor' => '#00FFFF',
+        'title' => 'Soundcloud',
+        'text' => 'Mencari Dan Unduh Musik Di SoundCloud',
+        'defaultAction' =>
         array (
           'type' => 'uri',
           'label' => 'View detail',
           'uri' => 'http://example.com/page/123',
         ),
-        'actions' => 
+        'actions' =>
         array (
-          0 => 
+          0 =>
           array (
-            'type' => 'postback',
-            'label' => 'Buy',
-            'data' => 'action=buy&itemid=111',
-          ),
-          1 => 
-          array (
-            'type' => 'postback',
-            'label' => 'Add to cart',
-            'data' => 'action=add&itemid=111',
-          ),
-          2 => 
-          array (
-            'type' => 'uri',
-            'label' => 'View detail',
-            'uri' => 'http://example.com/page/111',
+            'type' => 'message',
+            'label' => 'Detail',
+            'text' => 'Ketik /soundcloud ......',
           ),
         ),
       ),
-      1 => 
+      1 =>
       array (
         'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
-        'imageBackgroundColor' => '#000000',
-        'title' => 'this is menu',
-        'text' => 'description',
-        'defaultAction' => 
+        'imageBackgroundColor' => '#00FFFF',
+        'title' => 'Instagram',
+        'text' => 'Menemukan Informasi Akun Instagram Berdasarkan Keyword',
+        'defaultAction' =>
+        array (
+          'type' => 'uri',
+          'label' => 'View detail',
+          'uri' => 'http://example.com/page/123',
+        ),
+        'actions' =>
+        array (
+          0 =>
+          array (
+            'type' => 'message',
+            'label' => 'Detail',
+            'text' => 'Ketik /instagram ......',
+          ),
+        ),
+      ),
+      2 =>
+      array (
+        'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
+        'imageBackgroundColor' => '#00FFFF',
+        'title' => 'Anime',
+        'text' => 'Mencari Informasi Anime Berdasarkan Keyword',
+        'defaultAction' =>
+        array (
+          'type' => 'uri',
+          'label' => 'View detail',
+          'uri' => 'http://example.com/page/123',
+        ),
+        'actions' =>
+        array (
+          0 =>
+          array (
+            'type' => 'message',
+            'label' => 'Detail',
+            'text' => 'ketik /anime ......',
+          ),
+        ),
+      ),
+      3 =>
+      array (
+        'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
+        'imageBackgroundColor' => '#00FFFF',
+        'title' => 'Praytime',
+        'text' => 'Mengetahui Jadwal Shalat Wilayah Indonesia Berdasarkan Tempat',
+        'defaultAction' =>
+        array (
+          'type' => 'uri',
+          'label' => 'View detail',
+          'uri' => 'http://example.com/page/123',
+        ),
+        'actions' =>
+        array (
+          0 =>
+          array (
+            'type' => 'message',
+            'label' => 'Detail',
+            'text' => 'Ketik /shalat ......',
+          ),
+        ),
+      ),
+      4 =>
+      array (
+        'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
+        'imageBackgroundColor' => '#00FFFF',
+        'title' => 'Fansign',
+        'text' => 'Membuat FS Anime Berdasarkan Keyword',
+        'defaultAction' =>
+        array (
+          'type' => 'uri',
+          'label' => 'View detail',
+          'uri' => 'http://example.com/page/123',
+        ),
+        'actions' =>
+        array (
+          0 =>
+          array (
+            'type' => 'message',
+            'label' => 'Detail',
+            'text' => 'Ketik /fansign ......',
+          ),
+        ),
+      ),
+      5 =>
+      array (
+        'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
+        'imageBackgroundColor' => '#00FFFF',
+        'title' => 'IndoXXI',
+        'text' => 'Cari Film Di IndoXXI',
+        'defaultAction' =>
+        array (
+          'type' => 'uri',
+          'label' => 'View detail',
+          'uri' => 'http://example.com/page/123',
+        ),
+        'actions' =>
+        array (
+          0 =>
+          array (
+            'type' => 'message',
+            'label' => 'Detail',
+            'text' => 'Ketik /film ......',
+          ),
+        ),
+      ),
+      6 =>
+      array (
+        'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
+        'imageBackgroundColor' => '#00FFFF',
+        'title' => 'Television',
+        'text' => 'Mencari Jadwal Acara Televisi Indonesia',
+        'defaultAction' =>
+        array (
+          'type' => 'uri',
+          'label' => 'View detail',
+          'uri' => 'http://example.com/page/123',
+        ),
+        'actions' =>
+        array (
+          0 =>
+          array (
+            'type' => 'message',
+            'label' => 'Detail',
+            'text' => 'Ketik /jadwaltv ......',
+          ),
+        ),
+      ),
+      7 =>
+      array (
+        'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
+        'imageBackgroundColor' => '#00FFFF',
+        'title' => 'Music',
+        'text' => 'Mengunduh Musik Dari Joox Dengan Lirik',
+        'defaultAction' =>
+        array (
+          'type' => 'uri',
+          'label' => 'View detail',
+          'uri' => 'http://example.com/page/123',
+        ),
+        'actions' =>
+        array (
+          0 =>
+          array (
+            'type' => 'message',
+            'label' => 'Detail',
+            'text' => 'ketik /joox ......',
+          ),
+        ),
+      ),
+      8 =>
+      array (
+        'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
+        'imageBackgroundColor' => '#00FFFF',
+        'title' => 'Weather',
+        'text' => 'Mengetahui Prakiraan Cuaca Seluruh Dunia',
+        'defaultAction' =>
         array (
           'type' => 'uri',
           'label' => 'View detail',
           'uri' => 'http://example.com/page/222',
         ),
-        'actions' => 
+        'actions' =>
         array (
-          0 => 
+          0 =>
           array (
-            'type' => 'postback',
-            'label' => 'Buy',
-            'data' => 'action=buy&itemid=222',
-          ),
-          1 => 
-          array (
-            'type' => 'postback',
-            'label' => 'Add to cart',
-            'data' => 'action=add&itemid=222',
-          ),
-          2 => 
-          array (
-            'type' => 'uri',
-            'label' => 'View detail',
-            'uri' => 'http://example.com/page/222',
+            'type' => 'message',
+            'label' => 'Detail',
+            'text' => 'Ketik /cuaca ......',
           ),
         ),
       ),
@@ -391,8 +498,8 @@ if ($command == '/menu') {
 )
 );
 }
-//pesan khusus
 
+//pesan khusus
 if($message['type']=='text') {
 	    if ($command == '/lokasi' || $command == '/Lokasi') {
         $result = lokasi($options);
@@ -412,7 +519,6 @@ if($message['type']=='text') {
 }
 if($message['type']=='text') {
 	    if ($command == '/soundcloud') {
-
         $result = cloud($options);
         $balas = array(
             'replyToken' => $replyToken,
@@ -436,11 +542,9 @@ URL: '. $result['link']
             )
         );
     }
-
 }
 if($message['type']=='text') {
 	    if ($command == '/instagram') {
-
         $result = instainfo($options);
         $balas = array(
             'replyToken' => $replyToken,
@@ -469,7 +573,6 @@ $result['bawah']
             )
         );
     }
-
 }
 if($message['type']=='text') {
 	    if ($command == '/anime') {
@@ -545,7 +648,6 @@ if($message['type']=='text') {
 }
 if($message['type']=='text') {
 	    if ($command == '/gtts') {
-
         $result = textspech($options);
         $balas = array(
             'replyToken' => $replyToken,
@@ -558,12 +660,9 @@ if($message['type']=='text') {
             )
         );
     }
-
 }
-
 if($message['type']=='text') {
 	    if ($command == '/musik') {
-
         $result = musiknya($options);
         $balas = array(
             'replyToken' => $replyToken,
@@ -575,11 +674,9 @@ if($message['type']=='text') {
             )
         );
     }
-
 }
 if($message['type']=='text') {
 	    if ($command == '/gambar') {
-
         $result = gambarnya($options);
         $balas = array(
             'replyToken' => $replyToken,
@@ -592,11 +689,9 @@ if($message['type']=='text') {
             )
         );
     }
-
 }
 if($message['type']=='text') {
 	    if ($command == '/fansign') {
-
         $result = fansign($options);
         $balas = array(
             'replyToken' => $replyToken,
@@ -609,11 +704,9 @@ if($message['type']=='text') {
             )
         );
     }
-
 }
 if($message['type']=='text') {
 	    if ($command == '/jadwaltv') {
-
         $result = jadwaltv($options);
         $balas = array(
             'replyToken' => $replyToken,
@@ -625,11 +718,9 @@ if($message['type']=='text') {
             )
         );
     }
-
 }
 if($message['type']=='text') {
 	    if ($command == '/shalat') {
-
         $result = shalat($options);
         $balas = array(
             'replyToken' => $replyToken,
@@ -641,9 +732,7 @@ if($message['type']=='text') {
             )
         );
     }
-
 }
-
 if($message['type']=='text') {
 	    if ($command == '/cuaca') {
         $result = cuaca($options);
@@ -658,14 +747,10 @@ if($message['type']=='text') {
         );
     }
 }
-
 if (isset($balas)) {
     $result = json_encode($balas);
 //$result = ob_get_clean();
-
     file_put_contents('./balasan.json', $result);
-
-
     $client->replyMessage($balas);
 }
 ?>
