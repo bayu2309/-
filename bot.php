@@ -326,7 +326,7 @@ if ($command == '/menu') {
     array (
         0 =>
       array (
-        'thumbnailImageUrl' => 'https://cdn.vox-cdn.com/thumbor/3PGCC3bHmmo9uSN2MJ83zpqIO5o=/0x14:800x547/1200x800/filters:focal(0x14:800x547)/cdn.vox-cdn.com/assets/3124217/new_youtube_logo.jpg',
+        'thumbnailImageUrl' => 'https://pedestalsearch.com/wp-content/uploads/2016/04/video-seo-youtube-logo.png',
         'imageBackgroundColor' => '#00FFFF',
         'title' => 'YOUTUBE',
         'text' => 'Temukan Vidio Kesukaanmu',
@@ -348,7 +348,7 @@ if ($command == '/menu') {
       ),
        1 =>
       array (
-        'thumbnailImageUrl' => 'https://www.practicepanther.com/wp-content/uploads/2014/11/twitter-flat-logo-shadow-icon-400x400.png',
+        'thumbnailImageUrl' => 'https://seeklogo.com/images/T/twitter-2012-negative-logo-5C6C1F1521-seeklogo.com.png',
         'imageBackgroundColor' => '#00FFFF',
         'title' => 'TWITTER',
         'text' => 'Mencari Informasi Akun Twitter',
