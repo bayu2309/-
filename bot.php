@@ -394,8 +394,8 @@ if ($command == '/menu') {
       array (
         'thumbnailImageUrl' => 'https://is3-ssl.mzstatic.com/image/thumb/Purple62/v4/cc/68/6c/cc686c29-ffd2-5115-2b97-c4821b548fe3/AppIcon-1x_U007emarketing-85-220-6.png/246x0w.jpg',
         'imageBackgroundColor' => '#00FFFF',
-        'title' => 'Praytime',
-        'text' => 'Info jadwal shalat sesuai dengan yang di cari',
+        'title' => 'PRAYTIME',
+        'text' => 'Mengetahui Jadwal Shalat Wilayah Indonesia Berdasarkan Tempat',
         'defaultAction' =>
         array (
           'type' => 'uri',
@@ -407,8 +407,8 @@ if ($command == '/menu') {
           0 =>
           array (
             'type' => 'message',
-            'label' => 'Example',
-            'text' => '/shalat jakarta',
+            'label' => 'Show me',
+            'text' => 'Ketik /shalat <nama kota>',
           ),
         ),
       ),
@@ -480,7 +480,7 @@ if ($command == '/menu') {
       ),
       7 =>
       array (
-        'thumbnailImageUrl' => 'https://i.ytimg.com/vi/3hz1e4d0f9I/maxresdefault.jpg',
+        'thumbnailImageUrl' => 'https://www.yokekungworld.com/wp-content/uploads/2016/02/joox.jpg',
         'imageBackgroundColor' => '#00FFFF',
         'title' => 'Music',
         'text' => 'Info music sesuai dengan yang di cari',
