@@ -326,7 +326,7 @@ if ($command == '/menu') {
     array (
         0 =>
       array (
-        'thumbnailImageUrl' => 'https://mirror.umd.edu/xbmc/addons/gotham/plugin.audio.soundcloud/icon.png',
+        'thumbnailImageUrl' => 'https://cdn.vox-cdn.com/thumbor/3PGCC3bHmmo9uSN2MJ83zpqIO5o=/0x14:800x547/1200x800/filters:focal(0x14:800x547)/cdn.vox-cdn.com/assets/3124217/new_youtube_logo.jpg',
         'imageBackgroundColor' => '#00FFFF',
         'title' => 'YOUTUBE',
         'text' => 'Temukan Vidio Kesukaanmu',
@@ -348,7 +348,7 @@ if ($command == '/menu') {
       ),
        1 =>
       array (
-        'thumbnailImageUrl' => 'https://mirror.umd.edu/xbmc/addons/gotham/plugin.audio.soundcloud/icon.png',
+        'thumbnailImageUrl' => 'https://www.practicepanther.com/wp-content/uploads/2014/11/twitter-flat-logo-shadow-icon-400x400.png',
         'imageBackgroundColor' => '#00FFFF',
         'title' => 'TWITTER',
         'text' => 'Mencari Informasi Akun Twitter',
@@ -523,28 +523,6 @@ if ($command == '/menu') {
         ),
       ),
       9 =>
-      array (
-        'thumbnailImageUrl' => 'https://www.blognone.com/sites/default/files/externals/46584b453aee2e9f40eea8f75314c8a1.jpg',
-        'imageBackgroundColor' => '#00FFFF',
-        'title' => 'JOOX MUSIC',
-        'text' => 'Mengunduh Musik Dari Joox Dengan Lyric',
-        'defaultAction' =>
-        array (
-          'type' => 'uri',
-          'label' => 'View detail',
-          'uri' => 'http://example.com/page/123',
-        ),
-        'actions' =>
-        array (
-          0 =>
-          array (
-            'type' => 'message',
-            'label' => 'Show me',
-            'text' => 'Ketik /joox <judul musik>',
-          ),
-        ),
-      ),
-      10 =>
       array (
         'thumbnailImageUrl' => 'https://4vector.com/i/free-vector-cartoon-weather-icon-05-vector_018885_cartoon_weather_icon_05_vector.jpg',
         'imageBackgroundColor' => '#00FFFF',
