@@ -310,7 +310,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'Ketik /soundcloud ......',
+            'text' => 'ketik /soundcloud ......',
           ),
         ),
       ),
@@ -332,7 +332,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'Ketik /instagram ......',
+            'text' => 'ketik /instagram ......',
           ),
         ),
       ),
@@ -376,7 +376,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'Ketik /shalat ......',
+            'text' => 'ketik /shalat ......',
           ),
         ),
       ),
@@ -398,7 +398,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'Ketik /fansign ......',
+            'text' => 'ketik /fansign ......',
           ),
         ),
       ),
@@ -420,7 +420,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'Ketik /film ......',
+            'text' => 'ketik /film ......',
           ),
         ),
       ),
@@ -442,7 +442,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'Ketik /jadwaltv ......',
+            'text' => 'ketik /jadwaltv [query]',
           ),
         ),
       ),
@@ -464,7 +464,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'ketik /joox ......',
+            'text' => 'ketik /joox [query]',
           ),
         ),
       ),
@@ -486,7 +486,7 @@ if ($command == '/menu') {
           array (
             'type' => 'message',
             'label' => 'Detail',
-            'text' => 'Ketik /cuaca ......',
+            'text' => 'ketik /cuaca ......',
           ),
         ),
       ),
