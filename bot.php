@@ -294,10 +294,10 @@ if ($command == '/menu') {
     array (
       0 =>
       array (
-        'thumbnailImageUrl' => 'https://image.freepik.com/icones-gratis/relogios-de-parede-com-horas_318-32867.jpg',
+        'thumbnailImageUrl' => 'https://mirror.umd.edu/xbmc/addons/gotham/plugin.audio.soundcloud/icon.png',
         'imageBackgroundColor' => '#00FFFF',
-        'title' => 'Zona waktu',
-        'text' => 'Informasi waktu di setiap kota yang ingin kamu cari',
+        'title' => 'SOUND CLOUD',
+        'text' => 'Mencari Dan Unduh Musik Di SoundCloud',
         'defaultAction' =>
         array (
           'type' => 'uri',
@@ -309,8 +309,8 @@ if ($command == '/menu') {
           0 =>
           array (
             'type' => 'message',
-            'label' => 'Example',
-            'text' => '/waktu jakarta',
+            'label' => 'Show me',
+            'text' => 'Ketik /soundcloud <judul lagu>',
           ),
         ),
       ),
