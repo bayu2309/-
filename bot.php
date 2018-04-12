@@ -326,7 +326,7 @@ if ($command == '/menu') {
     array (
         0 =>
       array (
-        'thumbnailImageUrl' => 'https://assets.hardwarezone.com/img/2017/02/YouTube_Main.jpg',
+        'thumbnailImageUrl' => 'https://mirror.umd.edu/xbmc/addons/gotham/plugin.audio.soundcloud/icon.png',
         'imageBackgroundColor' => '#00FFFF',
         'title' => 'YOUTUBE',
         'text' => 'Temukan Vidio Kesukaanmu',
@@ -348,7 +348,7 @@ if ($command == '/menu') {
       ),
        1 =>
       array (
-        'thumbnailImageUrl' => 'https://blogs.library.duke.edu/rubenstein/files/2014/04/twitter-icon.png',
+        'thumbnailImageUrl' => 'https://mirror.umd.edu/xbmc/addons/gotham/plugin.audio.soundcloud/icon.png',
         'imageBackgroundColor' => '#00FFFF',
         'title' => 'TWITTER',
         'text' => 'Mencari Informasi Akun Twitter',
