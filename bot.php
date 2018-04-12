@@ -346,7 +346,7 @@ if ($command == '/menu') {
           ),
         ),
       ),
-       0 =>
+       1 =>
       array (
         'thumbnailImageUrl' => 'https://blogs.library.duke.edu/rubenstein/files/2014/04/twitter-icon.png',
         'imageBackgroundColor' => '#00FFFF',
@@ -368,7 +368,7 @@ if ($command == '/menu') {
           ),
         ),
       ),
-      0 =>
+      2 =>
       array (
         'thumbnailImageUrl' => 'https://mirror.umd.edu/xbmc/addons/gotham/plugin.audio.soundcloud/icon.png',
         'imageBackgroundColor' => '#00FFFF',
@@ -390,7 +390,7 @@ if ($command == '/menu') {
           ),
         ),
       ),
-      1 =>
+      3 =>
       array (
         'thumbnailImageUrl' => 'https://1c7qp243xy9g1qeffp1k1nvo-wpengine.netdna-ssl.com/wp-content/uploads/2016/03/instagram_logo.jpg',
         'imageBackgroundColor' => '#00FFFF',
@@ -412,7 +412,7 @@ if ($command == '/menu') {
           ),
         ),
       ),
-      2 =>
+      4 =>
       array (
         'thumbnailImageUrl' => 'https://unnecessaryexclamationmark.files.wordpress.com/2016/05/myanimelist-logo.jpg',
         'imageBackgroundColor' => '#00FFFF',
@@ -434,7 +434,7 @@ if ($command == '/menu') {
           ),
         ),
       ),
-      3 =>
+      5 =>
       array (
         'thumbnailImageUrl' => 'https://is3-ssl.mzstatic.com/image/thumb/Purple62/v4/cc/68/6c/cc686c29-ffd2-5115-2b97-c4821b548fe3/AppIcon-1x_U007emarketing-85-220-6.png/246x0w.jpg',
         'imageBackgroundColor' => '#00FFFF',
@@ -456,7 +456,7 @@ if ($command == '/menu') {
           ),
         ),
       ),
-      4 =>
+      6 =>
       array (
         'thumbnailImageUrl' => 'https://i.pinimg.com/originals/d7/d8/a5/d7d8a5c1017dff37a359c95e88e0897b.jpg',
         'imageBackgroundColor' => '#00FFFF',
@@ -478,7 +478,7 @@ if ($command == '/menu') {
           ),
         ),
       ),
-      5 =>
+      7 =>
       array (
         'thumbnailImageUrl' => 'https://taisy0.com/wp-content/uploads/2015/07/Google-Maps.png',
         'imageBackgroundColor' => '#00FFFF',
@@ -500,7 +500,7 @@ if ($command == '/menu') {
           ),
         ),
       ),
-      6 =>
+      8 =>
       array (
         'thumbnailImageUrl' => 'https://st3.depositphotos.com/3921439/12696/v/950/depositphotos_126961774-stock-illustration-the-tv-icon-television-and.jpg',
         'imageBackgroundColor' => '#00FFFF',
@@ -522,7 +522,7 @@ if ($command == '/menu') {
           ),
         ),
       ),
-      7 =>
+      9 =>
       array (
         'thumbnailImageUrl' => 'https://www.blognone.com/sites/default/files/externals/46584b453aee2e9f40eea8f75314c8a1.jpg',
         'imageBackgroundColor' => '#00FFFF',
@@ -544,7 +544,7 @@ if ($command == '/menu') {
           ),
         ),
       ),
-      8 =>
+      10 =>
       array (
         'thumbnailImageUrl' => 'https://4vector.com/i/free-vector-cartoon-weather-icon-05-vector_018885_cartoon_weather_icon_05_vector.jpg',
         'imageBackgroundColor' => '#00FFFF',
