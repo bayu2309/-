@@ -329,7 +329,7 @@ if ($command == '/menu') {
         'thumbnailImageUrl' => 'https://assets.hardwarezone.com/img/2017/02/YouTube_Main.jpg',
         'imageBackgroundColor' => '#00FFFF',
         'title' => 'YOUTUBE',
-        'text' => 'Menemukan Video Berdasarkan Keyword',
+        'text' => 'Temukan Vidio Kesukaanmu',
         'defaultAction' =>
         array (
           'type' => 'uri',
