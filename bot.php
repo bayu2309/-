@@ -612,16 +612,19 @@ if($message['type']=='text') {
                         'thumbnailImageUrl' => $result['poto'],
                         'text' => $result['bio'],
                         'actions' => array(
+			    0 =>
 			    array(
                                 'type' => 'uri',
                                 'label' => 'Followers: '.$result['followers'],
                                 'uri' => $result['bawah']
                             ),
+			    1 =>
 			    array(
                                 'type' => 'uri',
                                 'label' => 'Following: '.$result['following'],
                                 'uri' => $result['bawah']
                             ),
+			    2 =>
                             array(
                                 'type' => 'uri',
                                 'label' => 'Total post: '.$result['totalpost'],
