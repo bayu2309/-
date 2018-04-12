@@ -481,10 +481,10 @@ if ($command == '/menu') {
       ),
       7 =>
       array (
-        'thumbnailImageUrl' => 'https://2.bp.blogspot.com/-syKaZns5Rnk/WWolJM5WptI/AAAAAAAAAOU/zTSsOPEzsrklzz7IzjU2nm64nQSw4O0BACLcBGAs/s1600/joox.png',
+        'thumbnailImageUrl' => 'https://www.yokekungworld.com/wp-content/uploads/2016/02/joox.jpg',
         'imageBackgroundColor' => '#00FFFF',
         'title' => 'JOOX MUSIC',
-        'text' => 'Mengunduh Musik Dari Joox (Dengan Lirik)',
+        'text' => 'Mengunduh Musik Dari Joox Dengan Lirik',
         'defaultAction' =>
         array (
           'type' => 'uri',
