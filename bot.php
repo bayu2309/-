@@ -157,7 +157,6 @@ function cuaca($keyword) {
 	  $result .= $json['weather']['0']['description'];
     return $result;
 }
-
 function say($keyword) { 
     $uri = "https://script.google.com/macros/exec?service=AKfycbw7gKzP-WYV2F5mc9RaR7yE3Ve1yN91Tjs91hp_jHSE02dSv9w&nama=" . $keyword . "&tanggal=10-05-2003"; 
  
@@ -209,7 +208,12 @@ function manga($keyword) {
     $parsed['synopsis'] = str_replace("<br />", "\n", html_entity_decode((string) $xml->entry[0]->synopsis, ENT_QUOTES | ENT_XHTML, 'UTF-8'));
     return $parsed;
 }
-
+function manga_syn($keyword) {
+    $parsed = manga($keyword);
+    $result = "Judul : " . $parsed['title'];
+    $result .= "\n\nSynopsis :\n" . $parsed['synopsis'];
+    return $result;
+}
 function anime($keyword) {
     $fullurl = 'https://myanimelist.net/api/anime/search.xml?q=' . $keyword;
     $username = 'jamal3213';
@@ -235,7 +239,12 @@ function anime($keyword) {
     $parsed['synopsis'] = str_replace("<br />", "\n", html_entity_decode((string) $xml->entry[0]->synopsis, ENT_QUOTES | ENT_XHTML, 'UTF-8'));
     return $parsed;
 }
-
+function anime_syn($keyword) {
+    $parsed = anime($keyword);
+    $result = "Judul : " . $parsed['title'];
+    $result .= "\n\nSynopsis :\n" . $parsed['synopsis'];
+    return $result;
+}
 function qibla($keyword) { 
     $uri = "https://time.siswadi.com/qibla/" . $keyword; 
  
@@ -385,8 +394,8 @@ if ($command == '/menu') {
       array (
         'thumbnailImageUrl' => 'https://is3-ssl.mzstatic.com/image/thumb/Purple62/v4/cc/68/6c/cc686c29-ffd2-5115-2b97-c4821b548fe3/AppIcon-1x_U007emarketing-85-220-6.png/246x0w.jpg',
         'imageBackgroundColor' => '#00FFFF',
-        'title' => 'PRAYTIME',
-        'text' => 'Mengetahui Jadwal Shalat Wilayah Indonesia Berdasarkan Tempat',
+        'title' => 'Praytime',
+        'text' => 'Info jadwal shalat sesuai dengan yang di cari',
         'defaultAction' =>
         array (
           'type' => 'uri',
@@ -398,8 +407,8 @@ if ($command == '/menu') {
           0 =>
           array (
             'type' => 'message',
-            'label' => 'Show me',
-            'text' => 'Ketik /shalat <nama kota/daerah>',
+            'label' => 'Example',
+            'text' => '/shalat jakarta',
           ),
         ),
       ),
@@ -471,10 +480,10 @@ if ($command == '/menu') {
       ),
       7 =>
       array (
-        'thumbnailImageUrl' => 'https://www.yokekungworld.com/wp-content/uploads/2016/02/joox.jpg',
+        'thumbnailImageUrl' => 'https://i.ytimg.com/vi/3hz1e4d0f9I/maxresdefault.jpg',
         'imageBackgroundColor' => '#00FFFF',
-        'title' => 'JOOX MUSIC',
-        'text' => 'Mengunduh Musik Dari Joox Dengan Lirik',
+        'title' => 'Music',
+        'text' => 'Info music sesuai dengan yang di cari',
         'defaultAction' =>
         array (
           'type' => 'uri',
@@ -495,8 +504,8 @@ if ($command == '/menu') {
       array (
         'thumbnailImageUrl' => 'https://4vector.com/i/free-vector-cartoon-weather-icon-05-vector_018885_cartoon_weather_icon_05_vector.jpg',
         'imageBackgroundColor' => '#00FFFF',
-        'title' => 'WEATHER',
-        'text' => 'Mengetahui Prakiraan Cuaca Seluruh Dunia',
+        'title' => 'Weather',
+        'text' => 'Info cuaca sesuai dgn yang di cari',
         'defaultAction' =>
         array (
           'type' => 'uri',
@@ -656,7 +665,7 @@ if($message['type']=='text') {
                                 'type' => 'postback',
                                 'label' => 'Baca Sinopsis-nya',
                                 'data' => 'action=add&itemid=123',
-                                'text' => '/manga-syn ' . $options
+                                'text' => '/manga-syn' . $options
                             ),
                             array(
                                 'type' => 'uri',
@@ -684,7 +693,6 @@ if($message['type']=='text') {
         );
     }
 }
-
 if($message['type']=='text') {
 	    if ($command == '/say') {
         $result = say($options);
