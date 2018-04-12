@@ -384,8 +384,8 @@ if ($command == '/menu') {
       array (
         'thumbnailImageUrl' => 'https://i.pinimg.com/originals/d7/d8/a5/d7d8a5c1017dff37a359c95e88e0897b.jpg',
         'imageBackgroundColor' => '#00FFFF',
-        'title' => 'Fansign',
-        'text' => 'Text yang di tulis d kertas',
+        'title' => 'FANSIGN ANIME',
+        'text' => 'Membuat FS Anime Berdasarkan Keyword',
         'defaultAction' =>
         array (
           'type' => 'uri',
@@ -397,17 +397,17 @@ if ($command == '/menu') {
           0 =>
           array (
             'type' => 'message',
-            'label' => 'Example',
-            'text' => '/fansign saya',
+            'label' => 'Show me',
+            'text' => 'Ketik /fansign <text nya>',
           ),
         ),
       ),
       5 =>
       array (
-        'thumbnailImageUrl' => 'https://png.pngtree.com/element_origin_min_pic/16/10/19/1758073fffac5db.jpg',
+        'thumbnailImageUrl' => 'https://taisy0.com/wp-content/uploads/2015/07/Google-Maps.png',
         'imageBackgroundColor' => '#00FFFF',
-        'title' => 'Picture',
-        'text' => 'Pencarian gambar sesuai dengan yg kamu mau',
+        'title' => 'GOOGLEMAP',
+        'text' => 'Mengetahui Lokasi Dan Koordinat Nama Tempat',
         'defaultAction' =>
         array (
           'type' => 'uri',
@@ -419,8 +419,8 @@ if ($command == '/menu') {
           0 =>
           array (
             'type' => 'message',
-            'label' => 'Example',
-            'text' => '/gambar kucing',
+            'label' => 'Show me',
+            'text' => 'Ketik /location <nama tempat>',
           ),
         ),
       ),
