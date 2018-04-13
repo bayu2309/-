@@ -112,13 +112,13 @@ function musiknya($keyword) {
 }
 function fansign($keyword) {
     $listnya = array(
-	    "https://farzain.xyz//api//premium//fansign//cos/cos%20(1).php?text=" . $keyword . ",&apikey=ag73837ung43838383jdhdhd",
-            "https://farzain.xyz//api//premium//fansign//cos/cos%20(2).php?text=" . $keyword . ",&apikey=ag73837ung43838383jdhdhd",
-	    "https://farzain.xyz//api//premium//fansign//cos/cos%20(3).php?text=" . $keyword . ",&apikey=ag73837ung43838383jdhdhd",
-	    "https://farzain.xyz//api//premium//fansign//cos/cos%20(4).php?text=" . $keyword . ",&apikey=ag73837ung43838383jdhdhd",
-	    "https://farzain.xyz//api//premium//fansign//cos/cos%20(5).php?text=" . $keyword . ",&apikey=ag73837ung43838383jdhdhd",
-	    "https://farzain.xyz//api//premium//fansign//cos/cos%20(6).php?text=" . $keyword . ",&apikey=ag73837ung43838383jdhdhd",
-	    "https://farzain.xyz//api//premium//fansign//cos/cos%20(7).php?text=" . $keyword . ",&apikey=ag73837ung43838383jdhdhd",
+	    "https://farzain.xyz//api//premium//fansign//cos/cos%20(1).php?text=" . $keyword . "&apikey=ag73837ung43838383jdhdhd",
+            "https://farzain.xyz//api//premium//fansign//cos/cos%20(2).php?text=" . $keyword . "&apikey=ag73837ung43838383jdhdhd",
+	    "https://farzain.xyz//api//premium//fansign//cos/cos%20(3).php?text=" . $keyword . "&apikey=ag73837ung43838383jdhdhd",
+	    "https://farzain.xyz//api//premium//fansign//cos/cos%20(4).php?text=" . $keyword . "&apikey=ag73837ung43838383jdhdhd",
+	    "https://farzain.xyz//api//premium//fansign//cos/cos%20(5).php?text=" . $keyword . "&apikey=ag73837ung43838383jdhdhd",
+	    "https://farzain.xyz//api//premium//fansign//cos/cos%20(6).php?text=" . $keyword . "&apikey=ag73837ung43838383jdhdhd",
+	    "https://farzain.xyz//api//premium//fansign//cos/cos%20(7).php?text=" . $keyword . "&apikey=ag73837ung43838383jdhdhd",
 	    );
             $jaws = array_rand($listnya);
             $result = $listnya[$jaws];
