@@ -59,6 +59,23 @@ function textspech($keyword) {
     $result .= $json['result'];
     return $result;
 }
+function ytlist($keyword) {
+    $uri = "https://farzain.xyz/api/premium/yt_search.php?apikey=ag73837ung43838383jdhdhd&id=" . $keyword;
+    $response = Unirest\Request::get("$uri");
+    $json = json_decode($response->raw_body, true);
+    $result['id0'] .= $json['respons'][0]['video_id'];
+    $result['title0'] .= $json['respons'][0]['title'];
+    $result['icon0'] .= $json['respons'][0]['thumbnail'];
+	
+    $result['id1'] .= $json['respons'][1]['video_id'];
+    $result['title1'] .= $json['respons'][1]['title'];
+    $result['icon1'] .= $json['respons'][1]['thumbnail'];
+	
+    $result['id2'] .= $json['respons'][2]['video_id'];
+    $result['title2'] .= $json['respons'][2]['title'];
+    $result['icon2'] .= $json['respons'][2]['thumbnail'];
+    return $result;
+}
 function cloud($keyword) {
     $uri = "https://farzain.xyz/api/premium/soundcloud.php?apikey=ag73837ung43838383jdhdhd&id=" . $keyword;
     $response = Unirest\Request::get("$uri");
@@ -609,8 +626,8 @@ URL: '. $result['link']
 }
 // fitur instagram
 if($message['type']=='text') {
-	    if ($command == '/instagram' || $command == '/Instagram') {
-        $result = instainfo($options);
+	    if ($command == '/youtube' || $command == '/Youtube') {
+        $result = ytlist($options);
         $balas = array(
             'replyToken' => $replyToken,
             'messages' => array(
@@ -620,16 +637,16 @@ if($message['type']=='text') {
   'template' => 
   array (
     'type' => 'buttons',
-    'thumbnailImageUrl' => $result['poto'],
+    'thumbnailImageUrl' => $result['icon0'],
     'imageAspectRatio' => 'rectangle',
     'imageSize' => 'cover',
     'imageBackgroundColor' => '#FFFFFF',
-    'title' => 'Menu',
-    'text' => 'Please select',
+    'title' => 'Result1',
+    'text' => $result['title0'],
     'defaultAction' => 
     array (
       'type' => 'uri',
-      'label' => 'View detail',
+      'label' => 'Youtube',
       'uri' => 'http://example.com/page/123',
     ),
     'actions' => 
@@ -637,20 +654,9 @@ if($message['type']=='text') {
       0 => 
       array (
         'type' => 'postback',
-        'label' => 'Buy',
+        'label' => 'Lihat video',
         'data' => 'action=buy&itemid=123',
-      ),
-      1 => 
-      array (
-        'type' => 'postback',
-        'label' => 'Add to cart',
-        'data' => 'action=add&itemid=123',
-      ),
-      2 => 
-      array (
-        'type' => 'uri',
-        'label' => 'View detail',
-        'uri' => 'http://example.com/page/123',
+	'text' => 'Youtube-view'.$result['id0']
       ),
     ),
   ),
