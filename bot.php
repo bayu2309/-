@@ -627,7 +627,7 @@ URL: '. $result['link']
 // fitur instagram
 if($message['type']=='text') {
 	    if ($command == '/youtube' || $command == '/Youtube') {
-        $result = ytlist($options);
+        $result = anime($options);
         $balas = array(
             'replyToken' => $replyToken,
             'messages' => array(
@@ -637,12 +637,12 @@ if($message['type']=='text') {
   'template' => 
   array (
     'type' => 'buttons',
-    'thumbnailImageUrl' => $result['icon0'],
+    'thumbnailImageUrl' => $result['image'],
     'imageAspectRatio' => 'rectangle',
     'imageSize' => 'cover',
     'imageBackgroundColor' => '#FFFFFF',
     'title' => 'Result1',
-    'text' => $result['title0'],
+    'text' => 'wrw',
     'defaultAction' => 
     array (
       'type' => 'uri',
@@ -656,7 +656,7 @@ if($message['type']=='text') {
         'type' => 'postback',
         'label' => 'Lihat video',
         'data' => 'action=buy&itemid=123',
-	'text' => 'Youtube-view'.$result['id0']
+	'text' => 'Youtube-view'
       )
     )
   )
