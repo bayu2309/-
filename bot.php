@@ -657,9 +657,9 @@ if($message['type']=='text') {
         'label' => 'Lihat video',
         'data' => 'action=buy&itemid=123',
 	'text' => 'Youtube-view'.$result['id0']
-      ),
-    ),
-  ),
+      )
+    )
+  )
 )
             )
         );
