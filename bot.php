@@ -887,6 +887,21 @@ if($message['type']=='text') {
         );
     }
 }
+else if($message['type']=='sticker')
+{	
+	$balas = array(
+		'replyToken' => $replyToken,														
+		'messages' => array(
+			array(
+		            'type' => 'sticker', // sesuaikan
+                            'packageId' => 1, // sesuaikan
+                            'stickerId' => 1 // sesuaikan										
+									
+									)
+							)
+						);
+						
+}
 if (isset($balas)) {
     $result = json_encode($balas);
 //$result = ob_get_clean();
