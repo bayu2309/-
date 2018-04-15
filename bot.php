@@ -914,13 +914,14 @@ if($message['type']=='text') {
 }
 else if($message['type']=='sticker')
 {	
+	$result = stickerlist($options);
 	$balas = array(
 		'replyToken' => $replyToken,														
 		'messages' => array(
 			array(
 		            'type' => 'sticker', // sesuaikan
                             'packageId' => 1, // sesuaikan
-                            'stickerId' => 1 // sesuaikan										
+                            'stickerId' => $result// sesuaikan										
 									
 									)
 							)
