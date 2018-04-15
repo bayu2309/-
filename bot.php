@@ -110,6 +110,31 @@ function musiknya($keyword) {
     $result .= $json['lirik'];
     return $result;
 }
+function stickerlist($keyword) {
+    $listnya = array(
+	    "1",
+	    "2",
+	    "3",
+	    "4",
+	    "13",
+	    "10",
+	    "402",
+	    "401",
+	    "17",
+	    "16",
+	    "405",
+	    "5",
+	    "404",
+	    "406",
+	    "21",
+	    "9",
+	    "103",
+	    "102",
+	    );
+            $jaws = array_rand($listnya);
+            $result = $listnya[$jaws];
+    return $result;
+}
 function fansign($keyword) {
     $listnya = array(
 	    "https://farzain.xyz//api//premium//fansign//cos/cos%20(1).php?text=" . $keyword . "&apikey=ag73837ung43838383jdhdhd",
