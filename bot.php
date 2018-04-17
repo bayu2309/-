@@ -38,19 +38,20 @@ function twitter($keyword) {
     return $result;
 }
 function instainfo($keyword) {
-    $uri = "https://farzain.xyz/api/ig_profile.php?apikey=9YzAAXsDGYHWFRf6gWzdG5EQECW7oo&id=";
+    $uri = "https://farzain.xyz/api/ig_profile.php?id=";
     $response = Unirest\Request::get("$uri");
     $json = json_decode($response->raw_body, true);
-    $result['poto']      .= $json['info']['profile_pict'];
-    $result['nama']      .= $json['info']['full_name'];
-    $result['username']  .= $json['info']['username'];
-    $result['followers'] .= $json['count']['followers'];
-    $result['following'] .= $json['count']["following"];
-    $result['totalpost'] .= $json['count']['post'];
-    $result['bio']       .= $json['info']['bio'];
-    $result['bawah']     .= 'https://www.instagram.com/'. $keyword;
+    $parsed = array();
+    $parsed['poto']      = $json['info']['profile_pict'];
+    $parsed['nama']      = $json['info']['full_name'];
+    $parsed['username']  = $json['info']['username'];
+    $parsed['followers'] = $json['count']['followers'];
+    $parsed['following'] = $json['count']["following"];
+    $parsed['totalpost'] = $json['count']['post'];
+    $parsed['bio']       = $json['info']['bio'];
+    $parsed['bawah']     = 'https://www.instagram.com/'. $keyword;
     
-    return $result;
+    return $parsed;
 }
 function textspech($keyword) {
     $uri = "https://farzain.xyz/api/tts.php?apikey=9YzAAXsDGYHWFRf6gWzdG5EQECW7oo&id=" . $keyword;
@@ -718,8 +719,8 @@ URL: '. $result['link']
 }
 // fitur instagram
 if($message['type']=='text') {
-	    if ($command == '/youtube' || $command == '/Youtube') {
-        $result = anime($options);
+	    if ($command == '/instagram' || $command == '/Instagram') {
+        $result = instainfo($options);
         $balas = array(
             'replyToken' => $replyToken,
             'messages' => array(
@@ -729,7 +730,7 @@ if($message['type']=='text') {
   'template' => 
   array (
     'type' => 'buttons',
-    'thumbnailImageUrl' => $result['image'],
+    'thumbnailImageUrl' => $parsed['poto'],
     'imageAspectRatio' => 'rectangle',
     'imageSize' => 'cover',
     'imageBackgroundColor' => '#FFFFFF',
