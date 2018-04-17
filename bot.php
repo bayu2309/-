@@ -41,7 +41,6 @@ function instainfo($keyword) {
     $uri = "https://farzain.xyz/api/ig_profile.php?id=";
     $response = Unirest\Request::get("$uri");
     $json = json_decode($response->raw_body, true);
-    $parsed = array();
     $parsed['poto']      = $json['info']['profile_pict'];
     $parsed['nama']      = $json['info']['full_name'];
     $parsed['username']  = $json['info']['username'];
