@@ -720,7 +720,7 @@ URL: '. $result['link']
 // fitur instagram
 if($message['type']=='text') {
 	    if ($command == '/instagram' || $command == '/Instagram') {
-        $result = instainfo($options);
+        $parsed = instainfo($options);
         $balas = array(
             'replyToken' => $replyToken,
             'messages' => array(
