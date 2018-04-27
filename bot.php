@@ -1003,7 +1003,7 @@ if($message['type']=='text') {
 		   array(
 		    'UserID' => $profil->userId,
                     'type' => 'text',
-                    'text' => $profil->displayName.' '.$result
+                    'text' => $profil->userId->displayName.'\n\n'.$result
                 )
 	    )
         );
