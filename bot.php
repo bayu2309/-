@@ -980,11 +980,12 @@ if($message['type']=='text') {
     }
 }
 else if($message['type']=='text') {
-	$result = simi($message['text']);
+	$pesan = str_replace(" ", "%20", $pesan_datang);
+	$result = simi($pesan);
         $balas = array(
-              'replyToken' => $replyToken,
-            'messages' => array(
-                array(
+            'UserID' => $profil->userId,
+            'replyToken' => $replyToken,														
+	    'messages' => array(
                     'type' => 'text',
                     'text' => $result
                 )
