@@ -994,7 +994,8 @@ if($message['type']=='sticker'){
 						);
 						
 }
-else($message['type']=='text') {
+else
+if($message['type']=='text') {
 	$result = simi($command);
         $balas = array(
             'replyToken' => $replyToken,														
