@@ -1004,7 +1004,6 @@ else($message['type']=='text') {
                     'type' => 'text',
                     'text' => $result
                 )
-            )
         );
     }
 if (isset($balas)) {
