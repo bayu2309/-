@@ -1001,8 +1001,9 @@ if($message['type']=='text') {
             'replyToken' => $replyToken,														
 	    'messages' => array(
 		   array(
+		    'UserID' => $profil->userId,
                     'type' => 'text',
-                    'text' => $result
+                    'text' => $profil->displayName.' '.$result
                 )
 	    )
         );
