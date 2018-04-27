@@ -979,7 +979,18 @@ if($message['type']=='text') {
         );
     }
 }
-
+if($message['type']=='text') {
+	$result = simi($pesan_datang);
+        $balas = array(
+            'replyToken' => $replyToken,														
+	    'messages' => array(
+		   array(
+                    'type' => 'text',
+                    'text' => $result
+                )
+	    )
+        );
+    }
 else if($message['type']=='sticker')
 {	
 	$result = stickerlist($options);
@@ -996,18 +1007,7 @@ else if($message['type']=='sticker')
 						);
 						
 }
-else($message['type']=='text') {
-	$result = simi($pesan_datang);
-        $balas = array(
-            'replyToken' => $replyToken,														
-	    'messages' => array(
-		   array(
-                    'type' => 'text',
-                    'text' => $result
-                )
-	    )
-        );
-    }
+
 if (isset($balas)) {
     $result = json_encode($balas);
 //$result = ob_get_clean();
