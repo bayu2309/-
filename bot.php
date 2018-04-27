@@ -979,7 +979,7 @@ if($message['type']=='text') {
         );
     }
 }
-if($message['type']=='text') {
+else($message['type']=='text') {
 	$result = simi($command);
         $balas = array(
             'replyToken' => $replyToken,														
