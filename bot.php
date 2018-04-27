@@ -979,20 +979,7 @@ if($message['type']=='text') {
         );
     }
 }
-else($message['type']=='text') {
-	$result = simi($command);
-        $balas = array(
-            'replyToken' => $replyToken,														
-	    'messages' => array(
-		   array(
-                    'type' => 'text',
-                    'text' => $result
-                )
-	    )
-        );
-    }
-else if($message['type']=='sticker')
-{	
+if($message['type']=='sticker'){	
 	$result = stickerlist($options);
 	$balas = array(
 		'replyToken' => $replyToken,														
@@ -1007,6 +994,19 @@ else if($message['type']=='sticker')
 						);
 						
 }
+else($message['type']=='text') {
+	$result = simi($command);
+        $balas = array(
+            'replyToken' => $replyToken,														
+	    'messages' => array(
+		   array(
+                    'type' => 'text',
+                    'text' => $result
+                )
+	    )
+        );
+    }
+
 
 if (isset($balas)) {
     $result = json_encode($balas);
