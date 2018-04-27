@@ -979,7 +979,7 @@ if($message['type']=='text') {
         );
     }
 }
-if($message['type']=='text') {
+else if($message['type']=='text') {
 	$result = simi($message['text']);
         $balas = array(
               'replyToken' => $replyToken,
@@ -991,7 +991,6 @@ if($message['type']=='text') {
             )
         );
     }
-}
 else if($message['type']=='sticker')
 {	
 	$result = stickerlist($options);
