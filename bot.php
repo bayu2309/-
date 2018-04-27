@@ -1001,9 +1001,11 @@ else($message['type']=='text') {
         $balas = array(
             'replyToken' => $replyToken,														
 	    'messages' => array(
+		   array(
                     'type' => 'text',
                     'text' => $result
                 )
+	    )
         );
     }
 if (isset($balas)) {
