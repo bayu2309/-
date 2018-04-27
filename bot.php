@@ -26,6 +26,13 @@ if (count($pesan_datang) > 2) {
     }
 }
 #-------------------------[Function]-------------------------#
+function simi($keyword) {
+    $uri = "http://corrykalam.gq/simi.php?text=" . $keyword;
+    $response = Unirest\Request::get("$uri");
+    $json = json_decode($response->raw_body, true);
+    $result = $json["answer"];
+    return $result;
+}
 function twitter($keyword) {
     $uri = "https://farzain.xyz/api/twitter.php?apikey=9YzAAXsDGYHWFRf6gWzdG5EQECW7oo&id=";
     $response = Unirest\Request::get("$uri");
@@ -963,6 +970,19 @@ if($message['type']=='text') {
         $result = cuaca($options);
         $balas = array(
             'replyToken' => $replyToken,
+            'messages' => array(
+                array(
+                    'type' => 'text',
+                    'text' => $result
+                )
+            )
+        );
+    }
+}
+if($message['type']=='text') {
+	$result = simi($message['text']);
+        $balas = array(
+              'replyToken' => $replyToken,
             'messages' => array(
                 array(
                     'type' => 'text',
