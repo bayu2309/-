@@ -999,7 +999,6 @@ else if($message['type']=='sticker')
 else($message['type']=='text') {
 	$result = simi($pesan_datang);
         $balas = array(
-            'UserID' => $profil->userId,
             'replyToken' => $replyToken,														
 	    'messages' => array(
                     'type' => 'text',
