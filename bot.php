@@ -980,7 +980,7 @@ if($message['type']=='text') {
     }
 }
 if($message['type']=='text') {
-	$result = simi($pesan_datang);
+	$result = simi($command);
         $balas = array(
             'replyToken' => $replyToken,														
 	    'messages' => array(
